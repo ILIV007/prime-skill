@@ -1,0 +1,20 @@
+{
+  "name": "systematic-debugging",
+  "title": "systematic-debugging",
+  "description": "A root-cause-first debugging method: reproduce, isolate, and prove the cause before changing any code.",
+  "why": "Ends guess-and-patch debugging loops; pairs with this project's verify-against-real-behavior rule.",
+  "category": "development",
+  "source": {
+    "repo": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "path": "skills/systematic-debugging",
+    "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+  },
+  "license": "MIT",
+  "stars_at_import": 312043,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

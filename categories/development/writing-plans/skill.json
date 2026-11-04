@@ -1,0 +1,20 @@
+{
+  "name": "writing-plans",
+  "title": "writing-plans",
+  "description": "Turns an approved spec or design into a detailed, step-by-step implementation plan that can be executed without guessing.",
+  "why": "The missing half of the brainstorming workflow already in this repo; makes multi-step builds land first-try instead of drifting.",
+  "category": "development",
+  "source": {
+    "repo": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "path": "skills/writing-plans",
+    "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+  },
+  "license": "MIT",
+  "stars_at_import": 312043,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

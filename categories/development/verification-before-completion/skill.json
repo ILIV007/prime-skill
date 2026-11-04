@@ -1,0 +1,20 @@
+{
+  "name": "verification-before-completion",
+  "title": "verification-before-completion",
+  "description": "Requires fresh evidence (test runs, command output, live checks) before any claim that work is done or fixed.",
+  "why": "Encodes the rule that shipped means verified; cheap insurance against false 'done' reports.",
+  "category": "development",
+  "source": {
+    "repo": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "path": "skills/verification-before-completion",
+    "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+  },
+  "license": "MIT",
+  "stars_at_import": 312043,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

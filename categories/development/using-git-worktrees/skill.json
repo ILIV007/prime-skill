@@ -1,0 +1,22 @@
+{
+  "name": "using-git-worktrees",
+  "title": "using-git-worktrees",
+  "description": "Sets up isolated git worktrees so parallel features, reviews, and experiments never collide in one working tree.",
+  "why": "The standard companion to plan-driven work; makes parallel agent work on the owner's repos safe.",
+  "category": "development",
+  "source": {
+    "repo": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "path": "skills/using-git-worktrees",
+    "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+  },
+  "license": "MIT",
+  "stars_at_import": 312043,
+  "added": "2026-11-04",
+  "requires": [
+    "git"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

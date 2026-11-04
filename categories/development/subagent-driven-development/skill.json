@@ -1,0 +1,22 @@
+{
+  "name": "subagent-driven-development",
+  "title": "subagent-driven-development",
+  "description": "Executes an implementation plan with fresh subagents per task, with spec and quality review gates between tasks.",
+  "why": "The execution engine for writing-plans in multi-agent harnesses; how the owner's bigger builds actually get run.",
+  "category": "development",
+  "source": {
+    "repo": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "path": "skills/subagent-driven-development",
+    "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+  },
+  "license": "MIT",
+  "stars_at_import": 312043,
+  "added": "2026-11-04",
+  "requires": [
+    "a harness with subagents"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

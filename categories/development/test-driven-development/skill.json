@@ -1,0 +1,20 @@
+{
+  "name": "test-driven-development",
+  "title": "test-driven-development",
+  "description": "Guides red-green-refactor TDD: write the failing test first, make it pass with the smallest change, then refactor.",
+  "why": "Proven discipline from the most-starred source in this collection; keeps agent-written code verified by construction.",
+  "category": "development",
+  "source": {
+    "repo": "obra/superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "path": "skills/test-driven-development",
+    "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+  },
+  "license": "MIT",
+  "stars_at_import": 312043,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}
