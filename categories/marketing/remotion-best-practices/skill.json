@@ -1,0 +1,22 @@
+{
+  "name": "remotion-best-practices",
+  "title": "remotion-best-practices",
+  "description": "Remotion's official best practices for programmatic video in React — markup, animation, captions, maps and interactivity done right.",
+  "why": "The motion cluster's one representative: official, actively maintained engine craft that goes deeper than the video skill's strategy-level coverage; link-only because the source repo declares no license.",
+  "category": "marketing",
+  "source": {
+    "repo": "remotion-dev/skills",
+    "url": "https://github.com/remotion-dev/skills",
+    "path": "skills/remotion-best-practices",
+    "commit": "c7cb2fdcacd134fb2ccb9b7a44f9ffa44e467271"
+  },
+  "license": "none",
+  "stars_at_import": 6294,
+  "added": "2026-11-04",
+  "requires": [
+    "a Remotion project"
+  ],
+  "entry": "link-only",
+  "adapted": false,
+  "adaptations": ""
+}
