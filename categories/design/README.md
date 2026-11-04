@@ -1,14 +1,16 @@
 # Design
 
-Skills in the **design** category. Back to the [root README](../../README.md).
+*Visual and interface design: design systems, styling, branding, and generated visuals.*
+
+Back to the [root README](../../README.md).
 
 | Skill | What it does | Why it's here | Requires | Source |
 |---|---|---|---|---|
 | [algorithmic-art](algorithmic-art/) | Creates generative art with p5.js: seeded algorithms, flow fields, and particle systems delivered as interactive HTML pieces. | The distinctive one in Anthropic's set: real generative-art capability, not another text workflow; useful for visuals and covers. | — | [anthropics/skills](https://github.com/anthropics/skills) @ ca45fc4 |
 | [anatomy](anatomy/) | Builds crafted, interactive isometric SVG figures that explain a technical idea as a physical machine, with worked examples and a geometry-audit kit. | Precise technical illustration as explanation — a capability neither the generative-art skill nor the UI set covers. | Node 20.10+; Chrome/Chromium | [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy) @ 1482e84 |
 | [banner-design](banner-design/) | Designs banners for social, ads, website heroes, and print, with multiple art-direction options. | Banners and covers are a recurring need for channels and launches. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
+| [blender-web-3d](blender-web-3d/) | Drives Blender headless or via MCP to build, modify, render, and optimize 3D models, then publishes them as fast Three.js/Next.js web experiences with modern color, shader, and compression pipelines. | The only Blender-to-web pipeline in the collection: real 3D asset craft with optimization and deploy covered, plus a runnable demo to start from. | Blender 4.x/5.x; Node.js 20+ | [czlonkowski/blender-web-3d-skill](https://github.com/czlonkowski/blender-web-3d-skill) @ 858762f |
 | [brand](brand/) | Brand voice, visual identity, messaging frameworks, and consistency checks for branded content. | Keeps channel and product visuals and tone recognizably on-brand. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
-| [design](design/) | All-in-one design skill: brand identity, tokens, logos, icons, banners, presentations, and social visuals. | Covers the long tail of one-off design asks in a single skill. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
 | [design-system](design-system/) | Design-token architecture (primitive to semantic to component), component specs, and brand-compliant slides. | Keeps multi-screen products visually consistent as they grow. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
 | [slides](slides/) | Creates strategic HTML presentations with charts, design tokens, and responsive layouts. | Turns briefs and reports into presentable decks without design software. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
 | [ui-styling](ui-styling/) | Builds accessible UIs with shadcn/ui, Radix, and Tailwind, plus canvas-based visual designs. | The practical implementation partner to the design-system rules. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |

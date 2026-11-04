@@ -1,6 +1,8 @@
 # Security
 
-Skills in the **security** category. Back to the [root README](../../README.md).
+*Defending systems: secure coding, API testing, threat modeling, and incident readiness.*
+
+Back to the [root README](../../README.md).
 
 | Skill | What it does | Why it's here | Requires | Source |
 |---|---|---|---|---|

@@ -1,5 +1,5 @@
 {
-  "count": 65,
+  "count": 73,
   "skills": [
     {
       "name": "algorithmic-art",
@@ -65,6 +65,29 @@
       "adaptations": ""
     },
     {
+      "name": "blender-web-3d",
+      "title": "Blender Web 3D",
+      "description": "Drives Blender headless or via MCP to build, modify, render, and optimize 3D models, then publishes them as fast Three.js/Next.js web experiences with modern color, shader, and compression pipelines.",
+      "why": "The only Blender-to-web pipeline in the collection: real 3D asset craft with optimization and deploy covered, plus a runnable demo to start from.",
+      "category": "design",
+      "source": {
+        "repo": "czlonkowski/blender-web-3d-skill",
+        "url": "https://github.com/czlonkowski/blender-web-3d-skill",
+        "path": "plugins/blender-web-3d/skills/blender-web-3d",
+        "commit": "858762f1add7f1d9f5dcb1fb1d0b55f71906bf0d"
+      },
+      "license": "MIT",
+      "stars_at_import": 4,
+      "added": "2026-11-04",
+      "requires": [
+        "Blender 4.x/5.x",
+        "Node.js 20+"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
       "name": "brand",
       "title": "Brand",
       "description": "Brand voice, visual identity, messaging frameworks, and consistency checks for branded content.",
@@ -74,26 +97,6 @@
         "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
         "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
         "path": ".claude/skills/brand",
-        "commit": "dd9a1b4cf9f67ca2e326f646d93e101b2778db30"
-      },
-      "license": "MIT",
-      "stars_at_import": 144911,
-      "added": "2026-11-04",
-      "requires": [],
-      "entry": "full",
-      "adapted": false,
-      "adaptations": ""
-    },
-    {
-      "name": "design",
-      "title": "Design",
-      "description": "All-in-one design skill: brand identity, tokens, logos, icons, banners, presentations, and social visuals.",
-      "why": "Covers the long tail of one-off design asks in a single skill.",
-      "category": "design",
-      "source": {
-        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
-        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-        "path": ".claude/skills/design",
         "commit": "dd9a1b4cf9f67ca2e326f646d93e101b2778db30"
       },
       "license": "MIT",
@@ -205,27 +208,67 @@
       "adaptations": ""
     },
     {
-      "name": "ffmpeg-skill",
-      "title": "ffmpeg-skill",
-      "description": "A complete local FFmpeg editing system: 42 scripted tools to cut, join, reframe, caption, remove silence, check loudness and export audio/video.",
-      "why": "Deterministic media-file work, fully local and scriptable — nothing else in Prime Skill touches actual audio or video files.",
+      "name": "caveman",
+      "title": "Caveman",
+      "description": "Terse caveman voice for agent replies: answer first, fluff gone, every technical fact kept, and it stays on until told to stop.",
+      "why": "Cuts output-token waste on every reply without losing substance; the communication-side counterpart to ponytail's lean code.",
       "category": "development",
       "source": {
-        "repo": "kajisho5/ffmpeg-skill",
-        "url": "https://github.com/kajisho5/ffmpeg-skill",
-        "path": ".",
-        "commit": "1ce2c186bf1dba96132d87274eee46df4f537e0e"
+        "repo": "JuliusBrussee/caveman",
+        "url": "https://github.com/JuliusBrussee/caveman",
+        "path": "skills/caveman",
+        "commit": "2e068f735253cce28256744804785f01887d9646"
       },
-      "license": "MIT",
-      "stars_at_import": 4475,
+      "license": "Apache-2.0",
+      "stars_at_import": 117342,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": "License note: the GitHub API declares this repo Apache-2.0 and the vendored LICENSE is the Apache-2.0 text, but the repo also ships a separate MIT license file (LICENSE-MIT) for parts of the project; the skill folder is recorded as Apache-2.0. Content imported unmodified."
+    },
+    {
+      "name": "caveman-compress",
+      "title": "Caveman Compress",
+      "description": "Compresses memory files such as CLAUDE.md or todo lists into caveman format to save input tokens, keeping a readable backup outside the tree.",
+      "why": "Long-lived context files are re-read every session; compressing them is a permanent input-token saving rather than a one-off.",
+      "category": "development",
+      "source": {
+        "repo": "JuliusBrussee/caveman",
+        "url": "https://github.com/JuliusBrussee/caveman",
+        "path": "skills/caveman-compress",
+        "commit": "2e068f735253cce28256744804785f01887d9646"
+      },
+      "license": "Apache-2.0",
+      "stars_at_import": 117342,
       "added": "2026-11-04",
       "requires": [
-        "FFmpeg 6.1+",
-        "Python 3.10+"
+        "Python 3",
+        "Model provider API"
       ],
       "entry": "full",
-      "adapted": true,
-      "adaptations": "Root skill only: vendored SKILL.md + scripts/, references/, mcp/, templates/. The repo's 13 .claude/skills/* maintainer-workflow skills and other repo-level folders were excluded — they are separate skills and infrastructure, not part of this skill."
+      "adapted": false,
+      "adaptations": "License note: the GitHub API declares this repo Apache-2.0 and the vendored LICENSE is the Apache-2.0 text, but the repo also ships a separate MIT license file (LICENSE-MIT) for parts of the project; the skill folder is recorded as Apache-2.0. Content imported unmodified."
+    },
+    {
+      "name": "domain-modeling",
+      "title": "Domain Modeling",
+      "description": "Builds and sharpens a project's domain model: maintains a living glossary of codebase terminology and records architecture decisions as ADRs.",
+      "why": "Shared vocabulary keeps agents and humans from talking past each other; this makes terminology a maintained artifact, not folklore.",
+      "category": "development",
+      "source": {
+        "repo": "mattpocock/skills",
+        "url": "https://github.com/mattpocock/skills",
+        "path": "skills/engineering/domain-modeling",
+        "commit": "4ae2317ddb22b046e26455e4f9c9b3aaaf62212d"
+      },
+      "license": "MIT",
+      "stars_at_import": 312014,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
     },
     {
       "name": "find-skills",
@@ -243,9 +286,49 @@
       "stars_at_import": 38012,
       "added": "2026-11-04",
       "requires": [
-        "Node.js / npx",
-        "access to skills.sh"
+        "Node.js",
+        "skills.sh access"
       ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "grill-me",
+      "title": "Grill Me",
+      "description": "A relentless one-question-at-a-time interview that stress-tests a plan or design until every branch of the decision tree is resolved.",
+      "why": "The sharp end of requirements work: it surfaces the decisions brainstorming leaves unmade, before they turn into rework.",
+      "category": "development",
+      "source": {
+        "repo": "mattpocock/skills",
+        "url": "https://github.com/mattpocock/skills",
+        "path": "skills/productivity/grill-me",
+        "commit": "4ae2317ddb22b046e26455e4f9c9b3aaaf62212d"
+      },
+      "license": "MIT",
+      "stars_at_import": 312014,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "grilling",
+      "title": "Grilling",
+      "description": "The reusable interview engine behind grill-me: grills the user relentlessly about a plan, decision, or idea, one question at a time.",
+      "why": "Grill-me is the session wrapper; this is the portable technique that other workflows can invoke on any decision.",
+      "category": "development",
+      "source": {
+        "repo": "mattpocock/skills",
+        "url": "https://github.com/mattpocock/skills",
+        "path": "skills/productivity/grilling",
+        "commit": "4ae2317ddb22b046e26455e4f9c9b3aaaf62212d"
+      },
+      "license": "MIT",
+      "stars_at_import": 312013,
+      "added": "2026-11-04",
+      "requires": [],
       "entry": "full",
       "adapted": false,
       "adaptations": ""
@@ -331,46 +414,6 @@
       "adaptations": ""
     },
     {
-      "name": "ponytail-gain",
-      "title": "Ponytail Gain",
-      "description": "Shows Ponytail's measured savings in code, cost, and speed from its benchmark.",
-      "why": "Answers 'is the lazy mode actually paying off' with numbers, not vibes.",
-      "category": "development",
-      "source": {
-        "repo": "DietrichGebert/ponytail",
-        "url": "https://github.com/DietrichGebert/ponytail",
-        "path": "skills/ponytail-gain",
-        "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846"
-      },
-      "license": "MIT",
-      "stars_at_import": 183980,
-      "added": "2026-11-04",
-      "requires": [],
-      "entry": "full",
-      "adapted": false,
-      "adaptations": ""
-    },
-    {
-      "name": "ponytail-help",
-      "title": "Ponytail Help",
-      "description": "Quick reference card for Ponytail levels, skills, and commands.",
-      "why": "One-shot cheat sheet so the whole set stays usable without re-reading docs.",
-      "category": "development",
-      "source": {
-        "repo": "DietrichGebert/ponytail",
-        "url": "https://github.com/DietrichGebert/ponytail",
-        "path": "skills/ponytail-help",
-        "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846"
-      },
-      "license": "MIT",
-      "stars_at_import": 183980,
-      "added": "2026-11-04",
-      "requires": [],
-      "entry": "full",
-      "adapted": false,
-      "adaptations": ""
-    },
-    {
       "name": "ponytail-review",
       "title": "Ponytail Review",
       "description": "Quality review of a change: correctness, safety, load behavior, tests, and whether every line earns its place.",
@@ -411,6 +454,28 @@
       "adaptations": ""
     },
     {
+      "name": "strategic-compact",
+      "title": "Strategic Compact",
+      "description": "Suggests manual context compaction at logical task-phase boundaries, so long sessions compact deliberately instead of at arbitrary auto-compaction points.",
+      "why": "Long agent sessions die at context limits; compacting at phase boundaries keeps the working thread coherent across a whole build.",
+      "category": "development",
+      "source": {
+        "repo": "affaan-m/ECC",
+        "url": "https://github.com/affaan-m/ECC",
+        "path": ".agents/skills/strategic-compact",
+        "commit": "b38be6a7f6350964d59328b52f0624e1d1d552d1"
+      },
+      "license": "MIT",
+      "stars_at_import": 296787,
+      "added": "2026-11-04",
+      "requires": [
+        "Context-compaction harness"
+      ],
+      "entry": "full",
+      "adapted": true,
+      "adaptations": "Ships a Claude Code-specific PreToolUse hook (suggest-compact.js); the compaction guidance itself is harness-portable."
+    },
+    {
       "name": "subagent-driven-development",
       "title": "subagent-driven-development",
       "description": "Executes an implementation plan with fresh subagents per task, with spec and quality review gates between tasks.",
@@ -426,7 +491,7 @@
       "stars_at_import": 312043,
       "added": "2026-11-04",
       "requires": [
-        "a harness with subagents"
+        "Subagent-capable harness"
       ],
       "entry": "full",
       "adapted": false,
@@ -473,6 +538,28 @@
       "adaptations": ""
     },
     {
+      "name": "threejs-fundamentals",
+      "title": "Three.js Fundamentals",
+      "description": "Three.js scene setup done right: scenes and fog, cameras, the renderer and tone mapping, the animation loop, object hierarchies, transforms, core math, and cleanup, on WebGL or WebGPU/TSL.",
+      "why": "The fundamentals entry of the Three.js set: scene, camera, and renderer mistakes are where 3D web work goes wrong first.",
+      "category": "development",
+      "source": {
+        "repo": "CloudAI-X/threejs-skills",
+        "url": "https://github.com/CloudAI-X/threejs-skills",
+        "path": "skills/threejs-fundamentals",
+        "commit": "0e181866f095b5f06d005133876e926515390d95"
+      },
+      "license": "MIT",
+      "stars_at_import": 3962,
+      "added": "2026-11-04",
+      "requires": [
+        "Three.js project"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
       "name": "using-git-worktrees",
       "title": "using-git-worktrees",
       "description": "Sets up isolated git worktrees so parallel features, reviews, and experiments never collide in one working tree.",
@@ -488,7 +575,7 @@
       "stars_at_import": 312043,
       "added": "2026-11-04",
       "requires": [
-        "git"
+        "Git"
       ],
       "entry": "full",
       "adapted": false,
@@ -550,8 +637,9 @@
       "stars_at_import": 187211,
       "added": "2026-11-04",
       "requires": [
-        "Python + Playwright",
-        "a local dev server"
+        "Python 3",
+        "Playwright",
+        "Local dev server"
       ],
       "entry": "full",
       "adapted": false,
@@ -738,26 +826,6 @@
       "adaptations": ""
     },
     {
-      "name": "marketing-council",
-      "title": "Marketing Council",
-      "description": "Simulates a board of legendary marketers (Godin, Ogilvy, Hormozi, and more) debating your marketing question.",
-      "why": "Several expert lenses on one decision beat a single generic take.",
-      "category": "marketing",
-      "source": {
-        "repo": "coreyhaines31/marketingskills",
-        "url": "https://github.com/coreyhaines31/marketingskills",
-        "path": "skills/marketing-council",
-        "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
-      },
-      "license": "MIT",
-      "stars_at_import": 58381,
-      "added": "2026-11-04",
-      "requires": [],
-      "entry": "full",
-      "adapted": false,
-      "adaptations": ""
-    },
-    {
       "name": "marketing-ideas",
       "title": "Marketing Ideas",
       "description": "A bank of proven marketing and growth tactics for software products, matched to the situation.",
@@ -838,31 +906,9 @@
       "adaptations": ""
     },
     {
-      "name": "remotion-best-practices",
-      "title": "remotion-best-practices",
-      "description": "Remotion's official best practices for programmatic video in React — markup, animation, captions, maps and interactivity done right.",
-      "why": "The motion cluster's one representative: official, actively maintained engine craft that goes deeper than the video skill's strategy-level coverage; link-only because the source repo declares no license.",
-      "category": "marketing",
-      "source": {
-        "repo": "remotion-dev/skills",
-        "url": "https://github.com/remotion-dev/skills",
-        "path": "skills/remotion-best-practices",
-        "commit": "c7cb2fdcacd134fb2ccb9b7a44f9ffa44e467271"
-      },
-      "license": "none",
-      "stars_at_import": 6294,
-      "added": "2026-11-04",
-      "requires": [
-        "a Remotion project"
-      ],
-      "entry": "link-only",
-      "adapted": false,
-      "adaptations": ""
-    },
-    {
       "name": "social",
       "title": "Social",
-      "description": "Creates, schedules, and optimizes social media content, and runs social listening across the major platforms.",
+      "description": "Creates, schedules, and optimizes social media content across the major platforms.",
       "why": "Directly useful for running and growing social and channel presences.",
       "category": "marketing",
       "source": {
@@ -880,11 +926,76 @@
       "adaptations": ""
     },
     {
+      "name": "cinematic-director",
+      "title": "Cinematic Director",
+      "description": "Directs film and AI video like a working director: script breakdowns, beat sheets, blocking and staging, shot lists, storyboard and motion prompts, continuity bibles, and per-model adapters.",
+      "why": "The filmmaking-craft representative: executable direction for a camera crew or a generation queue, beyond the video skill's strategy-level coverage.",
+      "category": "media",
+      "source": {
+        "repo": "2598588975/skills8.7",
+        "url": "https://github.com/2598588975/skills8.7",
+        "path": "skills/cinematic-director",
+        "commit": "eaf80017c7c19c57884da971e7c230a46b39a661"
+      },
+      "license": "none",
+      "stars_at_import": 1,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "link-only",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "ffmpeg-skill",
+      "title": "ffmpeg-skill",
+      "description": "A complete local FFmpeg editing system: 42 scripted tools to cut, join, reframe, caption, remove silence, check loudness and export audio/video.",
+      "why": "Deterministic media-file work, fully local and scriptable — nothing else in Prime Skill touches actual audio or video files.",
+      "category": "media",
+      "source": {
+        "repo": "kajisho5/ffmpeg-skill",
+        "url": "https://github.com/kajisho5/ffmpeg-skill",
+        "path": ".",
+        "commit": "1ce2c186bf1dba96132d87274eee46df4f537e0e"
+      },
+      "license": "MIT",
+      "stars_at_import": 4475,
+      "added": "2026-11-04",
+      "requires": [
+        "FFmpeg 6.1+",
+        "Python 3.10+"
+      ],
+      "entry": "full",
+      "adapted": true,
+      "adaptations": "Root skill only: vendored SKILL.md + scripts/, references/, mcp/, templates/. The repo's 13 .claude/skills/* maintainer-workflow skills and other repo-level folders were excluded — they are separate skills and infrastructure, not part of this skill."
+    },
+    {
+      "name": "remotion-best-practices",
+      "title": "remotion-best-practices",
+      "description": "Remotion's official best practices for programmatic video in React — markup, animation, captions, maps and interactivity done right.",
+      "why": "The motion cluster's one representative: official, actively maintained engine craft, deeper than the video skill's strategy-level coverage; link-only, no license declared.",
+      "category": "media",
+      "source": {
+        "repo": "remotion-dev/skills",
+        "url": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-best-practices",
+        "commit": "c7cb2fdcacd134fb2ccb9b7a44f9ffa44e467271"
+      },
+      "license": "none",
+      "stars_at_import": 6294,
+      "added": "2026-11-04",
+      "requires": [
+        "Remotion project"
+      ],
+      "entry": "link-only",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
       "name": "video",
       "title": "Video",
       "description": "Guides AI and programmatic video production: avatars, demos, explainers, and generation pipelines.",
       "why": "Video is the highest-reach format; this maps the current tool landscape into workflows.",
-      "category": "marketing",
+      "category": "media",
       "source": {
         "repo": "coreyhaines31/marketingskills",
         "url": "https://github.com/coreyhaines31/marketingskills",
@@ -915,7 +1026,7 @@
       "stars_at_import": 5438,
       "added": "2026-11-04",
       "requires": [
-        "ScrapeCreators API key (paid, credit-based)"
+        "ScrapeCreators API key (paid)"
       ],
       "entry": "full",
       "adapted": false,
@@ -937,7 +1048,7 @@
       "stars_at_import": 5438,
       "added": "2026-11-04",
       "requires": [
-        "ScrapeCreators API key (paid, credit-based)"
+        "ScrapeCreators API key (paid)"
       ],
       "entry": "full",
       "adapted": false,
@@ -959,7 +1070,7 @@
       "stars_at_import": 5438,
       "added": "2026-11-04",
       "requires": [
-        "ScrapeCreators API key (paid, credit-based)"
+        "ScrapeCreators API key (paid)"
       ],
       "entry": "full",
       "adapted": false,
@@ -981,7 +1092,7 @@
       "stars_at_import": 5438,
       "added": "2026-11-04",
       "requires": [
-        "ScrapeCreators API key (paid, credit-based)"
+        "ScrapeCreators API key (paid)"
       ],
       "entry": "full",
       "adapted": false,
@@ -1003,7 +1114,7 @@
       "stars_at_import": 5438,
       "added": "2026-11-04",
       "requires": [
-        "ScrapeCreators API key (paid, credit-based)"
+        "ScrapeCreators API key (paid)"
       ],
       "entry": "full",
       "adapted": false,
@@ -1025,7 +1136,51 @@
       "stars_at_import": 5438,
       "added": "2026-11-04",
       "requires": [
-        "ScrapeCreators API key (paid, credit-based)"
+        "ScrapeCreators API key (paid)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "deep-research",
+      "title": "Deep Research",
+      "description": "Runs autonomous multi-step research through Google's Gemini Deep Research agent and returns detailed, cited reports for market, competitive, technical, and literature questions.",
+      "why": "The heavyweight research option: paid per run and minutes-slow, but it produces cited reports the social-data set cannot.",
+      "category": "research",
+      "source": {
+        "repo": "sanjay3290/ai-skills",
+        "url": "https://github.com/sanjay3290/ai-skills",
+        "path": "skills/deep-research",
+        "commit": "c84255839a1bfaa06d681aa528f9b50d70002afb"
+      },
+      "license": "Apache-2.0",
+      "stars_at_import": 450,
+      "added": "2026-11-04",
+      "requires": [
+        "GEMINI_API_KEY (paid)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "exa-search",
+      "title": "Exa Search",
+      "description": "Calls Exa's semantic search API directly over HTTP, with ranked results, domain and freshness filters, extracted text and highlights, structured output, and streaming responses — no SDK.",
+      "why": "A general open-web retrieval primitive for agents, complementing the social-platform research set.",
+      "category": "research",
+      "source": {
+        "repo": "exa-labs/agent-skills",
+        "url": "https://github.com/exa-labs/agent-skills",
+        "path": "skills/exa-search",
+        "commit": "5c5c7ebfb4458cfd1bd72697f14bd89685550c2e"
+      },
+      "license": "MIT",
+      "stars_at_import": 65,
+      "added": "2026-11-04",
+      "requires": [
+        "EXA_API_KEY (paid)"
       ],
       "entry": "full",
       "adapted": false,
@@ -1047,7 +1202,29 @@
       "stars_at_import": 5438,
       "added": "2026-11-04",
       "requires": [
-        "ScrapeCreators API key (paid, credit-based)"
+        "ScrapeCreators API key (paid)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "literature-review",
+      "title": "Literature Review",
+      "description": "Conducts systematic, scoping, and narrative literature reviews across PubMed, arXiv, bioRxiv, and Semantic Scholar, with coverage tracking and screening, delivered as Markdown or PDF.",
+      "why": "Brings academic-grade evidence synthesis to the research category; nothing else here searches the scholarly literature.",
+      "category": "research",
+      "source": {
+        "repo": "K-Dense-AI/scientific-agent-skills",
+        "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "path": "skills/literature-review",
+        "commit": "a25cf9ec00e2745d03f8704acf6f6919694ccd9a"
+      },
+      "license": "MIT",
+      "stars_at_import": 56043,
+      "added": "2026-11-04",
+      "requires": [
+        "Python 3.10+"
       ],
       "entry": "full",
       "adapted": false,
@@ -1069,7 +1246,7 @@
       "stars_at_import": 5438,
       "added": "2026-11-04",
       "requires": [
-        "ScrapeCreators API key (paid, credit-based)"
+        "ScrapeCreators API key (paid)"
       ],
       "entry": "full",
       "adapted": false,
@@ -1091,7 +1268,7 @@
       "stars_at_import": 5438,
       "added": "2026-11-04",
       "requires": [
-        "ScrapeCreators API key (paid, credit-based)"
+        "ScrapeCreators API key (paid)"
       ],
       "entry": "full",
       "adapted": false,
@@ -1113,7 +1290,7 @@
       "stars_at_import": 5438,
       "added": "2026-11-04",
       "requires": [
-        "ScrapeCreators API key (paid, credit-based)"
+        "ScrapeCreators API key (paid)"
       ],
       "entry": "full",
       "adapted": false,
@@ -1135,7 +1312,7 @@
       "stars_at_import": 5438,
       "added": "2026-11-04",
       "requires": [
-        "ScrapeCreators API key (paid, credit-based)"
+        "ScrapeCreators API key (paid)"
       ],
       "entry": "full",
       "adapted": false,
@@ -1157,7 +1334,7 @@
       "stars_at_import": 5438,
       "added": "2026-11-04",
       "requires": [
-        "ScrapeCreators API key (paid, credit-based)"
+        "ScrapeCreators API key (paid)"
       ],
       "entry": "full",
       "adapted": false,
@@ -1179,7 +1356,7 @@
       "stars_at_import": 5438,
       "added": "2026-11-04",
       "requires": [
-        "ScrapeCreators API key (paid, credit-based)"
+        "ScrapeCreators API key (paid)"
       ],
       "entry": "full",
       "adapted": false,
@@ -1223,7 +1400,7 @@
       "stars_at_import": 428340,
       "added": "2026-11-04",
       "requires": [
-        "REA toolchain (optional, for full function)"
+        "REA toolchain (optional)"
       ],
       "entry": "full",
       "adapted": false,

@@ -1,6 +1,8 @@
 # Marketing
 
-Skills in the **marketing** category. Back to the [root README](../../README.md).
+*Go-to-market: positioning, copy, content, social, and launches.*
+
+Back to the [root README](../../README.md).
 
 | Skill | What it does | Why it's here | Requires | Source |
 |---|---|---|---|---|
@@ -11,11 +13,8 @@ Skills in the **marketing** category. Back to the [root README](../../README.md)
 | [copywriting](copywriting/) | Writes and improves marketing copy for pages: headlines, CTAs, value propositions, and hero sections. | Sharp copy is the cheapest conversion lever for landing pages and product posts. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
 | [customer-research](customer-research/) | Runs and synthesizes customer research: interviews, surveys, review mining, voice-of-customer, and JTBD. | Decisions grounded in real customer language outperform opinion. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
 | [launch](launch/) | Plans product launches and feature announcements: checklists, go-to-market, waitlists, and release strategy. | Launches are one-shot events; a checklist prevents unforced errors. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
-| [marketing-council](marketing-council/) | Simulates a board of legendary marketers (Godin, Ogilvy, Hormozi, and more) debating your marketing question. | Several expert lenses on one decision beat a single generic take. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
 | [marketing-ideas](marketing-ideas/) | A bank of proven marketing and growth tactics for software products, matched to the situation. | The fastest way out of 'we need growth but don't know what to try'. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
 | [marketing-psychology](marketing-psychology/) | Applies behavioral science and mental models - anchoring, social proof, scarcity, framing - to marketing. | Explains why people buy, so offers and copy stop being guesswork. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
 | [offers](offers/) | Designs the offer itself: value framing, bonus stacks, guarantees, scarcity, and payment structure. | A better offer beats better ads; core skill for anything sold or promoted. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
 | [product-marketing](product-marketing/) | Creates the product-marketing context doc - positioning, audience, ICP, brand voice - that the other marketing skills build on. | The foundation of the marketing set: write the context once, reuse it in every campaign. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
-| [remotion-best-practices](https://github.com/remotion-dev/skills/tree/c7cb2fdcacd134fb2ccb9b7a44f9ffa44e467271/skills/remotion-best-practices) · link-only | Remotion's official best practices for programmatic video in React — markup, animation, captions, maps and interactivity done right. | The motion cluster's one representative: official, actively maintained engine craft that goes deeper than the video skill's strategy-level coverage; link-only because the source repo declares no license. | a Remotion project | [remotion-dev/skills](https://github.com/remotion-dev/skills) @ c7cb2fd |
-| [social](social/) | Creates, schedules, and optimizes social media content, and runs social listening across the major platforms. | Directly useful for running and growing social and channel presences. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
-| [video](video/) | Guides AI and programmatic video production: avatars, demos, explainers, and generation pipelines. | Video is the highest-reach format; this maps the current tool landscape into workflows. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
+| [social](social/) | Creates, schedules, and optimizes social media content across the major platforms. | Directly useful for running and growing social and channel presences. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
