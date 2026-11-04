@@ -17,7 +17,9 @@ in one line, it doesn't belong here.
 - **Install a skill:** copy its folder from `categories/<category>/<skill>/`
   into your agent's skills directory. Each folder is self-contained and keeps
   the standard `SKILL.md` format used by Claude Code, OpenAI Codex, Cursor,
-  Muse, and other harnesses.
+  Muse, and other harnesses. Entries marked **link-only** in the tables
+  carry metadata only (their license does not allow redistribution); follow
+  their source link to fetch the files.
 
 ## Entry rules
 
@@ -114,6 +116,17 @@ in one line, it doesn't belong here.
 | Skill | What it does | Why it's here | Requires | Source |
 |---|---|---|---|---|
 | [reverse-engineer-anything](categories/reverse-engineering/reverse-engineer-anything/) | Reverse engineers binaries, Electron/JS apps, .NET, firmware, and browser targets with REA, backed by runtime evidence. | The owner's reverse-engineering workhorse: explains features, compares versions, and guides reconstructions from real artifacts. | REA toolchain (optional, for full function) | [morluto/rea](https://github.com/morluto/rea) @ d7df9df |
+
+### Security (6)
+
+| Skill | What it does | Why it's here | Requires | Source |
+|---|---|---|---|---|
+| [api-security](categories/security/api-security/) | API security testing techniques and scenario playbooks for REST, GraphQL, WebSocket, and LLM-integrated APIs, mapped to the OWASP API Top 10. | The deep, scenario-level companion to security-review: the owner's bots and workers expose APIs, and this is the offensive testing reference for them. | — | [transilienceai/communitytools](https://github.com/transilienceai/communitytools) @ 95fdc12 |
+| [incident-runbook-templates](categories/security/incident-runbook-templates/) | Production-ready incident response runbook templates: severity levels, triage and escalation paths, step-by-step recovery, and communication structure. | When a live bot or worker goes down at 3 AM, a written runbook beats improvisation; this is the template set to write them from. | — | [wshobson/agents](https://github.com/wshobson/agents) @ 7e2fb55 |
+| [secrets-management](categories/security/secrets-management/) | Secrets management for CI/CD pipelines using Vault, AWS Secrets Manager, and native platform tooling: storage, rotation, and least-privilege access. | Every project here juggles bot tokens and API keys; this is the disciplined way to store and rotate them instead of scattering them across configs. | — | [wshobson/agents](https://github.com/wshobson/agents) @ 7e2fb55 |
+| [security-review](categories/security/security-review/) | Security checklist and patterns to run when adding authentication, handling user input, creating API endpoints, or touching secrets and payments. | The flagship security skill from the most-starred collection in this repo; turns 'did we think about security' into a concrete pre-ship checklist. | — | [affaan-m/ECC](https://github.com/affaan-m/ECC) @ b38be6a |
+| [semgrep](https://github.com/trailofbits/skills/tree/711af095215ad4ecde5b90cd1d0124b3f1c4ca9e/plugins/static-analysis/skills/semgrep) · link-only | Trail of Bits' Semgrep skill: writing and running Semgrep rules for static analysis and code auditing. | The canonical static-analysis skill from a top security firm; listed link-only because its CC-BY-SA-4.0 license does not allow redistribution. | Semgrep CLI | [trailofbits/skills](https://github.com/trailofbits/skills) @ 711af09 |
+| [stride-analysis-patterns](categories/security/stride-analysis-patterns/) | Applies the STRIDE methodology to threat-model a system — spoofing, tampering, repudiation, information disclosure, denial of service, elevation of privilege — with mitigations for each. | Threat modeling before code exists catches design flaws no later review can; this is the canonical STRIDE pattern set from a widely used plugin library. | — | [wshobson/agents](https://github.com/wshobson/agents) @ 7e2fb55 |
 <!-- GENERATED:END -->
 
 ## Adding a skill

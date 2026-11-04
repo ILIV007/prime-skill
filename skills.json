@@ -1,5 +1,5 @@
 {
-  "count": 54,
+  "count": 60,
   "skills": [
     {
       "name": "algorithmic-art",
@@ -1112,6 +1112,128 @@
       "requires": [
         "REA toolchain (optional, for full function)"
       ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "api-security",
+      "title": "API Security",
+      "description": "API security testing techniques and scenario playbooks for REST, GraphQL, WebSocket, and LLM-integrated APIs, mapped to the OWASP API Top 10.",
+      "why": "The deep, scenario-level companion to security-review: the owner's bots and workers expose APIs, and this is the offensive testing reference for them.",
+      "category": "security",
+      "source": {
+        "repo": "transilienceai/communitytools",
+        "url": "https://github.com/transilienceai/communitytools",
+        "path": "skills/api-security",
+        "commit": "95fdc128af4ca1ae16b3226f9430f1bad97b0656"
+      },
+      "license": "MIT",
+      "stars_at_import": 604,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "incident-runbook-templates",
+      "title": "Incident Runbook Templates",
+      "description": "Production-ready incident response runbook templates: severity levels, triage and escalation paths, step-by-step recovery, and communication structure.",
+      "why": "When a live bot or worker goes down at 3 AM, a written runbook beats improvisation; this is the template set to write them from.",
+      "category": "security",
+      "source": {
+        "repo": "wshobson/agents",
+        "url": "https://github.com/wshobson/agents",
+        "path": "plugins/incident-response/skills/incident-runbook-templates",
+        "commit": "7e2fb559cf4b824b27f1fec49fe88f7511066d26"
+      },
+      "license": "MIT",
+      "stars_at_import": 42172,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "secrets-management",
+      "title": "Secrets Management",
+      "description": "Secrets management for CI/CD pipelines using Vault, AWS Secrets Manager, and native platform tooling: storage, rotation, and least-privilege access.",
+      "why": "Every project here juggles bot tokens and API keys; this is the disciplined way to store and rotate them instead of scattering them across configs.",
+      "category": "security",
+      "source": {
+        "repo": "wshobson/agents",
+        "url": "https://github.com/wshobson/agents",
+        "path": "plugins/cicd-automation/skills/secrets-management",
+        "commit": "7e2fb559cf4b824b27f1fec49fe88f7511066d26"
+      },
+      "license": "MIT",
+      "stars_at_import": 42172,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "security-review",
+      "title": "Security Review",
+      "description": "Security checklist and patterns to run when adding authentication, handling user input, creating API endpoints, or touching secrets and payments.",
+      "why": "The flagship security skill from the most-starred collection in this repo; turns 'did we think about security' into a concrete pre-ship checklist.",
+      "category": "security",
+      "source": {
+        "repo": "affaan-m/ECC",
+        "url": "https://github.com/affaan-m/ECC",
+        "path": "skills/security-review",
+        "commit": "b38be6a7f6350964d59328b52f0624e1d1d552d1"
+      },
+      "license": "MIT",
+      "stars_at_import": 296744,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "semgrep",
+      "title": "Semgrep",
+      "description": "Trail of Bits' Semgrep skill: writing and running Semgrep rules for static analysis and code auditing.",
+      "why": "The canonical static-analysis skill from a top security firm; listed link-only because its CC-BY-SA-4.0 license does not allow redistribution.",
+      "category": "security",
+      "source": {
+        "repo": "trailofbits/skills",
+        "url": "https://github.com/trailofbits/skills",
+        "path": "plugins/static-analysis/skills/semgrep",
+        "commit": "711af095215ad4ecde5b90cd1d0124b3f1c4ca9e"
+      },
+      "license": "CC-BY-SA-4.0",
+      "stars_at_import": 7992,
+      "added": "2026-11-04",
+      "requires": [
+        "Semgrep CLI"
+      ],
+      "entry": "link-only",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "stride-analysis-patterns",
+      "title": "STRIDE Analysis Patterns",
+      "description": "Applies the STRIDE methodology to threat-model a system — spoofing, tampering, repudiation, information disclosure, denial of service, elevation of privilege — with mitigations for each.",
+      "why": "Threat modeling before code exists catches design flaws no later review can; this is the canonical STRIDE pattern set from a widely used plugin library.",
+      "category": "security",
+      "source": {
+        "repo": "wshobson/agents",
+        "url": "https://github.com/wshobson/agents",
+        "path": "plugins/security-scanning/skills/stride-analysis-patterns",
+        "commit": "7e2fb559cf4b824b27f1fec49fe88f7511066d26"
+      },
+      "license": "MIT",
+      "stars_at_import": 42172,
+      "added": "2026-11-04",
+      "requires": [],
       "entry": "full",
       "adapted": false,
       "adaptations": ""
