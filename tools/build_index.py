@@ -15,6 +15,18 @@ ROOT = Path(__file__).resolve().parent.parent
 CATEGORIES = ROOT / "categories"
 START = "<!-- GENERATED:START -->"
 END = "<!-- GENERATED:END -->"
+IDX_START = "<!-- GENERATED:INDEX:START -->"
+IDX_END = "<!-- GENERATED:INDEX:END -->"
+
+SCOPES = {
+    "development": "Building software: planning, implementation, testing, debugging, and harness workflows.",
+    "design": "Visual and interface design: design systems, styling, branding, and generated visuals.",
+    "marketing": "Go-to-market: positioning, copy, content, social, and launches.",
+    "media": "Media production: video creation and editing, motion, and filmmaking craft.",
+    "research": "Finding things out: social-media research, deep research, search, and literature.",
+    "security": "Defending systems: secure coding, API testing, threat modeling, and incident readiness.",
+    "reverse-engineering": "Understanding compiled and shipped artifacts — and hardening your own against it.",
+}
 
 REQUIRED = ["name", "title", "description", "why", "category", "source",
             "license", "stars_at_import", "added", "requires", "entry",
@@ -131,11 +143,26 @@ def render_outputs(skills):
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     if START not in readme or END not in readme:
         raise SystemExit("README.md is missing the GENERATED markers")
+    if IDX_START not in readme or IDX_END not in readme:
+        raise SystemExit("README.md is missing the GENERATED:INDEX markers")
+
+    link_only = sum(1 for m in metas if m.get("entry") == "link-only")
+    idx = [f"**{len(metas)} skills · {len(by_cat)} categories · {link_only} link-only**",
+           "",
+           "| Category | Skills | Scope | Page |",
+           "|---|---|---|---|"]
+    for cat in sorted(by_cat):
+        idx.append(f"| {display_category(cat)} | {len(by_cat[cat])} | "
+                   f"{esc(SCOPES.get(cat, ''))} | [Browse →](categories/{cat}/README.md) |")
+    ihead, _, irest = readme.partition(IDX_START)
+    _, _, itail = irest.partition(IDX_END)
+    readme = f"{ihead}{IDX_START}\n" + "\n".join(idx) + f"\n{IDX_END}{itail}"
+
     head, _, rest = readme.partition(START)
     _, _, tail = rest.partition(END)
     blocks = []
     for cat in sorted(by_cat):
-        blocks.append(f"### {display_category(cat)} ({len(by_cat[cat])})")
+        blocks.append(f"### [{display_category(cat)}](categories/{cat}/README.md) ({len(by_cat[cat])})")
         blocks.append("")
         blocks.extend(table_for(by_cat[cat], lambda m: f"categories/{m['category']}/{m['name']}/"))
         blocks.append("")
@@ -143,9 +170,10 @@ def render_outputs(skills):
     outputs["README.md"] = f"{head}{START}\n{generated}{END}{tail}"
 
     for cat in sorted(by_cat):
-        lines = [f"# {display_category(cat)}", "",
-                 f"Skills in the **{cat}** category. Back to the [root README](../../README.md).",
-                 ""]
+        lines = [f"# {display_category(cat)}", ""]
+        if cat in SCOPES:
+            lines += [f"*{SCOPES[cat]}*", ""]
+        lines += ["Back to the [root README](../../README.md).", ""]
         lines.extend(table_for(by_cat[cat], lambda m: f"{m['name']}/"))
         outputs[f"categories/{cat}/README.md"] = "\n".join(lines) + "\n"
     return outputs

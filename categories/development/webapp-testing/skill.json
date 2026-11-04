@@ -14,8 +14,9 @@
   "stars_at_import": 187211,
   "added": "2026-11-04",
   "requires": [
-    "Python + Playwright",
-    "a local dev server"
+    "Python 3",
+    "Playwright",
+    "Local dev server"
   ],
   "entry": "full",
   "adapted": false,

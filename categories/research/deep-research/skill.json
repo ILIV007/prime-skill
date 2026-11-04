@@ -1,0 +1,22 @@
+{
+  "name": "deep-research",
+  "title": "Deep Research",
+  "description": "Runs autonomous multi-step research through Google's Gemini Deep Research agent and returns detailed, cited reports for market, competitive, technical, and literature questions.",
+  "why": "The heavyweight research option: paid per run and minutes-slow, but it produces cited reports the social-data set cannot.",
+  "category": "research",
+  "source": {
+    "repo": "sanjay3290/ai-skills",
+    "url": "https://github.com/sanjay3290/ai-skills",
+    "path": "skills/deep-research",
+    "commit": "c84255839a1bfaa06d681aa528f9b50d70002afb"
+  },
+  "license": "Apache-2.0",
+  "stars_at_import": 450,
+  "added": "2026-11-04",
+  "requires": [
+    "GEMINI_API_KEY (paid)"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

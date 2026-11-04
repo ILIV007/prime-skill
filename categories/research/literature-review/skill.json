@@ -1,0 +1,22 @@
+{
+  "name": "literature-review",
+  "title": "Literature Review",
+  "description": "Conducts systematic, scoping, and narrative literature reviews across PubMed, arXiv, bioRxiv, and Semantic Scholar, with coverage tracking and screening, delivered as Markdown or PDF.",
+  "why": "Brings academic-grade evidence synthesis to the research category; nothing else here searches the scholarly literature.",
+  "category": "research",
+  "source": {
+    "repo": "K-Dense-AI/scientific-agent-skills",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "path": "skills/literature-review",
+    "commit": "a25cf9ec00e2745d03f8704acf6f6919694ccd9a"
+  },
+  "license": "MIT",
+  "stars_at_import": 56043,
+  "added": "2026-11-04",
+  "requires": [
+    "Python 3.10+"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

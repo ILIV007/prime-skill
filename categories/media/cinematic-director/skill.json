@@ -1,0 +1,20 @@
+{
+  "name": "cinematic-director",
+  "title": "Cinematic Director",
+  "description": "Directs film and AI video like a working director: script breakdowns, beat sheets, blocking and staging, shot lists, storyboard and motion prompts, continuity bibles, and per-model adapters.",
+  "why": "The filmmaking-craft representative: executable direction for a camera crew or a generation queue, beyond the video skill's strategy-level coverage.",
+  "category": "media",
+  "source": {
+    "repo": "2598588975/skills8.7",
+    "url": "https://github.com/2598588975/skills8.7",
+    "path": "skills/cinematic-director",
+    "commit": "eaf80017c7c19c57884da971e7c230a46b39a661"
+  },
+  "license": "none",
+  "stars_at_import": 1,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "link-only",
+  "adapted": false,
+  "adaptations": ""
+}

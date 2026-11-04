@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 MANIFEST = ROOT / "skills.json"
 OUT = ROOT / "site" / "index.html"
 REPO_URL = "https://github.com/ILIV007/prime-skill"
-CATEGORY_ORDER = ["development", "design", "marketing", "research",
+CATEGORY_ORDER = ["development", "design", "marketing", "media", "research",
                   "security", "reverse-engineering"]
 
 CSS = """

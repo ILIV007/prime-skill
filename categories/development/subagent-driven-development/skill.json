@@ -14,7 +14,7 @@
   "stars_at_import": 312043,
   "added": "2026-11-04",
   "requires": [
-    "a harness with subagents"
+    "Subagent-capable harness"
   ],
   "entry": "full",
   "adapted": false,

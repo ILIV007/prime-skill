@@ -1,0 +1,22 @@
+{
+  "name": "exa-search",
+  "title": "Exa Search",
+  "description": "Calls Exa's semantic search API directly over HTTP, with ranked results, domain and freshness filters, extracted text and highlights, structured output, and streaming responses — no SDK.",
+  "why": "A general open-web retrieval primitive for agents, complementing the social-platform research set.",
+  "category": "research",
+  "source": {
+    "repo": "exa-labs/agent-skills",
+    "url": "https://github.com/exa-labs/agent-skills",
+    "path": "skills/exa-search",
+    "commit": "5c5c7ebfb4458cfd1bd72697f14bd89685550c2e"
+  },
+  "license": "MIT",
+  "stars_at_import": 65,
+  "added": "2026-11-04",
+  "requires": [
+    "EXA_API_KEY (paid)"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

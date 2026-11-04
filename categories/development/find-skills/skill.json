@@ -14,8 +14,8 @@
   "stars_at_import": 38012,
   "added": "2026-11-04",
   "requires": [
-    "Node.js / npx",
-    "access to skills.sh"
+    "Node.js",
+    "skills.sh access"
   ],
   "entry": "full",
   "adapted": false,
