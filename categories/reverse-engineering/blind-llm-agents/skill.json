@@ -1,0 +1,22 @@
+{
+  "name": "blind-llm-agents",
+  "title": "blind-llm-agents",
+  "description": "Hardens release artifacts against AI reverse-engineering agents with decoys, analysis-budget exhaustion and dead ends, driven by the bla-agents CLI.",
+  "why": "The defensive mirror of REA: REA takes artifacts apart; this protects your own releases from being taken apart.",
+  "category": "reverse-engineering",
+  "source": {
+    "repo": "qybaihe/bla",
+    "url": "https://github.com/qybaihe/bla",
+    "path": ".agents/skills/blind-llm-agents",
+    "commit": "eb44984a5c3e1920bec9c7bdc8403c6d93d0bc0e"
+  },
+  "license": "MIT",
+  "stars_at_import": 2111,
+  "added": "2026-11-04",
+  "requires": [
+    "bla-agents CLI"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

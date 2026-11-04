@@ -1,0 +1,23 @@
+{
+  "name": "find-skills",
+  "title": "find-skills",
+  "description": "Finds and installs agent skills from the open ecosystem through the Skills CLI and the skills.sh registry.",
+  "why": "Skill discovery is a different job from skill authoring — and the front door for growing this very collection.",
+  "category": "development",
+  "source": {
+    "repo": "vercel-labs/skills",
+    "url": "https://github.com/vercel-labs/skills",
+    "path": "skills/find-skills",
+    "commit": "9197d919034d19010ae303cf96bf19ad087dd4be"
+  },
+  "license": "MIT",
+  "stars_at_import": 38012,
+  "added": "2026-11-04",
+  "requires": [
+    "Node.js / npx",
+    "access to skills.sh"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

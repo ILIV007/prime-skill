@@ -1,0 +1,23 @@
+{
+  "name": "ffmpeg-skill",
+  "title": "ffmpeg-skill",
+  "description": "A complete local FFmpeg editing system: 42 scripted tools to cut, join, reframe, caption, remove silence, check loudness and export audio/video.",
+  "why": "Deterministic media-file work, fully local and scriptable — nothing else in Prime Skill touches actual audio or video files.",
+  "category": "development",
+  "source": {
+    "repo": "kajisho5/ffmpeg-skill",
+    "url": "https://github.com/kajisho5/ffmpeg-skill",
+    "path": ".",
+    "commit": "1ce2c186bf1dba96132d87274eee46df4f537e0e"
+  },
+  "license": "MIT",
+  "stars_at_import": 4475,
+  "added": "2026-11-04",
+  "requires": [
+    "FFmpeg 6.1+",
+    "Python 3.10+"
+  ],
+  "entry": "full",
+  "adapted": true,
+  "adaptations": "Root skill only: vendored SKILL.md + scripts/, references/, mcp/, templates/. The repo's 13 .claude/skills/* maintainer-workflow skills and other repo-level folders were excluded — they are separate skills and infrastructure, not part of this skill."
+}
