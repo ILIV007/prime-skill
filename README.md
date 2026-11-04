@@ -38,11 +38,12 @@ in one line, it doesn't belong here.
 ## Categories
 
 <!-- GENERATED:START -->
-### Design (8)
+### Design (9)
 
 | Skill | What it does | Why it's here | Requires | Source |
 |---|---|---|---|---|
 | [algorithmic-art](categories/design/algorithmic-art/) | Creates generative art with p5.js: seeded algorithms, flow fields, and particle systems delivered as interactive HTML pieces. | The distinctive one in Anthropic's set: real generative-art capability, not another text workflow; useful for visuals and covers. | — | [anthropics/skills](https://github.com/anthropics/skills) @ ca45fc4 |
+| [anatomy](categories/design/anatomy/) | Builds crafted, interactive isometric SVG figures that explain a technical idea as a physical machine, with worked examples and a geometry-audit kit. | Precise technical illustration as explanation — a capability neither the generative-art skill nor the UI set covers. | Node 20.10+; Chrome/Chromium | [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy) @ 1482e84 |
 | [banner-design](categories/design/banner-design/) | Designs banners for social, ads, website heroes, and print, with multiple art-direction options. | Banners and covers are a recurring need for channels and launches. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
 | [brand](categories/design/brand/) | Brand voice, visual identity, messaging frameworks, and consistency checks for branded content. | Keeps channel and product visuals and tone recognizably on-brand. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
 | [design](categories/design/design/) | All-in-one design skill: brand identity, tokens, logos, icons, banners, presentations, and social visuals. | Covers the long tail of one-off design asks in a single skill. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
@@ -51,11 +52,13 @@ in one line, it doesn't belong here.
 | [ui-styling](categories/design/ui-styling/) | Builds accessible UIs with shadcn/ui, Radix, and Tailwind, plus canvas-based visual designs. | The practical implementation partner to the design-system rules. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
 | [ui-ux-pro-max](categories/design/ui-ux-pro-max/) | Design intelligence for web, mobile, and desktop UIs, with searchable local data on styles, palettes, font pairings, UX guidelines, and stacks. | Gives interface work a real design database instead of guesswork; the flagship of the design set. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
 
-### Development (18)
+### Development (20)
 
 | Skill | What it does | Why it's here | Requires | Source |
 |---|---|---|---|---|
 | [brainstorming](categories/development/brainstorming/) | Clarifies what the user actually wants, one question at a time, compares 2-3 approaches, and gets a design approved before anything is built. | Stops build-first-guess-later work on new features and projects; it is the process that designed this very repo. | — | [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) @ cc3f535 |
+| [ffmpeg-skill](categories/development/ffmpeg-skill/) | A complete local FFmpeg editing system: 42 scripted tools to cut, join, reframe, caption, remove silence, check loudness and export audio/video. | Deterministic media-file work, fully local and scriptable — nothing else in Prime Skill touches actual audio or video files. | FFmpeg 6.1+; Python 3.10+ | [kajisho5/ffmpeg-skill](https://github.com/kajisho5/ffmpeg-skill) @ 1ce2c18 |
+| [find-skills](categories/development/find-skills/) | Finds and installs agent skills from the open ecosystem through the Skills CLI and the skills.sh registry. | Skill discovery is a different job from skill authoring — and the front door for growing this very collection. | Node.js / npx; access to skills.sh | [vercel-labs/skills](https://github.com/vercel-labs/skills) @ 9197d91 |
 | [mcp-builder](categories/development/mcp-builder/) | Anthropic's playbook for designing and building high-quality MCP servers, with reference guides and an evaluation harness. | The owner builds connectors and MCP-backed tools; this is the reference guide from the source. | — | [anthropics/skills](https://github.com/anthropics/skills) @ ca45fc4 |
 | [ponytail](categories/development/ponytail/) | Lazy senior-dev mode: the smallest change that fully solves the task, explained in one read. | Cuts over-engineering, tokens, and cost on everyday coding without dropping safety or tests. | — | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) @ 96608e0 |
 | [ponytail-audit](categories/development/ponytail-audit/) | One-shot whole-repo audit for bugs, security holes, slow paths, untested risky code, and deletable bloat. | A fast health check for inherited or fast-grown codebases, ranked by impact. | — | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) @ 96608e0 |
@@ -74,7 +77,7 @@ in one line, it doesn't belong here.
 | [workers-best-practices](categories/development/workers-best-practices/) | Cloudflare's official best practices for Workers: configuration, runtime patterns, and platform API guidance. | Nearly all of the owner's production code runs on Workers (IVAI, TradeAgent, Proxiv3); this is the vendor's own guidance. | — | [cloudflare/skills](https://github.com/cloudflare/skills) @ 1f2cd0a |
 | [writing-plans](categories/development/writing-plans/) | Turns an approved spec or design into a detailed, step-by-step implementation plan that can be executed without guessing. | The missing half of the brainstorming workflow already in this repo; makes multi-step builds land first-try instead of drifting. | — | [obra/superpowers](https://github.com/obra/superpowers) @ 22f0b46 |
 
-### Marketing (14)
+### Marketing (15)
 
 | Skill | What it does | Why it's here | Requires | Source |
 |---|---|---|---|---|
@@ -90,6 +93,7 @@ in one line, it doesn't belong here.
 | [marketing-psychology](categories/marketing/marketing-psychology/) | Applies behavioral science and mental models - anchoring, social proof, scarcity, framing - to marketing. | Explains why people buy, so offers and copy stop being guesswork. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
 | [offers](categories/marketing/offers/) | Designs the offer itself: value framing, bonus stacks, guarantees, scarcity, and payment structure. | A better offer beats better ads; core skill for anything sold or promoted. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
 | [product-marketing](categories/marketing/product-marketing/) | Creates the product-marketing context doc - positioning, audience, ICP, brand voice - that the other marketing skills build on. | The foundation of the marketing set: write the context once, reuse it in every campaign. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
+| [remotion-best-practices](https://github.com/remotion-dev/skills/tree/c7cb2fdcacd134fb2ccb9b7a44f9ffa44e467271/skills/remotion-best-practices) · link-only | Remotion's official best practices for programmatic video in React — markup, animation, captions, maps and interactivity done right. | The motion cluster's one representative: official, actively maintained engine craft that goes deeper than the video skill's strategy-level coverage; link-only because the source repo declares no license. | a Remotion project | [remotion-dev/skills](https://github.com/remotion-dev/skills) @ c7cb2fd |
 | [social](categories/marketing/social/) | Creates, schedules, and optimizes social media content, and runs social listening across the major platforms. | Directly useful for running and growing social and channel presences. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
 | [video](categories/marketing/video/) | Guides AI and programmatic video production: avatars, demos, explainers, and generation pipelines. | Video is the highest-reach format; this maps the current tool landscape into workflows. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
 
@@ -111,10 +115,11 @@ in one line, it doesn't belong here.
 | [transcript-intelligence](categories/research/transcript-intelligence/) | Summarizes and mines video transcripts for hooks, claims, quotes, and reusable content atoms. | Unlocks the content inside long videos without watching them all. | ScrapeCreators API key (paid, credit-based) | [ScrapeCreators/social-media-research-skills](https://github.com/ScrapeCreators/social-media-research-skills) @ 64ba7b4 |
 | [trend-discovery](categories/research/trend-discovery/) | Finds trending topics, hashtags, sounds, and formats in a niche from public trend endpoints. | Trend timing is free reach for channels; this turns trends into content angles. | ScrapeCreators API key (paid, credit-based) | [ScrapeCreators/social-media-research-skills](https://github.com/ScrapeCreators/social-media-research-skills) @ 64ba7b4 |
 
-### Reverse Engineering (1)
+### Reverse Engineering (2)
 
 | Skill | What it does | Why it's here | Requires | Source |
 |---|---|---|---|---|
+| [blind-llm-agents](categories/reverse-engineering/blind-llm-agents/) | Hardens release artifacts against AI reverse-engineering agents with decoys, analysis-budget exhaustion and dead ends, driven by the bla-agents CLI. | The defensive mirror of REA: REA takes artifacts apart; this protects your own releases from being taken apart. | bla-agents CLI | [qybaihe/bla](https://github.com/qybaihe/bla) @ eb44984 |
 | [reverse-engineer-anything](categories/reverse-engineering/reverse-engineer-anything/) | Reverse engineers binaries, Electron/JS apps, .NET, firmware, and browser targets with REA, backed by runtime evidence. | The owner's reverse-engineering workhorse: explains features, compares versions, and guides reconstructions from real artifacts. | REA toolchain (optional, for full function) | [morluto/rea](https://github.com/morluto/rea) @ d7df9df |
 
 ### Security (6)

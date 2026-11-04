@@ -1,5 +1,5 @@
 {
-  "count": 60,
+  "count": 65,
   "skills": [
     {
       "name": "algorithmic-art",
@@ -20,6 +20,29 @@
       "entry": "full",
       "adapted": false,
       "adaptations": ""
+    },
+    {
+      "name": "anatomy",
+      "title": "anatomy",
+      "description": "Builds crafted, interactive isometric SVG figures that explain a technical idea as a physical machine, with worked examples and a geometry-audit kit.",
+      "why": "Precise technical illustration as explanation — a capability neither the generative-art skill nor the UI set covers.",
+      "category": "design",
+      "source": {
+        "repo": "wheresryan22/anatomy",
+        "url": "https://github.com/wheresryan22/anatomy",
+        "path": ".",
+        "commit": "1482e8469b0a9e0d8cc18ea2740a01423d29ae80"
+      },
+      "license": "MIT",
+      "stars_at_import": 24607,
+      "added": "2026-11-04",
+      "requires": [
+        "Node 20.10+",
+        "Chrome/Chromium"
+      ],
+      "entry": "full",
+      "adapted": true,
+      "adaptations": "Root skill imported with its runtime files (examples/, kit/, references/, scripts/, agents/, evals/); repo-level docs, .github/ and tests/ were not vendored."
     },
     {
       "name": "banner-design",
@@ -177,6 +200,52 @@
       "stars_at_import": 33112,
       "added": "2026-11-04",
       "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "ffmpeg-skill",
+      "title": "ffmpeg-skill",
+      "description": "A complete local FFmpeg editing system: 42 scripted tools to cut, join, reframe, caption, remove silence, check loudness and export audio/video.",
+      "why": "Deterministic media-file work, fully local and scriptable — nothing else in Prime Skill touches actual audio or video files.",
+      "category": "development",
+      "source": {
+        "repo": "kajisho5/ffmpeg-skill",
+        "url": "https://github.com/kajisho5/ffmpeg-skill",
+        "path": ".",
+        "commit": "1ce2c186bf1dba96132d87274eee46df4f537e0e"
+      },
+      "license": "MIT",
+      "stars_at_import": 4475,
+      "added": "2026-11-04",
+      "requires": [
+        "FFmpeg 6.1+",
+        "Python 3.10+"
+      ],
+      "entry": "full",
+      "adapted": true,
+      "adaptations": "Root skill only: vendored SKILL.md + scripts/, references/, mcp/, templates/. The repo's 13 .claude/skills/* maintainer-workflow skills and other repo-level folders were excluded — they are separate skills and infrastructure, not part of this skill."
+    },
+    {
+      "name": "find-skills",
+      "title": "find-skills",
+      "description": "Finds and installs agent skills from the open ecosystem through the Skills CLI and the skills.sh registry.",
+      "why": "Skill discovery is a different job from skill authoring — and the front door for growing this very collection.",
+      "category": "development",
+      "source": {
+        "repo": "vercel-labs/skills",
+        "url": "https://github.com/vercel-labs/skills",
+        "path": "skills/find-skills",
+        "commit": "9197d919034d19010ae303cf96bf19ad087dd4be"
+      },
+      "license": "MIT",
+      "stars_at_import": 38012,
+      "added": "2026-11-04",
+      "requires": [
+        "Node.js / npx",
+        "access to skills.sh"
+      ],
       "entry": "full",
       "adapted": false,
       "adaptations": ""
@@ -769,6 +838,28 @@
       "adaptations": ""
     },
     {
+      "name": "remotion-best-practices",
+      "title": "remotion-best-practices",
+      "description": "Remotion's official best practices for programmatic video in React — markup, animation, captions, maps and interactivity done right.",
+      "why": "The motion cluster's one representative: official, actively maintained engine craft that goes deeper than the video skill's strategy-level coverage; link-only because the source repo declares no license.",
+      "category": "marketing",
+      "source": {
+        "repo": "remotion-dev/skills",
+        "url": "https://github.com/remotion-dev/skills",
+        "path": "skills/remotion-best-practices",
+        "commit": "c7cb2fdcacd134fb2ccb9b7a44f9ffa44e467271"
+      },
+      "license": "none",
+      "stars_at_import": 6294,
+      "added": "2026-11-04",
+      "requires": [
+        "a Remotion project"
+      ],
+      "entry": "link-only",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
       "name": "social",
       "title": "Social",
       "description": "Creates, schedules, and optimizes social media content, and runs social listening across the major platforms.",
@@ -1089,6 +1180,28 @@
       "added": "2026-11-04",
       "requires": [
         "ScrapeCreators API key (paid, credit-based)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "blind-llm-agents",
+      "title": "blind-llm-agents",
+      "description": "Hardens release artifacts against AI reverse-engineering agents with decoys, analysis-budget exhaustion and dead ends, driven by the bla-agents CLI.",
+      "why": "The defensive mirror of REA: REA takes artifacts apart; this protects your own releases from being taken apart.",
+      "category": "reverse-engineering",
+      "source": {
+        "repo": "qybaihe/bla",
+        "url": "https://github.com/qybaihe/bla",
+        "path": ".agents/skills/blind-llm-agents",
+        "commit": "eb44984a5c3e1920bec9c7bdc8403c6d93d0bc0e"
+      },
+      "license": "MIT",
+      "stars_at_import": 2111,
+      "added": "2026-11-04",
+      "requires": [
+        "bla-agents CLI"
       ],
       "entry": "full",
       "adapted": false,
