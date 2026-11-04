@@ -5,606 +5,738 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prime Skill — curated agent skills</title>
 <meta name="description" content="Prime Skill: a curated, categorized collection of genuinely useful agent skills.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --line:#2d333b;
-  --text:#e6edf3; --muted:#9aa7b4; --faint:#6e7d8c;
-  --accent:#58a6ff; --accent2:#bc8cff; --warn:#e3a008;
+  --bg:#0e0b1e; --panel:#1d1836; --panel2:#2a2350; --ink:#05030d;
+  --text:#f2eefc; --muted:#b6add6; --faint:#8d81b8;
+  --pink:#ff2e63; --cyan:#22d3ee; --yellow:#ffd319; --green:#22c55e;
+  --purple:#a855f7; --red:#dc2626; --orange:#fb923c; --blue:#3b82f6;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-family:"Space Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   line-height:1.5}
-a{color:var(--accent);text-decoration:none}
+a{color:var(--cyan);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:1200px;margin:0 auto;padding:0 20px 64px}
-header{padding:48px 0 8px;text-align:center}
-h1{font-size:2.6rem;margin:0 0 6px;letter-spacing:-.02em}
-h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));
-  -webkit-background-clip:text;background-clip:text;color:transparent}
-.tagline{color:var(--muted);margin:0 auto;max-width:640px}
-.count-line{color:var(--faint);margin-top:14px;font-size:.95rem}
+.hero{position:relative;overflow:hidden;border-bottom:4px solid var(--ink);
+  background:
+    radial-gradient(600px 240px at 15% 0%,rgba(255,46,99,.20),transparent 60%),
+    radial-gradient(700px 260px at 85% 10%,rgba(34,211,238,.16),transparent 60%),
+    radial-gradient(500px 300px at 50% 110%,rgba(168,85,247,.18),transparent 60%),
+    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px),
+    #14102a;
+  background-size:auto,auto,auto,24px 24px,24px 24px,auto}
+#hero3d{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-inner{position:relative;z-index:1;text-align:center;padding:56px 20px 46px;pointer-events:none}
+.hero-inner .btn{pointer-events:auto}
+.kicker{font-family:"Press Start 2P","Courier New",monospace;font-size:.6rem;
+  letter-spacing:.12em;color:var(--yellow);margin:0 0 18px}
+h1{font-family:"Press Start 2P","Courier New",monospace;font-size:2.1rem;line-height:1.35;
+  margin:0 0 16px;color:#fff;text-shadow:3px 3px 0 var(--pink),6px 6px 0 rgba(0,0,0,.45)}
+.tagline{color:var(--muted);margin:0 auto;max-width:660px;font-size:1.05rem}
+.count-line{color:var(--faint);margin-top:16px;font-size:.95rem}
 .count-line b{color:var(--text)}
-.btn{display:inline-block;margin-top:16px;padding:9px 18px;border:1px solid var(--line);
-  border-radius:999px;background:var(--panel);color:var(--text);font-weight:600}
-.btn:hover{border-color:var(--accent);text-decoration:none}
-.controls{position:sticky;top:0;background:var(--bg);padding:18px 0 12px;z-index:5}
+.btn{display:inline-block;margin-top:20px;padding:11px 20px;border:3px solid var(--ink);
+  background:var(--yellow);color:#171233;font-weight:700;box-shadow:5px 5px 0 var(--ink);
+  font-family:"Press Start 2P","Courier New",monospace;font-size:.68rem;letter-spacing:.04em}
+.btn:hover{text-decoration:none;transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink)}
+.btn:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--ink)}
+.controls{position:sticky;top:0;background:var(--bg);padding:18px 0 12px;z-index:5;
+  border-bottom:2px dashed #352d5e}
 #search{width:100%;padding:12px 16px;font-size:1rem;color:var(--text);
-  background:var(--panel);border:1px solid var(--line);border-radius:10px;outline:none}
-#search:focus{border-color:var(--accent)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.chip{padding:6px 14px;border-radius:999px;border:1px solid var(--line);
-  background:var(--panel);color:var(--muted);cursor:pointer;font-size:.9rem}
-.chip:hover{color:var(--text)}
-.chip.active{background:var(--accent);border-color:var(--accent);color:#0d1117;font-weight:600}
+  background:var(--panel);border:3px solid var(--ink);border-radius:4px;outline:none;
+  box-shadow:4px 4px 0 rgba(3,2,10,.6)}
+#search:focus{border-color:var(--cyan)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;align-items:center}
+.chips .lbl{font-family:"Press Start 2P","Courier New",monospace;font-size:.55rem;
+  color:var(--faint);margin-right:2px}
+.chip{padding:6px 13px;border:2px solid var(--ink);border-radius:3px;
+  background:var(--panel);color:var(--muted);cursor:pointer;font-size:.88rem;font-weight:600;
+  box-shadow:3px 3px 0 rgba(3,2,10,.55)}
+.chip:hover{color:var(--text);transform:translate(1px,1px);box-shadow:2px 2px 0 rgba(3,2,10,.55)}
+.chip.active{background:var(--catc,var(--cyan));border-color:var(--ink);color:#120e26}
 .chip .n{opacity:.75;font-size:.82em;margin-left:4px}
+.chip.star.active{background:var(--yellow)}
+.tagchips .chip{font-size:.78rem;padding:4px 10px;background:var(--panel2)}
 #result-count{color:var(--faint);font-size:.9rem;margin:14px 2px 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-  gap:16px;margin-top:12px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;
-  padding:18px;display:flex;flex-direction:column;gap:8px}
-.card:hover{border-color:#3d4754}
-.card h3{margin:0;font-size:1.15rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.badge{font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
-  padding:2px 8px;border-radius:999px;vertical-align:middle}
-.badge.linkonly{background:rgba(227,160,8,.15);color:var(--warn);border:1px solid var(--warn)}
-.badge.cat{background:var(--panel2);color:var(--accent2);border:1px solid var(--line)}
+  gap:18px;margin-top:14px}
+.card{position:relative;background:var(--panel);border:3px solid var(--ink);border-radius:4px;
+  padding:24px 18px 16px;display:flex;flex-direction:column;gap:8px;
+  box-shadow:7px 7px 0 rgba(3,2,10,.65)}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:var(--catc,var(--cyan))}
+.card:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 rgba(3,2,10,.65)}
+.card.special{border-color:var(--yellow);box-shadow:7px 7px 0 rgba(255,211,25,.35)}
+.card.special:hover{box-shadow:9px 9px 0 rgba(255,211,25,.4)}
+.card h3{margin:0;font-size:1.12rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.badge{font-size:.66rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  padding:2px 8px;border-radius:2px;border:2px solid var(--ink);vertical-align:middle}
+.badge.linkonly{background:rgba(255,211,25,.16);color:var(--yellow)}
+.badge.cat{background:var(--panel2);color:var(--text)}
+.badge.star{background:var(--yellow);color:#171233}
 .desc{margin:0;color:var(--text)}
 .why{margin:0;color:var(--muted);font-size:.92rem;font-style:italic}
 .meta{display:flex;flex-wrap:wrap;gap:6px 14px;color:var(--faint);font-size:.85rem;margin-top:2px}
-.req{display:flex;flex-wrap:wrap;gap:6px}
-.req span{background:var(--panel2);border:1px solid var(--line);border-radius:6px;
+.req,.tags{display:flex;flex-wrap:wrap;gap:6px}
+.req span{background:var(--panel2);border:2px solid var(--ink);border-radius:2px;
   padding:1px 8px;font-size:.78rem;color:var(--muted)}
-.card footer{margin-top:auto;padding-top:8px;font-size:.9rem}
+.tag{background:#171233;border:2px solid #453a85;border-radius:2px;color:var(--cyan);
+  padding:1px 8px;font-size:.74rem;cursor:pointer;font-family:inherit}
+.tag:hover{border-color:var(--cyan);color:#fff}
+.card footer{margin-top:auto;padding-top:8px;font-size:.9rem;display:flex;gap:16px}
 #empty{display:none;color:var(--muted);text-align:center;padding:48px 0}
 .site-footer{margin-top:56px;text-align:center;color:var(--faint);font-size:.85rem}
-@media (max-width:560px){h1{font-size:2rem}.grid{grid-template-columns:1fr}}
+@media (max-width:560px){h1{font-size:1.35rem}.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header>
-  <h1>Prime <span class="grad">Skill</span></h1>
-  <p class="tagline">A curated collection of genuinely useful agent skills — one representative per capability, vetted for quality, categorized by function.</p>
-  <p class="count-line"><b>73</b> skills · <b>7</b> categories · <b>3</b> link-only</p>
-  <a class="btn" href="https://github.com/ILIV007/prime-skill">View on GitHub</a>
+<header class="hero">
+  <canvas id="hero3d" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <p class="kicker">★ Curated agent skills ★</p>
+    <h1>Prime Skill</h1>
+    <p class="tagline">A curated collection of genuinely useful agent skills — one representative per capability, vetted for quality, categorized by function.</p>
+    <p class="count-line"><b>75</b> skills · <b>7</b> categories · <b>8</b> ⭐ specials · <b>3</b> link-only</p>
+    <a class="btn" href="https://github.com/ILIV007/prime-skill">View on GitHub</a>
+  </div>
 </header>
+<div class="wrap">
 <div class="controls">
-  <input id="search" type="search" placeholder="Search skills, descriptions, categories…" aria-label="Search skills">
-  <div class="chips"><button class="chip active" data-cat="all">All<span class="n">73</span></button><button class="chip" data-cat="development">development<span class="n">24</span></button><button class="chip" data-cat="design">design<span class="n">9</span></button><button class="chip" data-cat="marketing">marketing<span class="n">12</span></button><button class="chip" data-cat="media">media<span class="n">4</span></button><button class="chip" data-cat="research">research<span class="n">16</span></button><button class="chip" data-cat="security">security<span class="n">6</span></button><button class="chip" data-cat="reverse-engineering">reverse-engineering<span class="n">2</span></button></div>
+  <input id="search" type="search" placeholder="Search skills, descriptions, tags, categories…" aria-label="Search skills">
+  <div class="chips"><span class="lbl">Category</span><button class="chip active" data-cat="all">All<span class="n">75</span></button><button class="chip" data-cat="development" style="--catc:#22d3ee">development<span class="n">24</span></button><button class="chip" data-cat="design" style="--catc:#ff2e63">design<span class="n">11</span></button><button class="chip" data-cat="marketing" style="--catc:#ffd319">marketing<span class="n">12</span></button><button class="chip" data-cat="media" style="--catc:#a855f7">media<span class="n">4</span></button><button class="chip" data-cat="research" style="--catc:#22c55e">research<span class="n">16</span></button><button class="chip" data-cat="security" style="--catc:#dc2626">security<span class="n">6</span></button><button class="chip" data-cat="reverse-engineering" style="--catc:#fb923c">reverse-engineering<span class="n">2</span></button><button class="chip star" id="chip-special">⭐ Specials<span class="n">8</span></button></div>
+  <div class="chips tagchips"><span class="lbl">Tags</span><button class="chip" data-tag="social-data">#social-data<span class="n">15</span></button><button class="chip" data-tag="workflow">#workflow<span class="n">15</span></button><button class="chip" data-tag="content">#content<span class="n">14</span></button><button class="chip" data-tag="research-methods">#research-methods<span class="n">8</span></button><button class="chip" data-tag="harness">#harness<span class="n">7</span></button><button class="chip" data-tag="automation">#automation<span class="n">6</span></button><button class="chip" data-tag="design-systems">#design-systems<span class="n">6</span></button><button class="chip" data-tag="api">#api<span class="n">5</span></button><button class="chip" data-tag="generative">#generative<span class="n">5</span></button><button class="chip" data-tag="react">#react<span class="n">4</span></button><button class="chip" data-tag="tokens">#tokens<span class="n">4</span></button><button class="chip" data-tag="video">#video<span class="n">4</span></button><button class="chip" data-tag="competitor">#competitor<span class="n">3</span></button><button class="chip" data-tag="security-testing">#security-testing<span class="n">3</span></button><button class="chip" data-tag="3d">#3d<span class="n">2</span></button><button class="chip" data-tag="web-search">#web-search<span class="n">2</span></button></div>
   <p id="result-count"></p>
 </div>
 <main class="grid">
-<article class="card" data-category="development" data-search="brainstorming brainstorming clarifies what the user actually wants, one question at a time, compares 2-3 approaches, and gets a design approved before anything is built. stops build-first-guess-later work on new features and projects; it is the process that designed this very repo. development davila7/claude-code-templates">
+<article class="card" style="--catc:#22d3ee" data-category="development" data-tags="workflow" data-special="" data-search="brainstorming brainstorming clarifies what the user actually wants, one question at a time, compares 2-3 approaches, and gets a design approved before anything is built. stops build-first-guess-later work on new features and projects; it is the process that designed this very repo. development workflow  davila7/claude-code-templates">
   <h3>Brainstorming <span class="badge cat">development</span></h3>
   <p class="desc">Clarifies what the user actually wants, one question at a time, compares 2-3 approaches, and gets a design approved before anything is built.</p>
   <p class="why">Stops build-first-guess-later work on new features and projects; it is the process that designed this very repo.</p>
   <div class="meta"><span>License: MIT</span><span>★ 33,112 at import</span></div>
   
-  <footer><a href="https://github.com/davila7/claude-code-templates/tree/cc3f5356409d09bd7596496eb9b265b2225e195f/cli-tool/components/skills/development/brainstorming" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="caveman caveman terse caveman voice for agent replies: answer first, fluff gone, every technical fact kept, and it stays on until told to stop. cuts output-token waste on every reply without losing substance; the communication-side counterpart to ponytail&#x27;s lean code. development juliusbrussee/caveman">
-  <h3>Caveman <span class="badge cat">development</span></h3>
+  <div class="tags"><button class="tag" data-tag="workflow">#workflow</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/brainstorming" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/davila7/claude-code-templates/tree/cc3f5356409d09bd7596496eb9b265b2225e195f/cli-tool/components/skills/development/brainstorming" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card special" style="--catc:#22d3ee" data-category="development" data-tags="tokens" data-special="1" data-search="caveman caveman terse caveman voice for agent replies: answer first, fluff gone, every technical fact kept, and it stays on until told to stop. cuts output-token waste on every reply without losing substance; the communication-side counterpart to ponytail&#x27;s lean code. development tokens special juliusbrussee/caveman">
+  <h3>Caveman <span class="badge star">⭐ special</span><span class="badge cat">development</span></h3>
   <p class="desc">Terse caveman voice for agent replies: answer first, fluff gone, every technical fact kept, and it stays on until told to stop.</p>
   <p class="why">Cuts output-token waste on every reply without losing substance; the communication-side counterpart to ponytail&#x27;s lean code.</p>
   <div class="meta"><span>License: Apache-2.0</span><span>★ 117,342 at import</span></div>
   
-  <footer><a href="https://github.com/JuliusBrussee/caveman/tree/2e068f735253cce28256744804785f01887d9646/skills/caveman" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="caveman-compress caveman compress compresses memory files such as claude.md or todo lists into caveman format to save input tokens, keeping a readable backup outside the tree. long-lived context files are re-read every session; compressing them is a permanent input-token saving rather than a one-off. development juliusbrussee/caveman">
+  <div class="tags"><button class="tag" data-tag="tokens">#tokens</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/caveman" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/JuliusBrussee/caveman/tree/2e068f735253cce28256744804785f01887d9646/skills/caveman" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="tokens" data-special="" data-search="caveman-compress caveman compress compresses memory files such as claude.md or todo lists into caveman format to save input tokens, keeping a readable backup outside the tree. long-lived context files are re-read every session; compressing them is a permanent input-token saving rather than a one-off. development tokens  juliusbrussee/caveman">
   <h3>Caveman Compress <span class="badge cat">development</span></h3>
   <p class="desc">Compresses memory files such as CLAUDE.md or todo lists into caveman format to save input tokens, keeping a readable backup outside the tree.</p>
   <p class="why">Long-lived context files are re-read every session; compressing them is a permanent input-token saving rather than a one-off.</p>
   <div class="meta"><span>License: Apache-2.0</span><span>★ 117,342 at import</span></div>
   <div class="req"><span>Python 3</span><span>Model provider API</span></div>
-  <footer><a href="https://github.com/JuliusBrussee/caveman/tree/2e068f735253cce28256744804785f01887d9646/skills/caveman-compress" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="domain-modeling domain modeling builds and sharpens a project&#x27;s domain model: maintains a living glossary of codebase terminology and records architecture decisions as adrs. shared vocabulary keeps agents and humans from talking past each other; this makes terminology a maintained artifact, not folklore. development mattpocock/skills">
+  <div class="tags"><button class="tag" data-tag="tokens">#tokens</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/caveman-compress" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/JuliusBrussee/caveman/tree/2e068f735253cce28256744804785f01887d9646/skills/caveman-compress" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="workflow" data-special="" data-search="domain-modeling domain modeling builds and sharpens a project&#x27;s domain model: maintains a living glossary of codebase terminology and records architecture decisions as adrs. shared vocabulary keeps agents and humans from talking past each other; this makes terminology a maintained artifact, not folklore. development workflow  mattpocock/skills">
   <h3>Domain Modeling <span class="badge cat">development</span></h3>
   <p class="desc">Builds and sharpens a project&#x27;s domain model: maintains a living glossary of codebase terminology and records architecture decisions as ADRs.</p>
   <p class="why">Shared vocabulary keeps agents and humans from talking past each other; this makes terminology a maintained artifact, not folklore.</p>
   <div class="meta"><span>License: MIT</span><span>★ 312,014 at import</span></div>
   
-  <footer><a href="https://github.com/mattpocock/skills/tree/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d/skills/engineering/domain-modeling" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="find-skills find-skills finds and installs agent skills from the open ecosystem through the skills cli and the skills.sh registry. skill discovery is a different job from skill authoring — and the front door for growing this very collection. development vercel-labs/skills">
+  <div class="tags"><button class="tag" data-tag="workflow">#workflow</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/domain-modeling" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/mattpocock/skills/tree/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d/skills/engineering/domain-modeling" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="harness" data-special="" data-search="find-skills find-skills finds and installs agent skills from the open ecosystem through the skills cli and the skills.sh registry. skill discovery is a different job from skill authoring — and the front door for growing this very collection. development harness  vercel-labs/skills">
   <h3>find-skills <span class="badge cat">development</span></h3>
   <p class="desc">Finds and installs agent skills from the open ecosystem through the Skills CLI and the skills.sh registry.</p>
   <p class="why">Skill discovery is a different job from skill authoring — and the front door for growing this very collection.</p>
   <div class="meta"><span>License: MIT</span><span>★ 38,012 at import</span></div>
   <div class="req"><span>Node.js</span><span>skills.sh access</span></div>
-  <footer><a href="https://github.com/vercel-labs/skills/tree/9197d919034d19010ae303cf96bf19ad087dd4be/skills/find-skills" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="grill-me grill me a relentless one-question-at-a-time interview that stress-tests a plan or design until every branch of the decision tree is resolved. the sharp end of requirements work: it surfaces the decisions brainstorming leaves unmade, before they turn into rework. development mattpocock/skills">
+  <div class="tags"><button class="tag" data-tag="harness">#harness</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/find-skills" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/vercel-labs/skills/tree/9197d919034d19010ae303cf96bf19ad087dd4be/skills/find-skills" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="workflow" data-special="" data-search="grill-me grill me a relentless one-question-at-a-time interview that stress-tests a plan or design until every branch of the decision tree is resolved. the sharp end of requirements work: it surfaces the decisions brainstorming leaves unmade, before they turn into rework. development workflow  mattpocock/skills">
   <h3>Grill Me <span class="badge cat">development</span></h3>
   <p class="desc">A relentless one-question-at-a-time interview that stress-tests a plan or design until every branch of the decision tree is resolved.</p>
   <p class="why">The sharp end of requirements work: it surfaces the decisions brainstorming leaves unmade, before they turn into rework.</p>
   <div class="meta"><span>License: MIT</span><span>★ 312,014 at import</span></div>
   
-  <footer><a href="https://github.com/mattpocock/skills/tree/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d/skills/productivity/grill-me" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="grilling grilling the reusable interview engine behind grill-me: grills the user relentlessly about a plan, decision, or idea, one question at a time. grill-me is the session wrapper; this is the portable technique that other workflows can invoke on any decision. development mattpocock/skills">
+  <div class="tags"><button class="tag" data-tag="workflow">#workflow</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/grill-me" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/mattpocock/skills/tree/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d/skills/productivity/grill-me" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="workflow" data-special="" data-search="grilling grilling the reusable interview engine behind grill-me: grills the user relentlessly about a plan, decision, or idea, one question at a time. grill-me is the session wrapper; this is the portable technique that other workflows can invoke on any decision. development workflow  mattpocock/skills">
   <h3>Grilling <span class="badge cat">development</span></h3>
   <p class="desc">The reusable interview engine behind grill-me: grills the user relentlessly about a plan, decision, or idea, one question at a time.</p>
   <p class="why">Grill-me is the session wrapper; this is the portable technique that other workflows can invoke on any decision.</p>
   <div class="meta"><span>License: MIT</span><span>★ 312,013 at import</span></div>
   
-  <footer><a href="https://github.com/mattpocock/skills/tree/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d/skills/productivity/grilling" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="mcp-builder mcp-builder anthropic&#x27;s playbook for designing and building high-quality mcp servers, with reference guides and an evaluation harness. the owner builds connectors and mcp-backed tools; this is the reference guide from the source. development anthropics/skills">
+  <div class="tags"><button class="tag" data-tag="workflow">#workflow</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/grilling" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/mattpocock/skills/tree/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d/skills/productivity/grilling" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="harness api" data-special="" data-search="mcp-builder mcp-builder anthropic&#x27;s playbook for designing and building high-quality mcp servers, with reference guides and an evaluation harness. the owner builds connectors and mcp-backed tools; this is the reference guide from the source. development harness api  anthropics/skills">
   <h3>mcp-builder <span class="badge cat">development</span></h3>
   <p class="desc">Anthropic&#x27;s playbook for designing and building high-quality MCP servers, with reference guides and an evaluation harness.</p>
   <p class="why">The owner builds connectors and MCP-backed tools; this is the reference guide from the source.</p>
   <div class="meta"><span>License: Apache-2.0</span><span>★ 187,211 at import</span></div>
   
-  <footer><a href="https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="ponytail ponytail lazy senior-dev mode: the smallest change that fully solves the task, explained in one read. cuts over-engineering, tokens, and cost on everyday coding without dropping safety or tests. development dietrichgebert/ponytail">
-  <h3>Ponytail <span class="badge cat">development</span></h3>
+  <div class="tags"><button class="tag" data-tag="harness">#harness</button><button class="tag" data-tag="api">#api</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/mcp-builder" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card special" style="--catc:#22d3ee" data-category="development" data-tags="tokens" data-special="1" data-search="ponytail ponytail lazy senior-dev mode: the smallest change that fully solves the task, explained in one read. cuts over-engineering, tokens, and cost on everyday coding without dropping safety or tests. development tokens special dietrichgebert/ponytail">
+  <h3>Ponytail <span class="badge star">⭐ special</span><span class="badge cat">development</span></h3>
   <p class="desc">Lazy senior-dev mode: the smallest change that fully solves the task, explained in one read.</p>
   <p class="why">Cuts over-engineering, tokens, and cost on everyday coding without dropping safety or tests.</p>
   <div class="meta"><span>License: MIT</span><span>★ 183,980 at import</span></div>
   
-  <footer><a href="https://github.com/DietrichGebert/ponytail/tree/96608e078b2d5ea607c5c3b8b5a54d1c1fba6846/skills/ponytail" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="ponytail-audit ponytail audit one-shot whole-repo audit for bugs, security holes, slow paths, untested risky code, and deletable bloat. a fast health check for inherited or fast-grown codebases, ranked by impact. development dietrichgebert/ponytail">
+  <div class="tags"><button class="tag" data-tag="tokens">#tokens</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/ponytail" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/DietrichGebert/ponytail/tree/96608e078b2d5ea607c5c3b8b5a54d1c1fba6846/skills/ponytail" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="workflow" data-special="" data-search="ponytail-audit ponytail audit one-shot whole-repo audit for bugs, security holes, slow paths, untested risky code, and deletable bloat. a fast health check for inherited or fast-grown codebases, ranked by impact. development workflow  dietrichgebert/ponytail">
   <h3>Ponytail Audit <span class="badge cat">development</span></h3>
   <p class="desc">One-shot whole-repo audit for bugs, security holes, slow paths, untested risky code, and deletable bloat.</p>
   <p class="why">A fast health check for inherited or fast-grown codebases, ranked by impact.</p>
   <div class="meta"><span>License: MIT</span><span>★ 183,980 at import</span></div>
   
-  <footer><a href="https://github.com/DietrichGebert/ponytail/tree/96608e078b2d5ea607c5c3b8b5a54d1c1fba6846/skills/ponytail-audit" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="ponytail-debt ponytail debt lists every deliberate shortcut: marker in the code as a debt ledger. keeps intentional shortcuts visible so they get repaid instead of forgotten. development dietrichgebert/ponytail">
+  <div class="tags"><button class="tag" data-tag="workflow">#workflow</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/ponytail-audit" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/DietrichGebert/ponytail/tree/96608e078b2d5ea607c5c3b8b5a54d1c1fba6846/skills/ponytail-audit" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="workflow" data-special="" data-search="ponytail-debt ponytail debt lists every deliberate shortcut: marker in the code as a debt ledger. keeps intentional shortcuts visible so they get repaid instead of forgotten. development workflow  dietrichgebert/ponytail">
   <h3>Ponytail Debt <span class="badge cat">development</span></h3>
   <p class="desc">Lists every deliberate shortcut: marker in the code as a debt ledger.</p>
   <p class="why">Keeps intentional shortcuts visible so they get repaid instead of forgotten.</p>
   <div class="meta"><span>License: MIT</span><span>★ 183,980 at import</span></div>
   
-  <footer><a href="https://github.com/DietrichGebert/ponytail/tree/96608e078b2d5ea607c5c3b8b5a54d1c1fba6846/skills/ponytail-debt" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="ponytail-review ponytail review quality review of a change: correctness, safety, load behavior, tests, and whether every line earns its place. catches risky or bloated diffs before they ship, explained in plain language. development dietrichgebert/ponytail">
+  <div class="tags"><button class="tag" data-tag="workflow">#workflow</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/ponytail-debt" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/DietrichGebert/ponytail/tree/96608e078b2d5ea607c5c3b8b5a54d1c1fba6846/skills/ponytail-debt" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="workflow" data-special="" data-search="ponytail-review ponytail review quality review of a change: correctness, safety, load behavior, tests, and whether every line earns its place. catches risky or bloated diffs before they ship, explained in plain language. development workflow  dietrichgebert/ponytail">
   <h3>Ponytail Review <span class="badge cat">development</span></h3>
   <p class="desc">Quality review of a change: correctness, safety, load behavior, tests, and whether every line earns its place.</p>
   <p class="why">Catches risky or bloated diffs before they ship, explained in plain language.</p>
   <div class="meta"><span>License: MIT</span><span>★ 183,980 at import</span></div>
   
-  <footer><a href="https://github.com/DietrichGebert/ponytail/tree/96608e078b2d5ea607c5c3b8b5a54d1c1fba6846/skills/ponytail-review" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="skill-creator skill-creator anthropic&#x27;s guide and tooling for creating, evaluating, and iterating on agent skills, with eval and description-tuning scripts. this repo curates skills for a living; the official skill-authoring workflow belongs in it. development anthropics/skills">
+  <div class="tags"><button class="tag" data-tag="workflow">#workflow</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/ponytail-review" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/DietrichGebert/ponytail/tree/96608e078b2d5ea607c5c3b8b5a54d1c1fba6846/skills/ponytail-review" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="harness" data-special="" data-search="skill-creator skill-creator anthropic&#x27;s guide and tooling for creating, evaluating, and iterating on agent skills, with eval and description-tuning scripts. this repo curates skills for a living; the official skill-authoring workflow belongs in it. development harness  anthropics/skills">
   <h3>skill-creator <span class="badge cat">development</span></h3>
   <p class="desc">Anthropic&#x27;s guide and tooling for creating, evaluating, and iterating on agent skills, with eval and description-tuning scripts.</p>
   <p class="why">This repo curates skills for a living; the official skill-authoring workflow belongs in it.</p>
   <div class="meta"><span>License: Apache-2.0</span><span>★ 187,211 at import</span></div>
   
-  <footer><a href="https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/skill-creator" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="strategic-compact strategic compact suggests manual context compaction at logical task-phase boundaries, so long sessions compact deliberately instead of at arbitrary auto-compaction points. long agent sessions die at context limits; compacting at phase boundaries keeps the working thread coherent across a whole build. development affaan-m/ecc">
+  <div class="tags"><button class="tag" data-tag="harness">#harness</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/skill-creator" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/skill-creator" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="tokens harness" data-special="" data-search="strategic-compact strategic compact suggests manual context compaction at logical task-phase boundaries, so long sessions compact deliberately instead of at arbitrary auto-compaction points. long agent sessions die at context limits; compacting at phase boundaries keeps the working thread coherent across a whole build. development tokens harness  affaan-m/ecc">
   <h3>Strategic Compact <span class="badge cat">development</span></h3>
   <p class="desc">Suggests manual context compaction at logical task-phase boundaries, so long sessions compact deliberately instead of at arbitrary auto-compaction points.</p>
   <p class="why">Long agent sessions die at context limits; compacting at phase boundaries keeps the working thread coherent across a whole build.</p>
   <div class="meta"><span>License: MIT</span><span>★ 296,787 at import</span></div>
   <div class="req"><span>Context-compaction harness</span></div>
-  <footer><a href="https://github.com/affaan-m/ECC/tree/b38be6a7f6350964d59328b52f0624e1d1d552d1/.agents/skills/strategic-compact" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="subagent-driven-development subagent-driven-development executes an implementation plan with fresh subagents per task, with spec and quality review gates between tasks. the execution engine for writing-plans in multi-agent harnesses; how the owner&#x27;s bigger builds actually get run. development obra/superpowers">
+  <div class="tags"><button class="tag" data-tag="tokens">#tokens</button><button class="tag" data-tag="harness">#harness</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/strategic-compact" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/affaan-m/ECC/tree/b38be6a7f6350964d59328b52f0624e1d1d552d1/.agents/skills/strategic-compact" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="harness workflow" data-special="" data-search="subagent-driven-development subagent-driven-development executes an implementation plan with fresh subagents per task, with spec and quality review gates between tasks. the execution engine for writing-plans in multi-agent harnesses; how the owner&#x27;s bigger builds actually get run. development harness workflow  obra/superpowers">
   <h3>subagent-driven-development <span class="badge cat">development</span></h3>
   <p class="desc">Executes an implementation plan with fresh subagents per task, with spec and quality review gates between tasks.</p>
   <p class="why">The execution engine for writing-plans in multi-agent harnesses; how the owner&#x27;s bigger builds actually get run.</p>
   <div class="meta"><span>License: MIT</span><span>★ 312,043 at import</span></div>
   <div class="req"><span>Subagent-capable harness</span></div>
-  <footer><a href="https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/subagent-driven-development" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="systematic-debugging systematic-debugging a root-cause-first debugging method: reproduce, isolate, and prove the cause before changing any code. ends guess-and-patch debugging loops; pairs with this project&#x27;s verify-against-real-behavior rule. development obra/superpowers">
+  <div class="tags"><button class="tag" data-tag="harness">#harness</button><button class="tag" data-tag="workflow">#workflow</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/subagent-driven-development" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/subagent-driven-development" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="workflow" data-special="" data-search="systematic-debugging systematic-debugging a root-cause-first debugging method: reproduce, isolate, and prove the cause before changing any code. ends guess-and-patch debugging loops; pairs with this project&#x27;s verify-against-real-behavior rule. development workflow  obra/superpowers">
   <h3>systematic-debugging <span class="badge cat">development</span></h3>
   <p class="desc">A root-cause-first debugging method: reproduce, isolate, and prove the cause before changing any code.</p>
   <p class="why">Ends guess-and-patch debugging loops; pairs with this project&#x27;s verify-against-real-behavior rule.</p>
   <div class="meta"><span>License: MIT</span><span>★ 312,043 at import</span></div>
   
-  <footer><a href="https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/systematic-debugging" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="test-driven-development test-driven-development guides red-green-refactor tdd: write the failing test first, make it pass with the smallest change, then refactor. proven discipline from the most-starred source in this collection; keeps agent-written code verified by construction. development obra/superpowers">
+  <div class="tags"><button class="tag" data-tag="workflow">#workflow</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/systematic-debugging" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/systematic-debugging" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="workflow" data-special="" data-search="test-driven-development test-driven-development guides red-green-refactor tdd: write the failing test first, make it pass with the smallest change, then refactor. proven discipline from the most-starred source in this collection; keeps agent-written code verified by construction. development workflow  obra/superpowers">
   <h3>test-driven-development <span class="badge cat">development</span></h3>
   <p class="desc">Guides red-green-refactor TDD: write the failing test first, make it pass with the smallest change, then refactor.</p>
   <p class="why">Proven discipline from the most-starred source in this collection; keeps agent-written code verified by construction.</p>
   <div class="meta"><span>License: MIT</span><span>★ 312,043 at import</span></div>
   
-  <footer><a href="https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/test-driven-development" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="threejs-fundamentals three.js fundamentals three.js scene setup done right: scenes and fog, cameras, the renderer and tone mapping, the animation loop, object hierarchies, transforms, core math, and cleanup, on webgl or webgpu/tsl. the fundamentals entry of the three.js set: scene, camera, and renderer mistakes are where 3d web work goes wrong first. development cloudai-x/threejs-skills">
+  <div class="tags"><button class="tag" data-tag="workflow">#workflow</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/test-driven-development" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/test-driven-development" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="3d react" data-special="" data-search="threejs-fundamentals three.js fundamentals three.js scene setup done right: scenes and fog, cameras, the renderer and tone mapping, the animation loop, object hierarchies, transforms, core math, and cleanup, on webgl or webgpu/tsl. the fundamentals entry of the three.js set: scene, camera, and renderer mistakes are where 3d web work goes wrong first. development 3d react  cloudai-x/threejs-skills">
   <h3>Three.js Fundamentals <span class="badge cat">development</span></h3>
   <p class="desc">Three.js scene setup done right: scenes and fog, cameras, the renderer and tone mapping, the animation loop, object hierarchies, transforms, core math, and cleanup, on WebGL or WebGPU/TSL.</p>
   <p class="why">The fundamentals entry of the Three.js set: scene, camera, and renderer mistakes are where 3D web work goes wrong first.</p>
   <div class="meta"><span>License: MIT</span><span>★ 3,962 at import</span></div>
   <div class="req"><span>Three.js project</span></div>
-  <footer><a href="https://github.com/CloudAI-X/threejs-skills/tree/0e181866f095b5f06d005133876e926515390d95/skills/threejs-fundamentals" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="using-git-worktrees using-git-worktrees sets up isolated git worktrees so parallel features, reviews, and experiments never collide in one working tree. the standard companion to plan-driven work; makes parallel agent work on the owner&#x27;s repos safe. development obra/superpowers">
+  <div class="tags"><button class="tag" data-tag="3d">#3d</button><button class="tag" data-tag="react">#react</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/threejs-fundamentals" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/CloudAI-X/threejs-skills/tree/0e181866f095b5f06d005133876e926515390d95/skills/threejs-fundamentals" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="harness" data-special="" data-search="using-git-worktrees using-git-worktrees sets up isolated git worktrees so parallel features, reviews, and experiments never collide in one working tree. the standard companion to plan-driven work; makes parallel agent work on the owner&#x27;s repos safe. development harness  obra/superpowers">
   <h3>using-git-worktrees <span class="badge cat">development</span></h3>
   <p class="desc">Sets up isolated git worktrees so parallel features, reviews, and experiments never collide in one working tree.</p>
   <p class="why">The standard companion to plan-driven work; makes parallel agent work on the owner&#x27;s repos safe.</p>
   <div class="meta"><span>License: MIT</span><span>★ 312,043 at import</span></div>
   <div class="req"><span>Git</span></div>
-  <footer><a href="https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/using-git-worktrees" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="vercel-react-best-practices vercel-react-best-practices vercel engineering&#x27;s react and next.js performance rules: 70 prioritized guidelines across data fetching, bundles, rendering, and re-renders. the canonical react performance rulebook; applies to the owner&#x27;s next.js work (eggino) and any react build. development vercel-labs/agent-skills">
+  <div class="tags"><button class="tag" data-tag="harness">#harness</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/using-git-worktrees" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/using-git-worktrees" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="react" data-special="" data-search="vercel-react-best-practices vercel-react-best-practices vercel engineering&#x27;s react and next.js performance rules: 70 prioritized guidelines across data fetching, bundles, rendering, and re-renders. the canonical react performance rulebook; applies to the owner&#x27;s next.js work (eggino) and any react build. development react  vercel-labs/agent-skills">
   <h3>vercel-react-best-practices <span class="badge cat">development</span></h3>
   <p class="desc">Vercel Engineering&#x27;s React and Next.js performance rules: 70 prioritized guidelines across data fetching, bundles, rendering, and re-renders.</p>
   <p class="why">The canonical React performance rulebook; applies to the owner&#x27;s Next.js work (Eggino) and any React build.</p>
   <div class="meta"><span>License: MIT</span><span>★ 33,506 at import</span></div>
   
-  <footer><a href="https://github.com/vercel-labs/agent-skills/tree/1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62/skills/react-best-practices" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="verification-before-completion verification-before-completion requires fresh evidence (test runs, command output, live checks) before any claim that work is done or fixed. encodes the rule that shipped means verified; cheap insurance against false &#x27;done&#x27; reports. development obra/superpowers">
+  <div class="tags"><button class="tag" data-tag="react">#react</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/vercel-react-best-practices" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/vercel-labs/agent-skills/tree/1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62/skills/react-best-practices" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="workflow" data-special="" data-search="verification-before-completion verification-before-completion requires fresh evidence (test runs, command output, live checks) before any claim that work is done or fixed. encodes the rule that shipped means verified; cheap insurance against false &#x27;done&#x27; reports. development workflow  obra/superpowers">
   <h3>verification-before-completion <span class="badge cat">development</span></h3>
   <p class="desc">Requires fresh evidence (test runs, command output, live checks) before any claim that work is done or fixed.</p>
   <p class="why">Encodes the rule that shipped means verified; cheap insurance against false &#x27;done&#x27; reports.</p>
   <div class="meta"><span>License: MIT</span><span>★ 312,043 at import</span></div>
   
-  <footer><a href="https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/verification-before-completion" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="webapp-testing webapp-testing tests local web apps with playwright: manages the dev server, drives a real browser, and inspects console, dom, and screenshots. gives agents a real-browser check for the owner&#x27;s web apps and artifacts; catches what unit tests cannot see. development anthropics/skills">
+  <div class="tags"><button class="tag" data-tag="workflow">#workflow</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/verification-before-completion" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/verification-before-completion" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="automation" data-special="" data-search="webapp-testing webapp-testing tests local web apps with playwright: manages the dev server, drives a real browser, and inspects console, dom, and screenshots. gives agents a real-browser check for the owner&#x27;s web apps and artifacts; catches what unit tests cannot see. development automation  anthropics/skills">
   <h3>webapp-testing <span class="badge cat">development</span></h3>
   <p class="desc">Tests local web apps with Playwright: manages the dev server, drives a real browser, and inspects console, DOM, and screenshots.</p>
   <p class="why">Gives agents a real-browser check for the owner&#x27;s web apps and artifacts; catches what unit tests cannot see.</p>
   <div class="meta"><span>License: Apache-2.0</span><span>★ 187,211 at import</span></div>
   <div class="req"><span>Python 3</span><span>Playwright</span><span>Local dev server</span></div>
-  <footer><a href="https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/webapp-testing" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="workers-best-practices workers-best-practices cloudflare&#x27;s official best practices for workers: configuration, runtime patterns, and platform api guidance. nearly all of the owner&#x27;s production code runs on workers (ivai, tradeagent, proxiv3); this is the vendor&#x27;s own guidance. development cloudflare/skills">
+  <div class="tags"><button class="tag" data-tag="automation">#automation</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/webapp-testing" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/webapp-testing" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="api" data-special="" data-search="workers-best-practices workers-best-practices cloudflare&#x27;s official best practices for workers: configuration, runtime patterns, and platform api guidance. nearly all of the owner&#x27;s production code runs on workers (ivai, tradeagent, proxiv3); this is the vendor&#x27;s own guidance. development api  cloudflare/skills">
   <h3>workers-best-practices <span class="badge cat">development</span></h3>
   <p class="desc">Cloudflare&#x27;s official best practices for Workers: configuration, runtime patterns, and platform API guidance.</p>
   <p class="why">Nearly all of the owner&#x27;s production code runs on Workers (IVAI, TradeAgent, Proxiv3); this is the vendor&#x27;s own guidance.</p>
   <div class="meta"><span>License: Apache-2.0</span><span>★ 3,275 at import</span></div>
   
-  <footer><a href="https://github.com/cloudflare/skills/tree/1f2cd0a19588e2c6197c91dd7c71729df1fb6156/skills/workers-best-practices" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="development" data-search="writing-plans writing-plans turns an approved spec or design into a detailed, step-by-step implementation plan that can be executed without guessing. the missing half of the brainstorming workflow already in this repo; makes multi-step builds land first-try instead of drifting. development obra/superpowers">
+  <div class="tags"><button class="tag" data-tag="api">#api</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/workers-best-practices" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/cloudflare/skills/tree/1f2cd0a19588e2c6197c91dd7c71729df1fb6156/skills/workers-best-practices" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22d3ee" data-category="development" data-tags="workflow" data-special="" data-search="writing-plans writing-plans turns an approved spec or design into a detailed, step-by-step implementation plan that can be executed without guessing. the missing half of the brainstorming workflow already in this repo; makes multi-step builds land first-try instead of drifting. development workflow  obra/superpowers">
   <h3>writing-plans <span class="badge cat">development</span></h3>
   <p class="desc">Turns an approved spec or design into a detailed, step-by-step implementation plan that can be executed without guessing.</p>
   <p class="why">The missing half of the brainstorming workflow already in this repo; makes multi-step builds land first-try instead of drifting.</p>
   <div class="meta"><span>License: MIT</span><span>★ 312,043 at import</span></div>
   
-  <footer><a href="https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/writing-plans" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="design" data-search="algorithmic-art algorithmic-art creates generative art with p5.js: seeded algorithms, flow fields, and particle systems delivered as interactive html pieces. the distinctive one in anthropic&#x27;s set: real generative-art capability, not another text workflow; useful for visuals and covers. design anthropics/skills">
-  <h3>algorithmic-art <span class="badge cat">design</span></h3>
+  <div class="tags"><button class="tag" data-tag="workflow">#workflow</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/development/writing-plans" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/writing-plans" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card special" style="--catc:#ff2e63" data-category="design" data-tags="generative" data-special="1" data-search="algorithmic-art algorithmic-art creates generative art with p5.js: seeded algorithms, flow fields, and particle systems delivered as interactive html pieces. the distinctive one in anthropic&#x27;s set: real generative-art capability, not another text workflow; useful for visuals and covers. design generative special anthropics/skills">
+  <h3>algorithmic-art <span class="badge star">⭐ special</span><span class="badge cat">design</span></h3>
   <p class="desc">Creates generative art with p5.js: seeded algorithms, flow fields, and particle systems delivered as interactive HTML pieces.</p>
   <p class="why">The distinctive one in Anthropic&#x27;s set: real generative-art capability, not another text workflow; useful for visuals and covers.</p>
   <div class="meta"><span>License: Apache-2.0</span><span>★ 187,211 at import</span></div>
   
-  <footer><a href="https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/algorithmic-art" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="design" data-search="anatomy anatomy builds crafted, interactive isometric svg figures that explain a technical idea as a physical machine, with worked examples and a geometry-audit kit. precise technical illustration as explanation — a capability neither the generative-art skill nor the ui set covers. design wheresryan22/anatomy">
-  <h3>anatomy <span class="badge cat">design</span></h3>
+  <div class="tags"><button class="tag" data-tag="generative">#generative</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/design/algorithmic-art" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/algorithmic-art" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card special" style="--catc:#ff2e63" data-category="design" data-tags="generative" data-special="1" data-search="anatomy anatomy builds crafted, interactive isometric svg figures that explain a technical idea as a physical machine, with worked examples and a geometry-audit kit. precise technical illustration as explanation — a capability neither the generative-art skill nor the ui set covers. design generative special wheresryan22/anatomy">
+  <h3>anatomy <span class="badge star">⭐ special</span><span class="badge cat">design</span></h3>
   <p class="desc">Builds crafted, interactive isometric SVG figures that explain a technical idea as a physical machine, with worked examples and a geometry-audit kit.</p>
   <p class="why">Precise technical illustration as explanation — a capability neither the generative-art skill nor the UI set covers.</p>
   <div class="meta"><span>License: MIT</span><span>★ 24,607 at import</span></div>
   <div class="req"><span>Node 20.10+</span><span>Chrome/Chromium</span></div>
-  <footer><a href="https://github.com/wheresryan22/anatomy/tree/1482e8469b0a9e0d8cc18ea2740a01423d29ae80" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="design" data-search="banner-design banner design designs banners for social, ads, website heroes, and print, with multiple art-direction options. banners and covers are a recurring need for channels and launches. design nextlevelbuilder/ui-ux-pro-max-skill">
+  <div class="tags"><button class="tag" data-tag="generative">#generative</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/design/anatomy" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/wheresryan22/anatomy/tree/1482e8469b0a9e0d8cc18ea2740a01423d29ae80" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ff2e63" data-category="design" data-tags="content" data-special="" data-search="banner-design banner design designs banners for social, ads, website heroes, and print, with multiple art-direction options. banners and covers are a recurring need for channels and launches. design content  nextlevelbuilder/ui-ux-pro-max-skill">
   <h3>Banner Design <span class="badge cat">design</span></h3>
   <p class="desc">Designs banners for social, ads, website heroes, and print, with multiple art-direction options.</p>
   <p class="why">Banners and covers are a recurring need for channels and launches.</p>
   <div class="meta"><span>License: MIT</span><span>★ 144,911 at import</span></div>
   
-  <footer><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/dd9a1b4cf9f67ca2e326f646d93e101b2778db30/.claude/skills/banner-design" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="design" data-search="blender-web-3d blender web 3d drives blender headless or via mcp to build, modify, render, and optimize 3d models, then publishes them as fast three.js/next.js web experiences with modern color, shader, and compression pipelines. the only blender-to-web pipeline in the collection: real 3d asset craft with optimization and deploy covered, plus a runnable demo to start from. design czlonkowski/blender-web-3d-skill">
+  <div class="tags"><button class="tag" data-tag="content">#content</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/design/banner-design" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/dd9a1b4cf9f67ca2e326f646d93e101b2778db30/.claude/skills/banner-design" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ff2e63" data-category="design" data-tags="3d" data-special="" data-search="blender-web-3d blender web 3d drives blender headless or via mcp to build, modify, render, and optimize 3d models, then publishes them as fast three.js/next.js web experiences with modern color, shader, and compression pipelines. the only blender-to-web pipeline in the collection: real 3d asset craft with optimization and deploy covered, plus a runnable demo to start from. design 3d  czlonkowski/blender-web-3d-skill">
   <h3>Blender Web 3D <span class="badge cat">design</span></h3>
   <p class="desc">Drives Blender headless or via MCP to build, modify, render, and optimize 3D models, then publishes them as fast Three.js/Next.js web experiences with modern color, shader, and compression pipelines.</p>
   <p class="why">The only Blender-to-web pipeline in the collection: real 3D asset craft with optimization and deploy covered, plus a runnable demo to start from.</p>
   <div class="meta"><span>License: MIT</span><span>★ 4 at import</span></div>
   <div class="req"><span>Blender 4.x/5.x</span><span>Node.js 20+</span></div>
-  <footer><a href="https://github.com/czlonkowski/blender-web-3d-skill/tree/858762f1add7f1d9f5dcb1fb1d0b55f71906bf0d/plugins/blender-web-3d/skills/blender-web-3d" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="design" data-search="brand brand brand voice, visual identity, messaging frameworks, and consistency checks for branded content. keeps channel and product visuals and tone recognizably on-brand. design nextlevelbuilder/ui-ux-pro-max-skill">
+  <div class="tags"><button class="tag" data-tag="3d">#3d</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/design/blender-web-3d" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/czlonkowski/blender-web-3d-skill/tree/858762f1add7f1d9f5dcb1fb1d0b55f71906bf0d/plugins/blender-web-3d/skills/blender-web-3d" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ff2e63" data-category="design" data-tags="content" data-special="" data-search="brand brand brand voice, visual identity, messaging frameworks, and consistency checks for branded content. keeps channel and product visuals and tone recognizably on-brand. design content  nextlevelbuilder/ui-ux-pro-max-skill">
   <h3>Brand <span class="badge cat">design</span></h3>
   <p class="desc">Brand voice, visual identity, messaging frameworks, and consistency checks for branded content.</p>
   <p class="why">Keeps channel and product visuals and tone recognizably on-brand.</p>
   <div class="meta"><span>License: MIT</span><span>★ 144,911 at import</span></div>
   
-  <footer><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/dd9a1b4cf9f67ca2e326f646d93e101b2778db30/.claude/skills/brand" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="design" data-search="design-system design system design-token architecture (primitive to semantic to component), component specs, and brand-compliant slides. keeps multi-screen products visually consistent as they grow. design nextlevelbuilder/ui-ux-pro-max-skill">
+  <div class="tags"><button class="tag" data-tag="content">#content</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/design/brand" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/dd9a1b4cf9f67ca2e326f646d93e101b2778db30/.claude/skills/brand" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ff2e63" data-category="design" data-tags="automation design-systems" data-special="" data-search="color-contrast color-contrast measures color contrast with wcag 2.x ratios and apca, audits a codebase or stylesheet for failing pairs (including dark mode), and repairs failures with the smallest possible color change. the executable half of color accessibility: it audits real stylesheets, computes real ratios, and fixes failures — measurement work no resident skill does. design automation design-systems  hendurhance/color-contrast">
+  <h3>color-contrast <span class="badge cat">design</span></h3>
+  <p class="desc">Measures color contrast with WCAG 2.x ratios and APCA, audits a codebase or stylesheet for failing pairs (including dark mode), and repairs failures with the smallest possible color change.</p>
+  <p class="why">The executable half of color accessibility: it audits real stylesheets, computes real ratios, and fixes failures — measurement work no resident skill does.</p>
+  <div class="meta"><span>License: MIT</span><span>★ 0 at import</span></div>
+  <div class="req"><span>Python 3</span></div>
+  <div class="tags"><button class="tag" data-tag="automation">#automation</button><button class="tag" data-tag="design-systems">#design-systems</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/design/color-contrast" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/hendurhance/color-contrast/tree/f301f1c07a472108e179ddeac657b6fb1605af07" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card special" style="--catc:#ff2e63" data-category="design" data-tags="design-systems generative" data-special="1" data-search="color-expert color-expert deep color expertise: color spaces (oklch, cielab), palette and ramp generation, harmony systems, color naming, pigment and print-vs-screen behavior, and contrast verification. the palette data elsewhere is lookup-only; this is the craft of making and judging color — perceptually uniform ramps, naming, and verified contrast. design design-systems generative special meodai/skill.color-expert">
+  <h3>color-expert <span class="badge star">⭐ special</span><span class="badge cat">design</span></h3>
+  <p class="desc">Deep color expertise: color spaces (OKLCH, CIELAB), palette and ramp generation, harmony systems, color naming, pigment and print-vs-screen behavior, and contrast verification.</p>
+  <p class="why">The palette data elsewhere is lookup-only; this is the craft of making and judging color — perceptually uniform ramps, naming, and verified contrast.</p>
+  <div class="meta"><span>License: CC-BY-4.0</span><span>★ 631 at import</span></div>
+  
+  <div class="tags"><button class="tag" data-tag="design-systems">#design-systems</button><button class="tag" data-tag="generative">#generative</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/design/color-expert" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/meodai/skill.color-expert/tree/5bf7c7704d56bccc6aeea38c36bcf449abe56a6c" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ff2e63" data-category="design" data-tags="design-systems" data-special="" data-search="design-system design system design-token architecture (primitive to semantic to component), component specs, and brand-compliant slides. keeps multi-screen products visually consistent as they grow. design design-systems  nextlevelbuilder/ui-ux-pro-max-skill">
   <h3>Design System <span class="badge cat">design</span></h3>
   <p class="desc">Design-token architecture (primitive to semantic to component), component specs, and brand-compliant slides.</p>
   <p class="why">Keeps multi-screen products visually consistent as they grow.</p>
   <div class="meta"><span>License: MIT</span><span>★ 144,911 at import</span></div>
   
-  <footer><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/dd9a1b4cf9f67ca2e326f646d93e101b2778db30/.claude/skills/design-system" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="design" data-search="slides slides creates strategic html presentations with charts, design tokens, and responsive layouts. turns briefs and reports into presentable decks without design software. design nextlevelbuilder/ui-ux-pro-max-skill">
+  <div class="tags"><button class="tag" data-tag="design-systems">#design-systems</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/design/design-system" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/dd9a1b4cf9f67ca2e326f646d93e101b2778db30/.claude/skills/design-system" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ff2e63" data-category="design" data-tags="content design-systems" data-special="" data-search="slides slides creates strategic html presentations with charts, design tokens, and responsive layouts. turns briefs and reports into presentable decks without design software. design content design-systems  nextlevelbuilder/ui-ux-pro-max-skill">
   <h3>Slides <span class="badge cat">design</span></h3>
   <p class="desc">Creates strategic HTML presentations with charts, design tokens, and responsive layouts.</p>
   <p class="why">Turns briefs and reports into presentable decks without design software.</p>
   <div class="meta"><span>License: MIT</span><span>★ 144,911 at import</span></div>
   
-  <footer><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/dd9a1b4cf9f67ca2e326f646d93e101b2778db30/.claude/skills/slides" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="design" data-search="ui-styling ui styling builds accessible uis with shadcn/ui, radix, and tailwind, plus canvas-based visual designs. the practical implementation partner to the design-system rules. design nextlevelbuilder/ui-ux-pro-max-skill">
+  <div class="tags"><button class="tag" data-tag="content">#content</button><button class="tag" data-tag="design-systems">#design-systems</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/design/slides" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/dd9a1b4cf9f67ca2e326f646d93e101b2778db30/.claude/skills/slides" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ff2e63" data-category="design" data-tags="design-systems react" data-special="" data-search="ui-styling ui styling builds accessible uis with shadcn/ui, radix, and tailwind, plus canvas-based visual designs. the practical implementation partner to the design-system rules. design design-systems react  nextlevelbuilder/ui-ux-pro-max-skill">
   <h3>Ui Styling <span class="badge cat">design</span></h3>
   <p class="desc">Builds accessible UIs with shadcn/ui, Radix, and Tailwind, plus canvas-based visual designs.</p>
   <p class="why">The practical implementation partner to the design-system rules.</p>
   <div class="meta"><span>License: MIT</span><span>★ 144,911 at import</span></div>
   
-  <footer><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/dd9a1b4cf9f67ca2e326f646d93e101b2778db30/.claude/skills/ui-styling" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="design" data-search="ui-ux-pro-max ui/ux pro max design intelligence for web, mobile, and desktop uis, with searchable local data on styles, palettes, font pairings, ux guidelines, and stacks. gives interface work a real design database instead of guesswork; the flagship of the design set. design nextlevelbuilder/ui-ux-pro-max-skill">
-  <h3>UI/UX Pro Max <span class="badge cat">design</span></h3>
+  <div class="tags"><button class="tag" data-tag="design-systems">#design-systems</button><button class="tag" data-tag="react">#react</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/design/ui-styling" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/dd9a1b4cf9f67ca2e326f646d93e101b2778db30/.claude/skills/ui-styling" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card special" style="--catc:#ff2e63" data-category="design" data-tags="design-systems" data-special="1" data-search="ui-ux-pro-max ui/ux pro max design intelligence for web, mobile, and desktop uis, with searchable local data on styles, palettes, font pairings, ux guidelines, and stacks. gives interface work a real design database instead of guesswork; the flagship of the design set. design design-systems special nextlevelbuilder/ui-ux-pro-max-skill">
+  <h3>UI/UX Pro Max <span class="badge star">⭐ special</span><span class="badge cat">design</span></h3>
   <p class="desc">Design intelligence for web, mobile, and desktop UIs, with searchable local data on styles, palettes, font pairings, UX guidelines, and stacks.</p>
   <p class="why">Gives interface work a real design database instead of guesswork; the flagship of the design set.</p>
   <div class="meta"><span>License: MIT</span><span>★ 144,911 at import</span></div>
   
-  <footer><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/dd9a1b4cf9f67ca2e326f646d93e101b2778db30/.claude/skills/ui-ux-pro-max" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="marketing" data-search="community-marketing community marketing builds and leverages online communities - discord, slack, forums - for product growth and loyalty. community-led growth fits bot and channel products especially well. marketing coreyhaines31/marketingskills">
+  <div class="tags"><button class="tag" data-tag="design-systems">#design-systems</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/design/ui-ux-pro-max" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/dd9a1b4cf9f67ca2e326f646d93e101b2778db30/.claude/skills/ui-ux-pro-max" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ffd319" data-category="marketing" data-tags="social-data content" data-special="" data-search="community-marketing community marketing builds and leverages online communities - discord, slack, forums - for product growth and loyalty. community-led growth fits bot and channel products especially well. marketing social-data content  coreyhaines31/marketingskills">
   <h3>Community Marketing <span class="badge cat">marketing</span></h3>
   <p class="desc">Builds and leverages online communities - Discord, Slack, forums - for product growth and loyalty.</p>
   <p class="why">Community-led growth fits bot and channel products especially well.</p>
   <div class="meta"><span>License: MIT</span><span>★ 58,381 at import</span></div>
   
-  <footer><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/community-marketing" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="marketing" data-search="competitor-profiling competitor profiling researches competitors from their urls and produces structured profile dossiers. know exactly what rivals offer and how they position before you ship. marketing coreyhaines31/marketingskills">
+  <div class="tags"><button class="tag" data-tag="social-data">#social-data</button><button class="tag" data-tag="content">#content</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/marketing/community-marketing" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/community-marketing" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ffd319" data-category="marketing" data-tags="competitor research-methods" data-special="" data-search="competitor-profiling competitor profiling researches competitors from their urls and produces structured profile dossiers. know exactly what rivals offer and how they position before you ship. marketing competitor research-methods  coreyhaines31/marketingskills">
   <h3>Competitor Profiling <span class="badge cat">marketing</span></h3>
   <p class="desc">Researches competitors from their URLs and produces structured profile dossiers.</p>
   <p class="why">Know exactly what rivals offer and how they position before you ship.</p>
   <div class="meta"><span>License: MIT</span><span>★ 58,381 at import</span></div>
   
-  <footer><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/competitor-profiling" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="marketing" data-search="content-strategy content strategy plans what content to create: pillars, topic clusters, editorial calendars, and roadmaps. deciding what to publish beats publishing at random, for blogs and channels alike. marketing coreyhaines31/marketingskills">
+  <div class="tags"><button class="tag" data-tag="competitor">#competitor</button><button class="tag" data-tag="research-methods">#research-methods</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/marketing/competitor-profiling" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/competitor-profiling" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ffd319" data-category="marketing" data-tags="content" data-special="" data-search="content-strategy content strategy plans what content to create: pillars, topic clusters, editorial calendars, and roadmaps. deciding what to publish beats publishing at random, for blogs and channels alike. marketing content  coreyhaines31/marketingskills">
   <h3>Content Strategy <span class="badge cat">marketing</span></h3>
   <p class="desc">Plans what content to create: pillars, topic clusters, editorial calendars, and roadmaps.</p>
   <p class="why">Deciding what to publish beats publishing at random, for blogs and channels alike.</p>
   <div class="meta"><span>License: MIT</span><span>★ 58,381 at import</span></div>
   
-  <footer><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/content-strategy" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="marketing" data-search="copy-editing copy editing edits and refreshes existing marketing copy: tightening, de-slopping, and sharpening without a rewrite. most real work is improving copy that already exists, not starting from zero. marketing coreyhaines31/marketingskills">
+  <div class="tags"><button class="tag" data-tag="content">#content</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/marketing/content-strategy" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/content-strategy" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ffd319" data-category="marketing" data-tags="content" data-special="" data-search="copy-editing copy editing edits and refreshes existing marketing copy: tightening, de-slopping, and sharpening without a rewrite. most real work is improving copy that already exists, not starting from zero. marketing content  coreyhaines31/marketingskills">
   <h3>Copy Editing <span class="badge cat">marketing</span></h3>
   <p class="desc">Edits and refreshes existing marketing copy: tightening, de-slopping, and sharpening without a rewrite.</p>
   <p class="why">Most real work is improving copy that already exists, not starting from zero.</p>
   <div class="meta"><span>License: MIT</span><span>★ 58,381 at import</span></div>
   
-  <footer><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/copy-editing" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="marketing" data-search="copywriting copywriting writes and improves marketing copy for pages: headlines, ctas, value propositions, and hero sections. sharp copy is the cheapest conversion lever for landing pages and product posts. marketing coreyhaines31/marketingskills">
+  <div class="tags"><button class="tag" data-tag="content">#content</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/marketing/copy-editing" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/copy-editing" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ffd319" data-category="marketing" data-tags="content" data-special="" data-search="copywriting copywriting writes and improves marketing copy for pages: headlines, ctas, value propositions, and hero sections. sharp copy is the cheapest conversion lever for landing pages and product posts. marketing content  coreyhaines31/marketingskills">
   <h3>Copywriting <span class="badge cat">marketing</span></h3>
   <p class="desc">Writes and improves marketing copy for pages: headlines, CTAs, value propositions, and hero sections.</p>
   <p class="why">Sharp copy is the cheapest conversion lever for landing pages and product posts.</p>
   <div class="meta"><span>License: MIT</span><span>★ 58,381 at import</span></div>
   
-  <footer><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/copywriting" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="marketing" data-search="customer-research customer research runs and synthesizes customer research: interviews, surveys, review mining, voice-of-customer, and jtbd. decisions grounded in real customer language outperform opinion. marketing coreyhaines31/marketingskills">
+  <div class="tags"><button class="tag" data-tag="content">#content</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/marketing/copywriting" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/copywriting" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ffd319" data-category="marketing" data-tags="research-methods" data-special="" data-search="customer-research customer research runs and synthesizes customer research: interviews, surveys, review mining, voice-of-customer, and jtbd. decisions grounded in real customer language outperform opinion. marketing research-methods  coreyhaines31/marketingskills">
   <h3>Customer Research <span class="badge cat">marketing</span></h3>
   <p class="desc">Runs and synthesizes customer research: interviews, surveys, review mining, voice-of-customer, and JTBD.</p>
   <p class="why">Decisions grounded in real customer language outperform opinion.</p>
   <div class="meta"><span>License: MIT</span><span>★ 58,381 at import</span></div>
   
-  <footer><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/customer-research" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="marketing" data-search="launch launch plans product launches and feature announcements: checklists, go-to-market, waitlists, and release strategy. launches are one-shot events; a checklist prevents unforced errors. marketing coreyhaines31/marketingskills">
+  <div class="tags"><button class="tag" data-tag="research-methods">#research-methods</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/marketing/customer-research" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/customer-research" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ffd319" data-category="marketing" data-tags="workflow" data-special="" data-search="launch launch plans product launches and feature announcements: checklists, go-to-market, waitlists, and release strategy. launches are one-shot events; a checklist prevents unforced errors. marketing workflow  coreyhaines31/marketingskills">
   <h3>Launch <span class="badge cat">marketing</span></h3>
   <p class="desc">Plans product launches and feature announcements: checklists, go-to-market, waitlists, and release strategy.</p>
   <p class="why">Launches are one-shot events; a checklist prevents unforced errors.</p>
   <div class="meta"><span>License: MIT</span><span>★ 58,381 at import</span></div>
   
-  <footer><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/launch" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="marketing" data-search="marketing-ideas marketing ideas a bank of proven marketing and growth tactics for software products, matched to the situation. the fastest way out of &#x27;we need growth but don&#x27;t know what to try&#x27;. marketing coreyhaines31/marketingskills">
+  <div class="tags"><button class="tag" data-tag="workflow">#workflow</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/marketing/launch" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/launch" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ffd319" data-category="marketing" data-tags="content" data-special="" data-search="marketing-ideas marketing ideas a bank of proven marketing and growth tactics for software products, matched to the situation. the fastest way out of &#x27;we need growth but don&#x27;t know what to try&#x27;. marketing content  coreyhaines31/marketingskills">
   <h3>Marketing Ideas <span class="badge cat">marketing</span></h3>
   <p class="desc">A bank of proven marketing and growth tactics for software products, matched to the situation.</p>
   <p class="why">The fastest way out of &#x27;we need growth but don&#x27;t know what to try&#x27;.</p>
   <div class="meta"><span>License: MIT</span><span>★ 58,381 at import</span></div>
   
-  <footer><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/marketing-ideas" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="marketing" data-search="marketing-psychology marketing psychology applies behavioral science and mental models - anchoring, social proof, scarcity, framing - to marketing. explains why people buy, so offers and copy stop being guesswork. marketing coreyhaines31/marketingskills">
+  <div class="tags"><button class="tag" data-tag="content">#content</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/marketing/marketing-ideas" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/marketing-ideas" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ffd319" data-category="marketing" data-tags="content" data-special="" data-search="marketing-psychology marketing psychology applies behavioral science and mental models - anchoring, social proof, scarcity, framing - to marketing. explains why people buy, so offers and copy stop being guesswork. marketing content  coreyhaines31/marketingskills">
   <h3>Marketing Psychology <span class="badge cat">marketing</span></h3>
   <p class="desc">Applies behavioral science and mental models - anchoring, social proof, scarcity, framing - to marketing.</p>
   <p class="why">Explains why people buy, so offers and copy stop being guesswork.</p>
   <div class="meta"><span>License: MIT</span><span>★ 58,381 at import</span></div>
   
-  <footer><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/marketing-psychology" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="marketing" data-search="offers offers designs the offer itself: value framing, bonus stacks, guarantees, scarcity, and payment structure. a better offer beats better ads; core skill for anything sold or promoted. marketing coreyhaines31/marketingskills">
+  <div class="tags"><button class="tag" data-tag="content">#content</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/marketing/marketing-psychology" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/marketing-psychology" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ffd319" data-category="marketing" data-tags="content" data-special="" data-search="offers offers designs the offer itself: value framing, bonus stacks, guarantees, scarcity, and payment structure. a better offer beats better ads; core skill for anything sold or promoted. marketing content  coreyhaines31/marketingskills">
   <h3>Offers <span class="badge cat">marketing</span></h3>
   <p class="desc">Designs the offer itself: value framing, bonus stacks, guarantees, scarcity, and payment structure.</p>
   <p class="why">A better offer beats better ads; core skill for anything sold or promoted.</p>
   <div class="meta"><span>License: MIT</span><span>★ 58,381 at import</span></div>
   
-  <footer><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/offers" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="marketing" data-search="product-marketing product marketing creates the product-marketing context doc - positioning, audience, icp, brand voice - that the other marketing skills build on. the foundation of the marketing set: write the context once, reuse it in every campaign. marketing coreyhaines31/marketingskills">
+  <div class="tags"><button class="tag" data-tag="content">#content</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/marketing/offers" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/offers" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ffd319" data-category="marketing" data-tags="content" data-special="" data-search="product-marketing product marketing creates the product-marketing context doc - positioning, audience, icp, brand voice - that the other marketing skills build on. the foundation of the marketing set: write the context once, reuse it in every campaign. marketing content  coreyhaines31/marketingskills">
   <h3>Product Marketing <span class="badge cat">marketing</span></h3>
   <p class="desc">Creates the product-marketing context doc - positioning, audience, ICP, brand voice - that the other marketing skills build on.</p>
   <p class="why">The foundation of the marketing set: write the context once, reuse it in every campaign.</p>
   <div class="meta"><span>License: MIT</span><span>★ 58,381 at import</span></div>
   
-  <footer><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/product-marketing" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="marketing" data-search="social social creates, schedules, and optimizes social media content across the major platforms. directly useful for running and growing social and channel presences. marketing coreyhaines31/marketingskills">
+  <div class="tags"><button class="tag" data-tag="content">#content</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/marketing/product-marketing" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/product-marketing" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#ffd319" data-category="marketing" data-tags="social-data content" data-special="" data-search="social social creates, schedules, and optimizes social media content across the major platforms. directly useful for running and growing social and channel presences. marketing social-data content  coreyhaines31/marketingskills">
   <h3>Social <span class="badge cat">marketing</span></h3>
   <p class="desc">Creates, schedules, and optimizes social media content across the major platforms.</p>
   <p class="why">Directly useful for running and growing social and channel presences.</p>
   <div class="meta"><span>License: MIT</span><span>★ 58,381 at import</span></div>
   
-  <footer><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/social" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="media" data-search="cinematic-director cinematic director directs film and ai video like a working director: script breakdowns, beat sheets, blocking and staging, shot lists, storyboard and motion prompts, continuity bibles, and per-model adapters. the filmmaking-craft representative: executable direction for a camera crew or a generation queue, beyond the video skill&#x27;s strategy-level coverage. media 2598588975/skills8.7">
+  <div class="tags"><button class="tag" data-tag="social-data">#social-data</button><button class="tag" data-tag="content">#content</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/marketing/social" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/social" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#a855f7" data-category="media" data-tags="video generative" data-special="" data-search="cinematic-director cinematic director directs film and ai video like a working director: script breakdowns, beat sheets, blocking and staging, shot lists, storyboard and motion prompts, continuity bibles, and per-model adapters. the filmmaking-craft representative: executable direction for a camera crew or a generation queue, beyond the video skill&#x27;s strategy-level coverage. media video generative  2598588975/skills8.7">
   <h3>Cinematic Director <span class="badge linkonly">link-only</span><span class="badge cat">media</span></h3>
   <p class="desc">Directs film and AI video like a working director: script breakdowns, beat sheets, blocking and staging, shot lists, storyboard and motion prompts, continuity bibles, and per-model adapters.</p>
   <p class="why">The filmmaking-craft representative: executable direction for a camera crew or a generation queue, beyond the video skill&#x27;s strategy-level coverage.</p>
   <div class="meta"><span>License: no license declared</span><span>★ 1 at import</span></div>
   
-  <footer><a href="https://github.com/2598588975/skills8.7/tree/eaf80017c7c19c57884da971e7c230a46b39a661/skills/cinematic-director" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="media" data-search="ffmpeg-skill ffmpeg-skill a complete local ffmpeg editing system: 42 scripted tools to cut, join, reframe, caption, remove silence, check loudness and export audio/video. deterministic media-file work, fully local and scriptable — nothing else in prime skill touches actual audio or video files. media kajisho5/ffmpeg-skill">
+  <div class="tags"><button class="tag" data-tag="video">#video</button><button class="tag" data-tag="generative">#generative</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/media/cinematic-director" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/2598588975/skills8.7/tree/eaf80017c7c19c57884da971e7c230a46b39a661/skills/cinematic-director" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#a855f7" data-category="media" data-tags="video automation" data-special="" data-search="ffmpeg-skill ffmpeg-skill a complete local ffmpeg editing system: 42 scripted tools to cut, join, reframe, caption, remove silence, check loudness and export audio/video. deterministic media-file work, fully local and scriptable — nothing else in prime skill touches actual audio or video files. media video automation  kajisho5/ffmpeg-skill">
   <h3>ffmpeg-skill <span class="badge cat">media</span></h3>
   <p class="desc">A complete local FFmpeg editing system: 42 scripted tools to cut, join, reframe, caption, remove silence, check loudness and export audio/video.</p>
   <p class="why">Deterministic media-file work, fully local and scriptable — nothing else in Prime Skill touches actual audio or video files.</p>
   <div class="meta"><span>License: MIT</span><span>★ 4,475 at import</span></div>
   <div class="req"><span>FFmpeg 6.1+</span><span>Python 3.10+</span></div>
-  <footer><a href="https://github.com/kajisho5/ffmpeg-skill/tree/1ce2c186bf1dba96132d87274eee46df4f537e0e" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="media" data-search="remotion-best-practices remotion-best-practices remotion&#x27;s official best practices for programmatic video in react — markup, animation, captions, maps and interactivity done right. the motion cluster&#x27;s one representative: official, actively maintained engine craft, deeper than the video skill&#x27;s strategy-level coverage; link-only, no license declared. media remotion-dev/skills">
+  <div class="tags"><button class="tag" data-tag="video">#video</button><button class="tag" data-tag="automation">#automation</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/media/ffmpeg-skill" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/kajisho5/ffmpeg-skill/tree/1ce2c186bf1dba96132d87274eee46df4f537e0e" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#a855f7" data-category="media" data-tags="video react" data-special="" data-search="remotion-best-practices remotion-best-practices remotion&#x27;s official best practices for programmatic video in react — markup, animation, captions, maps and interactivity done right. the motion cluster&#x27;s one representative: official, actively maintained engine craft, deeper than the video skill&#x27;s strategy-level coverage; link-only, no license declared. media video react  remotion-dev/skills">
   <h3>remotion-best-practices <span class="badge linkonly">link-only</span><span class="badge cat">media</span></h3>
   <p class="desc">Remotion&#x27;s official best practices for programmatic video in React — markup, animation, captions, maps and interactivity done right.</p>
   <p class="why">The motion cluster&#x27;s one representative: official, actively maintained engine craft, deeper than the video skill&#x27;s strategy-level coverage; link-only, no license declared.</p>
   <div class="meta"><span>License: no license declared</span><span>★ 6,294 at import</span></div>
   <div class="req"><span>Remotion project</span></div>
-  <footer><a href="https://github.com/remotion-dev/skills/tree/c7cb2fdcacd134fb2ccb9b7a44f9ffa44e467271/skills/remotion-best-practices" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="media" data-search="video video guides ai and programmatic video production: avatars, demos, explainers, and generation pipelines. video is the highest-reach format; this maps the current tool landscape into workflows. media coreyhaines31/marketingskills">
+  <div class="tags"><button class="tag" data-tag="video">#video</button><button class="tag" data-tag="react">#react</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/media/remotion-best-practices" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/remotion-dev/skills/tree/c7cb2fdcacd134fb2ccb9b7a44f9ffa44e467271/skills/remotion-best-practices" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#a855f7" data-category="media" data-tags="video generative" data-special="" data-search="video video guides ai and programmatic video production: avatars, demos, explainers, and generation pipelines. video is the highest-reach format; this maps the current tool landscape into workflows. media video generative  coreyhaines31/marketingskills">
   <h3>Video <span class="badge cat">media</span></h3>
   <p class="desc">Guides AI and programmatic video production: avatars, demos, explainers, and generation pipelines.</p>
   <p class="why">Video is the highest-reach format; this maps the current tool landscape into workflows.</p>
   <div class="meta"><span>License: MIT</span><span>★ 58,381 at import</span></div>
   
-  <footer><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/video" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="ad-library-teardown ad library teardown analyzes active ads from meta, google, and linkedin libraries: hooks, offers, ctas, and claims. competitors publish their best-tested messaging in ad libraries for free. research scrapecreators/social-media-research-skills">
+  <div class="tags"><button class="tag" data-tag="video">#video</button><button class="tag" data-tag="generative">#generative</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/media/video" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/video" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="social-data competitor" data-special="" data-search="ad-library-teardown ad library teardown analyzes active ads from meta, google, and linkedin libraries: hooks, offers, ctas, and claims. competitors publish their best-tested messaging in ad libraries for free. research social-data competitor  scrapecreators/social-media-research-skills">
   <h3>Ad Library Teardown <span class="badge cat">research</span></h3>
   <p class="desc">Analyzes active ads from Meta, Google, and LinkedIn libraries: hooks, offers, CTAs, and claims.</p>
   <p class="why">Competitors publish their best-tested messaging in ad libraries for free.</p>
   <div class="meta"><span>License: MIT</span><span>★ 5,438 at import</span></div>
   <div class="req"><span>ScrapeCreators API key (paid)</span></div>
-  <footer><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/ad-library-teardown" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="audience-research audience research evaluates a creator or brand audience from public signals: demographics, geography, language, and fit. prevents sponsorship and partnership picks based on follower counts alone. research scrapecreators/social-media-research-skills">
+  <div class="tags"><button class="tag" data-tag="social-data">#social-data</button><button class="tag" data-tag="competitor">#competitor</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/ad-library-teardown" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/ad-library-teardown" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="social-data research-methods" data-special="" data-search="audience-research audience research evaluates a creator or brand audience from public signals: demographics, geography, language, and fit. prevents sponsorship and partnership picks based on follower counts alone. research social-data research-methods  scrapecreators/social-media-research-skills">
   <h3>Audience Research <span class="badge cat">research</span></h3>
   <p class="desc">Evaluates a creator or brand audience from public signals: demographics, geography, language, and fit.</p>
   <p class="why">Prevents sponsorship and partnership picks based on follower counts alone.</p>
   <div class="meta"><span>License: MIT</span><span>★ 5,438 at import</span></div>
   <div class="req"><span>ScrapeCreators API key (paid)</span></div>
-  <footer><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/audience-research" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="comment-mining comment mining mines comments and replies for objections, questions, buying intent, and voice-of-customer language. comments are unfiltered market research, already written by the audience. research scrapecreators/social-media-research-skills">
+  <div class="tags"><button class="tag" data-tag="social-data">#social-data</button><button class="tag" data-tag="research-methods">#research-methods</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/audience-research" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/audience-research" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="social-data research-methods" data-special="" data-search="comment-mining comment mining mines comments and replies for objections, questions, buying intent, and voice-of-customer language. comments are unfiltered market research, already written by the audience. research social-data research-methods  scrapecreators/social-media-research-skills">
   <h3>Comment Mining <span class="badge cat">research</span></h3>
   <p class="desc">Mines comments and replies for objections, questions, buying intent, and voice-of-customer language.</p>
   <p class="why">Comments are unfiltered market research, already written by the audience.</p>
   <div class="meta"><span>License: MIT</span><span>★ 5,438 at import</span></div>
   <div class="req"><span>ScrapeCreators API key (paid)</span></div>
-  <footer><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/comment-mining" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="competitor-social-research competitor social research researches competitors&#x27; social strategy and turns public data into a practical strategy brief. shows what content is winning in your niche and where the gaps are. research scrapecreators/social-media-research-skills">
+  <div class="tags"><button class="tag" data-tag="social-data">#social-data</button><button class="tag" data-tag="research-methods">#research-methods</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/comment-mining" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/comment-mining" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="social-data competitor" data-special="" data-search="competitor-social-research competitor social research researches competitors&#x27; social strategy and turns public data into a practical strategy brief. shows what content is winning in your niche and where the gaps are. research social-data competitor  scrapecreators/social-media-research-skills">
   <h3>Competitor Social Research <span class="badge cat">research</span></h3>
   <p class="desc">Researches competitors&#x27; social strategy and turns public data into a practical strategy brief.</p>
   <p class="why">Shows what content is winning in your niche and where the gaps are.</p>
   <div class="meta"><span>License: MIT</span><span>★ 5,438 at import</span></div>
   <div class="req"><span>ScrapeCreators API key (paid)</span></div>
-  <footer><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/competitor-social-research" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="content-repurposing content repurposing turns public videos, transcripts, and posts into threads, scripts, newsletters, and content calendars. one good source becomes a week of channel-ready material. research scrapecreators/social-media-research-skills">
+  <div class="tags"><button class="tag" data-tag="social-data">#social-data</button><button class="tag" data-tag="competitor">#competitor</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/competitor-social-research" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/competitor-social-research" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="social-data content" data-special="" data-search="content-repurposing content repurposing turns public videos, transcripts, and posts into threads, scripts, newsletters, and content calendars. one good source becomes a week of channel-ready material. research social-data content  scrapecreators/social-media-research-skills">
   <h3>Content Repurposing <span class="badge cat">research</span></h3>
   <p class="desc">Turns public videos, transcripts, and posts into threads, scripts, newsletters, and content calendars.</p>
   <p class="why">One good source becomes a week of channel-ready material.</p>
   <div class="meta"><span>License: MIT</span><span>★ 5,438 at import</span></div>
   <div class="req"><span>ScrapeCreators API key (paid)</span></div>
-  <footer><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/content-repurposing" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="creator-profile-teardown creator profile teardown tears down a creator or brand profile: positioning, pillars, hooks, formats, and outlier posts. a repeatable way to learn from accounts that already win. research scrapecreators/social-media-research-skills">
+  <div class="tags"><button class="tag" data-tag="social-data">#social-data</button><button class="tag" data-tag="content">#content</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/content-repurposing" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/content-repurposing" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="social-data" data-special="" data-search="creator-profile-teardown creator profile teardown tears down a creator or brand profile: positioning, pillars, hooks, formats, and outlier posts. a repeatable way to learn from accounts that already win. research social-data  scrapecreators/social-media-research-skills">
   <h3>Creator Profile Teardown <span class="badge cat">research</span></h3>
   <p class="desc">Tears down a creator or brand profile: positioning, pillars, hooks, formats, and outlier posts.</p>
   <p class="why">A repeatable way to learn from accounts that already win.</p>
   <div class="meta"><span>License: MIT</span><span>★ 5,438 at import</span></div>
   <div class="req"><span>ScrapeCreators API key (paid)</span></div>
-  <footer><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/creator-profile-teardown" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="deep-research deep research runs autonomous multi-step research through google&#x27;s gemini deep research agent and returns detailed, cited reports for market, competitive, technical, and literature questions. the heavyweight research option: paid per run and minutes-slow, but it produces cited reports the social-data set cannot. research sanjay3290/ai-skills">
+  <div class="tags"><button class="tag" data-tag="social-data">#social-data</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/creator-profile-teardown" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/creator-profile-teardown" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="web-search research-methods" data-special="" data-search="deep-research deep research runs autonomous multi-step research through google&#x27;s gemini deep research agent and returns detailed, cited reports for market, competitive, technical, and literature questions. the heavyweight research option: paid per run and minutes-slow, but it produces cited reports the social-data set cannot. research web-search research-methods  sanjay3290/ai-skills">
   <h3>Deep Research <span class="badge cat">research</span></h3>
   <p class="desc">Runs autonomous multi-step research through Google&#x27;s Gemini Deep Research agent and returns detailed, cited reports for market, competitive, technical, and literature questions.</p>
   <p class="why">The heavyweight research option: paid per run and minutes-slow, but it produces cited reports the social-data set cannot.</p>
   <div class="meta"><span>License: Apache-2.0</span><span>★ 450 at import</span></div>
   <div class="req"><span>GEMINI_API_KEY (paid)</span></div>
-  <footer><a href="https://github.com/sanjay3290/ai-skills/tree/c84255839a1bfaa06d681aa528f9b50d70002afb/skills/deep-research" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="exa-search exa search calls exa&#x27;s semantic search api directly over http, with ranked results, domain and freshness filters, extracted text and highlights, structured output, and streaming responses — no sdk. a general open-web retrieval primitive for agents, complementing the social-platform research set. research exa-labs/agent-skills">
+  <div class="tags"><button class="tag" data-tag="web-search">#web-search</button><button class="tag" data-tag="research-methods">#research-methods</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/deep-research" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/sanjay3290/ai-skills/tree/c84255839a1bfaa06d681aa528f9b50d70002afb/skills/deep-research" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="web-search api" data-special="" data-search="exa-search exa search calls exa&#x27;s semantic search api directly over http, with ranked results, domain and freshness filters, extracted text and highlights, structured output, and streaming responses — no sdk. a general open-web retrieval primitive for agents, complementing the social-platform research set. research web-search api  exa-labs/agent-skills">
   <h3>Exa Search <span class="badge cat">research</span></h3>
   <p class="desc">Calls Exa&#x27;s semantic search API directly over HTTP, with ranked results, domain and freshness filters, extracted text and highlights, structured output, and streaming responses — no SDK.</p>
   <p class="why">A general open-web retrieval primitive for agents, complementing the social-platform research set.</p>
   <div class="meta"><span>License: MIT</span><span>★ 65 at import</span></div>
   <div class="req"><span>EXA_API_KEY (paid)</span></div>
-  <footer><a href="https://github.com/exa-labs/agent-skills/tree/5c5c7ebfb4458cfd1bd72697f14bd89685550c2e/skills/exa-search" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="influencer-prospecting influencer prospecting finds and scores creators in a niche for outreach, partnerships, sponsorships, and ugc. builds prospect lists from evidence instead of manual scrolling. research scrapecreators/social-media-research-skills">
+  <div class="tags"><button class="tag" data-tag="web-search">#web-search</button><button class="tag" data-tag="api">#api</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/exa-search" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/exa-labs/agent-skills/tree/5c5c7ebfb4458cfd1bd72697f14bd89685550c2e/skills/exa-search" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="social-data" data-special="" data-search="influencer-prospecting influencer prospecting finds and scores creators in a niche for outreach, partnerships, sponsorships, and ugc. builds prospect lists from evidence instead of manual scrolling. research social-data  scrapecreators/social-media-research-skills">
   <h3>Influencer Prospecting <span class="badge cat">research</span></h3>
   <p class="desc">Finds and scores creators in a niche for outreach, partnerships, sponsorships, and UGC.</p>
   <p class="why">Builds prospect lists from evidence instead of manual scrolling.</p>
   <div class="meta"><span>License: MIT</span><span>★ 5,438 at import</span></div>
   <div class="req"><span>ScrapeCreators API key (paid)</span></div>
-  <footer><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/influencer-prospecting" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="literature-review literature review conducts systematic, scoping, and narrative literature reviews across pubmed, arxiv, biorxiv, and semantic scholar, with coverage tracking and screening, delivered as markdown or pdf. brings academic-grade evidence synthesis to the research category; nothing else here searches the scholarly literature. research k-dense-ai/scientific-agent-skills">
+  <div class="tags"><button class="tag" data-tag="social-data">#social-data</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/influencer-prospecting" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/influencer-prospecting" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="research-methods" data-special="" data-search="literature-review literature review conducts systematic, scoping, and narrative literature reviews across pubmed, arxiv, biorxiv, and semantic scholar, with coverage tracking and screening, delivered as markdown or pdf. brings academic-grade evidence synthesis to the research category; nothing else here searches the scholarly literature. research research-methods  k-dense-ai/scientific-agent-skills">
   <h3>Literature Review <span class="badge cat">research</span></h3>
   <p class="desc">Conducts systematic, scoping, and narrative literature reviews across PubMed, arXiv, bioRxiv, and Semantic Scholar, with coverage tracking and screening, delivered as Markdown or PDF.</p>
   <p class="why">Brings academic-grade evidence synthesis to the research category; nothing else here searches the scholarly literature.</p>
   <div class="meta"><span>License: MIT</span><span>★ 56,043 at import</span></div>
   <div class="req"><span>Python 3.10+</span></div>
-  <footer><a href="https://github.com/K-Dense-AI/scientific-agent-skills/tree/a25cf9ec00e2745d03f8704acf6f6919694ccd9a/skills/literature-review" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="outlier-post-finder outlier post finder finds posts that massively overperformed a creator&#x27;s baseline and explains why they worked. modeling proven outliers is the shortest path to better content. research scrapecreators/social-media-research-skills">
+  <div class="tags"><button class="tag" data-tag="research-methods">#research-methods</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/literature-review" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/K-Dense-AI/scientific-agent-skills/tree/a25cf9ec00e2745d03f8704acf6f6919694ccd9a/skills/literature-review" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="social-data" data-special="" data-search="outlier-post-finder outlier post finder finds posts that massively overperformed a creator&#x27;s baseline and explains why they worked. modeling proven outliers is the shortest path to better content. research social-data  scrapecreators/social-media-research-skills">
   <h3>Outlier Post Finder <span class="badge cat">research</span></h3>
   <p class="desc">Finds posts that massively overperformed a creator&#x27;s baseline and explains why they worked.</p>
   <p class="why">Modeling proven outliers is the shortest path to better content.</p>
   <div class="meta"><span>License: MIT</span><span>★ 5,438 at import</span></div>
   <div class="req"><span>ScrapeCreators API key (paid)</span></div>
-  <footer><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/outlier-post-finder" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="product-demand-research product demand research validates product ideas by mining pain points, demand signals, and objections from social posts and reddit. evidence-backed demand checks before building or launching anything. research scrapecreators/social-media-research-skills">
+  <div class="tags"><button class="tag" data-tag="social-data">#social-data</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/outlier-post-finder" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/outlier-post-finder" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="social-data research-methods" data-special="" data-search="product-demand-research product demand research validates product ideas by mining pain points, demand signals, and objections from social posts and reddit. evidence-backed demand checks before building or launching anything. research social-data research-methods  scrapecreators/social-media-research-skills">
   <h3>Product Demand Research <span class="badge cat">research</span></h3>
   <p class="desc">Validates product ideas by mining pain points, demand signals, and objections from social posts and Reddit.</p>
   <p class="why">Evidence-backed demand checks before building or launching anything.</p>
   <div class="meta"><span>License: MIT</span><span>★ 5,438 at import</span></div>
   <div class="req"><span>ScrapeCreators API key (paid)</span></div>
-  <footer><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/product-demand-research" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="scrapecreators-api scrapecreators api reference and access layer for the scrapecreators rest api: public data from 27+ social platforms. the base skill the whole research set calls; it documents every endpoint the others use. research scrapecreators/social-media-research-skills">
+  <div class="tags"><button class="tag" data-tag="social-data">#social-data</button><button class="tag" data-tag="research-methods">#research-methods</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/product-demand-research" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/product-demand-research" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="social-data api" data-special="" data-search="scrapecreators-api scrapecreators api reference and access layer for the scrapecreators rest api: public data from 27+ social platforms. the base skill the whole research set calls; it documents every endpoint the others use. research social-data api  scrapecreators/social-media-research-skills">
   <h3>ScrapeCreators API <span class="badge cat">research</span></h3>
   <p class="desc">Reference and access layer for the ScrapeCreators REST API: public data from 27+ social platforms.</p>
   <p class="why">The base skill the whole research set calls; it documents every endpoint the others use.</p>
   <div class="meta"><span>License: MIT</span><span>★ 5,438 at import</span></div>
   <div class="req"><span>ScrapeCreators API key (paid)</span></div>
-  <footer><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/scrapecreators-api" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="social-listening-brief social listening brief produces a cited social-listening brief on what people say about a brand, topic, or niche. a fast reputation and sentiment snapshot before campaigns or launches. research scrapecreators/social-media-research-skills">
+  <div class="tags"><button class="tag" data-tag="social-data">#social-data</button><button class="tag" data-tag="api">#api</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/scrapecreators-api" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/scrapecreators-api" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="social-data research-methods" data-special="" data-search="social-listening-brief social listening brief produces a cited social-listening brief on what people say about a brand, topic, or niche. a fast reputation and sentiment snapshot before campaigns or launches. research social-data research-methods  scrapecreators/social-media-research-skills">
   <h3>Social Listening Brief <span class="badge cat">research</span></h3>
   <p class="desc">Produces a cited social-listening brief on what people say about a brand, topic, or niche.</p>
   <p class="why">A fast reputation and sentiment snapshot before campaigns or launches.</p>
   <div class="meta"><span>License: MIT</span><span>★ 5,438 at import</span></div>
   <div class="req"><span>ScrapeCreators API key (paid)</span></div>
-  <footer><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/social-listening-brief" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="transcript-intelligence transcript intelligence summarizes and mines video transcripts for hooks, claims, quotes, and reusable content atoms. unlocks the content inside long videos without watching them all. research scrapecreators/social-media-research-skills">
+  <div class="tags"><button class="tag" data-tag="social-data">#social-data</button><button class="tag" data-tag="research-methods">#research-methods</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/social-listening-brief" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/social-listening-brief" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="social-data content" data-special="" data-search="transcript-intelligence transcript intelligence summarizes and mines video transcripts for hooks, claims, quotes, and reusable content atoms. unlocks the content inside long videos without watching them all. research social-data content  scrapecreators/social-media-research-skills">
   <h3>Transcript Intelligence <span class="badge cat">research</span></h3>
   <p class="desc">Summarizes and mines video transcripts for hooks, claims, quotes, and reusable content atoms.</p>
   <p class="why">Unlocks the content inside long videos without watching them all.</p>
   <div class="meta"><span>License: MIT</span><span>★ 5,438 at import</span></div>
   <div class="req"><span>ScrapeCreators API key (paid)</span></div>
-  <footer><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/transcript-intelligence" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="research" data-search="trend-discovery trend discovery finds trending topics, hashtags, sounds, and formats in a niche from public trend endpoints. trend timing is free reach for channels; this turns trends into content angles. research scrapecreators/social-media-research-skills">
+  <div class="tags"><button class="tag" data-tag="social-data">#social-data</button><button class="tag" data-tag="content">#content</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/transcript-intelligence" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/transcript-intelligence" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#22c55e" data-category="research" data-tags="social-data" data-special="" data-search="trend-discovery trend discovery finds trending topics, hashtags, sounds, and formats in a niche from public trend endpoints. trend timing is free reach for channels; this turns trends into content angles. research social-data  scrapecreators/social-media-research-skills">
   <h3>Trend Discovery <span class="badge cat">research</span></h3>
   <p class="desc">Finds trending topics, hashtags, sounds, and formats in a niche from public trend endpoints.</p>
   <p class="why">Trend timing is free reach for channels; this turns trends into content angles.</p>
   <div class="meta"><span>License: MIT</span><span>★ 5,438 at import</span></div>
   <div class="req"><span>ScrapeCreators API key (paid)</span></div>
-  <footer><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/trend-discovery" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="security" data-search="api-security api security api security testing techniques and scenario playbooks for rest, graphql, websocket, and llm-integrated apis, mapped to the owasp api top 10. the deep, scenario-level companion to security-review: the owner&#x27;s bots and workers expose apis, and this is the offensive testing reference for them. security transilienceai/communitytools">
+  <div class="tags"><button class="tag" data-tag="social-data">#social-data</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/research/trend-discovery" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/ScrapeCreators/social-media-research-skills/tree/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/trend-discovery" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#dc2626" data-category="security" data-tags="security-testing api" data-special="" data-search="api-security api security api security testing techniques and scenario playbooks for rest, graphql, websocket, and llm-integrated apis, mapped to the owasp api top 10. the deep, scenario-level companion to security-review: the owner&#x27;s bots and workers expose apis, and this is the offensive testing reference for them. security security-testing api  transilienceai/communitytools">
   <h3>API Security <span class="badge cat">security</span></h3>
   <p class="desc">API security testing techniques and scenario playbooks for REST, GraphQL, WebSocket, and LLM-integrated APIs, mapped to the OWASP API Top 10.</p>
   <p class="why">The deep, scenario-level companion to security-review: the owner&#x27;s bots and workers expose APIs, and this is the offensive testing reference for them.</p>
   <div class="meta"><span>License: MIT</span><span>★ 604 at import</span></div>
   
-  <footer><a href="https://github.com/transilienceai/communitytools/tree/95fdc128af4ca1ae16b3226f9430f1bad97b0656/skills/api-security" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="security" data-search="incident-runbook-templates incident runbook templates production-ready incident response runbook templates: severity levels, triage and escalation paths, step-by-step recovery, and communication structure. when a live bot or worker goes down at 3 am, a written runbook beats improvisation; this is the template set to write them from. security wshobson/agents">
+  <div class="tags"><button class="tag" data-tag="security-testing">#security-testing</button><button class="tag" data-tag="api">#api</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/security/api-security" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/transilienceai/communitytools/tree/95fdc128af4ca1ae16b3226f9430f1bad97b0656/skills/api-security" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#dc2626" data-category="security" data-tags="workflow" data-special="" data-search="incident-runbook-templates incident runbook templates production-ready incident response runbook templates: severity levels, triage and escalation paths, step-by-step recovery, and communication structure. when a live bot or worker goes down at 3 am, a written runbook beats improvisation; this is the template set to write them from. security workflow  wshobson/agents">
   <h3>Incident Runbook Templates <span class="badge cat">security</span></h3>
   <p class="desc">Production-ready incident response runbook templates: severity levels, triage and escalation paths, step-by-step recovery, and communication structure.</p>
   <p class="why">When a live bot or worker goes down at 3 AM, a written runbook beats improvisation; this is the template set to write them from.</p>
   <div class="meta"><span>License: MIT</span><span>★ 42,172 at import</span></div>
   
-  <footer><a href="https://github.com/wshobson/agents/tree/7e2fb559cf4b824b27f1fec49fe88f7511066d26/plugins/incident-response/skills/incident-runbook-templates" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="security" data-search="secrets-management secrets management secrets management for ci/cd pipelines using vault, aws secrets manager, and native platform tooling: storage, rotation, and least-privilege access. every project here juggles bot tokens and api keys; this is the disciplined way to store and rotate them instead of scattering them across configs. security wshobson/agents">
+  <div class="tags"><button class="tag" data-tag="workflow">#workflow</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/security/incident-runbook-templates" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/wshobson/agents/tree/7e2fb559cf4b824b27f1fec49fe88f7511066d26/plugins/incident-response/skills/incident-runbook-templates" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#dc2626" data-category="security" data-tags="automation" data-special="" data-search="secrets-management secrets management secrets management for ci/cd pipelines using vault, aws secrets manager, and native platform tooling: storage, rotation, and least-privilege access. every project here juggles bot tokens and api keys; this is the disciplined way to store and rotate them instead of scattering them across configs. security automation  wshobson/agents">
   <h3>Secrets Management <span class="badge cat">security</span></h3>
   <p class="desc">Secrets management for CI/CD pipelines using Vault, AWS Secrets Manager, and native platform tooling: storage, rotation, and least-privilege access.</p>
   <p class="why">Every project here juggles bot tokens and API keys; this is the disciplined way to store and rotate them instead of scattering them across configs.</p>
   <div class="meta"><span>License: MIT</span><span>★ 42,172 at import</span></div>
   
-  <footer><a href="https://github.com/wshobson/agents/tree/7e2fb559cf4b824b27f1fec49fe88f7511066d26/plugins/cicd-automation/skills/secrets-management" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="security" data-search="security-review security review security checklist and patterns to run when adding authentication, handling user input, creating api endpoints, or touching secrets and payments. the flagship security skill from the most-starred collection in this repo; turns &#x27;did we think about security&#x27; into a concrete pre-ship checklist. security affaan-m/ecc">
+  <div class="tags"><button class="tag" data-tag="automation">#automation</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/security/secrets-management" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/wshobson/agents/tree/7e2fb559cf4b824b27f1fec49fe88f7511066d26/plugins/cicd-automation/skills/secrets-management" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#dc2626" data-category="security" data-tags="security-testing" data-special="" data-search="security-review security review security checklist and patterns to run when adding authentication, handling user input, creating api endpoints, or touching secrets and payments. the flagship security skill from the most-starred collection in this repo; turns &#x27;did we think about security&#x27; into a concrete pre-ship checklist. security security-testing  affaan-m/ecc">
   <h3>Security Review <span class="badge cat">security</span></h3>
   <p class="desc">Security checklist and patterns to run when adding authentication, handling user input, creating API endpoints, or touching secrets and payments.</p>
   <p class="why">The flagship security skill from the most-starred collection in this repo; turns &#x27;did we think about security&#x27; into a concrete pre-ship checklist.</p>
   <div class="meta"><span>License: MIT</span><span>★ 296,744 at import</span></div>
   
-  <footer><a href="https://github.com/affaan-m/ECC/tree/b38be6a7f6350964d59328b52f0624e1d1d552d1/skills/security-review" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="security" data-search="semgrep semgrep trail of bits&#x27; semgrep skill: writing and running semgrep rules for static analysis and code auditing. the canonical static-analysis skill from a top security firm; listed link-only because its cc-by-sa-4.0 license does not allow redistribution. security trailofbits/skills">
+  <div class="tags"><button class="tag" data-tag="security-testing">#security-testing</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/security/security-review" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/affaan-m/ECC/tree/b38be6a7f6350964d59328b52f0624e1d1d552d1/skills/security-review" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#dc2626" data-category="security" data-tags="security-testing automation" data-special="" data-search="semgrep semgrep trail of bits&#x27; semgrep skill: writing and running semgrep rules for static analysis and code auditing. the canonical static-analysis skill from a top security firm; listed link-only because its cc-by-sa-4.0 license does not allow redistribution. security security-testing automation  trailofbits/skills">
   <h3>Semgrep <span class="badge linkonly">link-only</span><span class="badge cat">security</span></h3>
   <p class="desc">Trail of Bits&#x27; Semgrep skill: writing and running Semgrep rules for static analysis and code auditing.</p>
   <p class="why">The canonical static-analysis skill from a top security firm; listed link-only because its CC-BY-SA-4.0 license does not allow redistribution.</p>
   <div class="meta"><span>License: CC-BY-SA-4.0</span><span>★ 7,992 at import</span></div>
   <div class="req"><span>Semgrep CLI</span></div>
-  <footer><a href="https://github.com/trailofbits/skills/tree/711af095215ad4ecde5b90cd1d0124b3f1c4ca9e/plugins/static-analysis/skills/semgrep" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="security" data-search="stride-analysis-patterns stride analysis patterns applies the stride methodology to threat-model a system — spoofing, tampering, repudiation, information disclosure, denial of service, elevation of privilege — with mitigations for each. threat modeling before code exists catches design flaws no later review can; this is the canonical stride pattern set from a widely used plugin library. security wshobson/agents">
+  <div class="tags"><button class="tag" data-tag="security-testing">#security-testing</button><button class="tag" data-tag="automation">#automation</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/security/semgrep" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/trailofbits/skills/tree/711af095215ad4ecde5b90cd1d0124b3f1c4ca9e/plugins/static-analysis/skills/semgrep" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card" style="--catc:#dc2626" data-category="security" data-tags="workflow" data-special="" data-search="stride-analysis-patterns stride analysis patterns applies the stride methodology to threat-model a system — spoofing, tampering, repudiation, information disclosure, denial of service, elevation of privilege — with mitigations for each. threat modeling before code exists catches design flaws no later review can; this is the canonical stride pattern set from a widely used plugin library. security workflow  wshobson/agents">
   <h3>STRIDE Analysis Patterns <span class="badge cat">security</span></h3>
   <p class="desc">Applies the STRIDE methodology to threat-model a system — spoofing, tampering, repudiation, information disclosure, denial of service, elevation of privilege — with mitigations for each.</p>
   <p class="why">Threat modeling before code exists catches design flaws no later review can; this is the canonical STRIDE pattern set from a widely used plugin library.</p>
   <div class="meta"><span>License: MIT</span><span>★ 42,172 at import</span></div>
   
-  <footer><a href="https://github.com/wshobson/agents/tree/7e2fb559cf4b824b27f1fec49fe88f7511066d26/plugins/security-scanning/skills/stride-analysis-patterns" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="reverse-engineering" data-search="blind-llm-agents blind-llm-agents hardens release artifacts against ai reverse-engineering agents with decoys, analysis-budget exhaustion and dead ends, driven by the bla-agents cli. the defensive mirror of rea: rea takes artifacts apart; this protects your own releases from being taken apart. reverse-engineering qybaihe/bla">
-  <h3>blind-llm-agents <span class="badge cat">reverse-engineering</span></h3>
+  <div class="tags"><button class="tag" data-tag="workflow">#workflow</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/security/stride-analysis-patterns" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/wshobson/agents/tree/7e2fb559cf4b824b27f1fec49fe88f7511066d26/plugins/security-scanning/skills/stride-analysis-patterns" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card special" style="--catc:#fb923c" data-category="reverse-engineering" data-tags="automation" data-special="1" data-search="blind-llm-agents blind-llm-agents hardens release artifacts against ai reverse-engineering agents with decoys, analysis-budget exhaustion and dead ends, driven by the bla-agents cli. the defensive mirror of rea: rea takes artifacts apart; this protects your own releases from being taken apart. reverse-engineering automation special qybaihe/bla">
+  <h3>blind-llm-agents <span class="badge star">⭐ special</span><span class="badge cat">reverse-engineering</span></h3>
   <p class="desc">Hardens release artifacts against AI reverse-engineering agents with decoys, analysis-budget exhaustion and dead ends, driven by the bla-agents CLI.</p>
   <p class="why">The defensive mirror of REA: REA takes artifacts apart; this protects your own releases from being taken apart.</p>
   <div class="meta"><span>License: MIT</span><span>★ 2,111 at import</span></div>
   <div class="req"><span>bla-agents CLI</span></div>
-  <footer><a href="https://github.com/qybaihe/bla/tree/eb44984a5c3e1920bec9c7bdc8403c6d93d0bc0e/.agents/skills/blind-llm-agents" target="_blank" rel="noopener">Source ↗</a></footer>
-</article><article class="card" data-category="reverse-engineering" data-search="reverse-engineer-anything reverse engineer anything reverse engineers binaries, electron/js apps, .net, firmware, and browser targets with rea, backed by runtime evidence. the owner&#x27;s reverse-engineering workhorse: explains features, compares versions, and guides reconstructions from real artifacts. reverse-engineering morluto/rea">
-  <h3>Reverse Engineer Anything <span class="badge cat">reverse-engineering</span></h3>
+  <div class="tags"><button class="tag" data-tag="automation">#automation</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/reverse-engineering/blind-llm-agents" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/qybaihe/bla/tree/eb44984a5c3e1920bec9c7bdc8403c6d93d0bc0e/.agents/skills/blind-llm-agents" target="_blank" rel="noopener">Source ↗</a></footer>
+</article><article class="card special" style="--catc:#fb923c" data-category="reverse-engineering" data-tags="harness" data-special="1" data-search="reverse-engineer-anything reverse engineer anything reverse engineers binaries, electron/js apps, .net, firmware, and browser targets with rea, backed by runtime evidence. the owner&#x27;s reverse-engineering workhorse: explains features, compares versions, and guides reconstructions from real artifacts. reverse-engineering harness special morluto/rea">
+  <h3>Reverse Engineer Anything <span class="badge star">⭐ special</span><span class="badge cat">reverse-engineering</span></h3>
   <p class="desc">Reverse engineers binaries, Electron/JS apps, .NET, firmware, and browser targets with REA, backed by runtime evidence.</p>
   <p class="why">The owner&#x27;s reverse-engineering workhorse: explains features, compares versions, and guides reconstructions from real artifacts.</p>
   <div class="meta"><span>License: MIT</span><span>★ 428,340 at import</span></div>
   <div class="req"><span>REA toolchain (optional)</span></div>
-  <footer><a href="https://github.com/morluto/rea/tree/d7df9df3393f77c78a76a06144ff4f515d5db928/.agents/skills/reverse-engineer-anything" target="_blank" rel="noopener">Source ↗</a></footer>
+  <div class="tags"><button class="tag" data-tag="harness">#harness</button></div>
+  <footer><a href="https://github.com/ILIV007/prime-skill/tree/main/categories/reverse-engineering/reverse-engineer-anything" target="_blank" rel="noopener">Files ↗</a><a href="https://github.com/morluto/rea/tree/d7df9df3393f77c78a76a06144ff4f515d5db928/.agents/skills/reverse-engineer-anything" target="_blank" rel="noopener">Source ↗</a></footer>
 </article>
 </main>
-<p id="empty">No skills match your search.</p>
+<p id="empty">No skills match your filters. Try clearing a tag or the search.</p>
 <p class="site-footer">Generated from <a href="https://github.com/ILIV007/prime-skill/blob/main/skills.json">skills.json</a> · “Link-only” entries are listed with metadata and a source link only, because their license does not permit redistribution.</p>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const search=document.getElementById('search');
 const cards=[...document.querySelectorAll('.card')];
-const chips=[...document.querySelectorAll('.chip')];
+const catChips=[...document.querySelectorAll('.chip[data-cat]')];
+const tagChips=[...document.querySelectorAll('.chip[data-tag]')];
+const specialChip=document.getElementById('chip-special');
 const countEl=document.getElementById('result-count');
 const emptyEl=document.getElementById('empty');
-let cat='all';
+let cat='all', tag=null, specialOnly=false;
 function apply(){
   const q=search.value.trim().toLowerCase();
   let shown=0;
   for(const c of cards){
     const okCat=cat==='all'||c.dataset.category===cat;
+    const okTag=!tag||(c.dataset.tags||'').split(' ').includes(tag);
+    const okSp=!specialOnly||c.dataset.special==='1';
     const okQ=!q||c.dataset.search.includes(q);
-    const show=okCat&&okQ;
+    const show=okCat&&okTag&&okSp&&okQ;
     c.style.display=show?'':'none';
     if(show)shown++;
   }
@@ -612,15 +744,105 @@ function apply(){
   emptyEl.style.display=shown?'none':'block';
 }
 search.addEventListener('input',apply);
-for(const ch of chips){
+for(const ch of catChips){
   ch.addEventListener('click',()=>{
-    chips.forEach(x=>x.classList.remove('active'));
+    catChips.forEach(x=>x.classList.remove('active'));
     ch.classList.add('active');
     cat=ch.dataset.cat;
     apply();
   });
 }
+for(const ch of tagChips){
+  ch.addEventListener('click',()=>{
+    if(tag===ch.dataset.tag){tag=null;ch.classList.remove('active');}
+    else{
+      tagChips.forEach(x=>x.classList.remove('active'));
+      ch.classList.add('active');
+      tag=ch.dataset.tag;
+    }
+    apply();
+  });
+}
+specialChip.addEventListener('click',()=>{
+  specialOnly=!specialOnly;
+  specialChip.classList.toggle('active',specialOnly);
+  apply();
+});
+for(const t of document.querySelectorAll('.card .tag')){
+  t.addEventListener('click',()=>{
+    const chip=tagChips.find(x=>x.dataset.tag===t.dataset.tag);
+    if(chip&&tag!==t.dataset.tag) chip.click();
+    document.querySelector('.controls').scrollIntoView({behavior:'smooth'});
+  });
+}
 apply();
+</script>
+<script>
+(function(){
+  var canvas=document.getElementById('hero3d');
+  if(!canvas||!window.THREE) return;
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var renderer;
+  try{
+    renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true});
+  }catch(e){ return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.5));
+  var scene=new THREE.Scene();
+  var camera=new THREE.PerspectiveCamera(42,2,0.1,100);
+  camera.position.set(7.5,6,9.5);
+  camera.lookAt(0,0.4,0);
+  scene.add(new THREE.AmbientLight(0xffffff,0.8));
+  var key=new THREE.DirectionalLight(0xffffff,0.85);
+  key.position.set(5,10,6);
+  scene.add(key);
+  var colors=[0xff2e63,0x22d3ee,0xffd319,0x22c55e,0xa855f7,0x3b82f6,0xfb923c];
+  var group=new THREE.Group();
+  var geo=new THREE.BoxGeometry(1,1,1);
+  var seed=7;
+  function rnd(){ seed=(seed*16807)%2147483647; return seed/2147483647; }
+  for(var i=0;i<42;i++){
+    var cube=new THREE.Mesh(geo,new THREE.MeshLambertMaterial({color:colors[i%colors.length]}));
+    var gx=(i%7)-3, gz=(Math.floor(i/7)%3)-1;
+    cube.position.set(gx*1.4+(rnd()-0.5)*0.3, 0.4+Math.floor(rnd()*3)*0.55, gz*1.4+(rnd()-0.5)*0.3);
+    var s=0.55+rnd()*0.5;
+    cube.scale.set(s,s,s);
+    cube.userData.ph=rnd()*6.28;
+    cube.userData.y=cube.position.y;
+    group.add(cube);
+  }
+  scene.add(group);
+  var tx=0,ty=0,mx=0,my=0,visible=true,t=0;
+  window.addEventListener('pointermove',function(e){
+    mx=e.clientX/window.innerWidth-0.5;
+    my=e.clientY/window.innerHeight-0.5;
+  },{passive:true});
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){ visible=en[0].isIntersecting; },{threshold:0.02}).observe(canvas);
+  }
+  function resize(){
+    var w=canvas.clientWidth||2, h=canvas.clientHeight||1;
+    renderer.setSize(w,h,false);
+    camera.aspect=w/h;
+    camera.updateProjectionMatrix();
+  }
+  function frame(){
+    requestAnimationFrame(frame);
+    if(!visible) return;
+    t+=0.008;
+    tx+=(mx-tx)*0.04; ty+=(my-ty)*0.04;
+    group.rotation.y=t*0.7+tx*0.9;
+    group.rotation.x=0.12+ty*0.35;
+    for(var j=0;j<group.children.length;j++){
+      var c=group.children[j];
+      c.position.y=c.userData.y+Math.sin(t*1.6+c.userData.ph)*0.12;
+    }
+    renderer.render(scene,camera);
+  }
+  resize();
+  renderer.render(scene,camera);
+  window.addEventListener('resize',function(){ resize(); if(reduced) renderer.render(scene,camera); });
+  if(!reduced) requestAnimationFrame(frame);
+})();
 </script>
 </body>
 </html>
