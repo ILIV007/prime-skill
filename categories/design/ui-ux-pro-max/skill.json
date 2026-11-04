@@ -1,0 +1,20 @@
+{
+  "name": "ui-ux-pro-max",
+  "title": "UI/UX Pro Max",
+  "description": "Design intelligence for web, mobile, and desktop UIs, with searchable local data on styles, palettes, font pairings, UX guidelines, and stacks.",
+  "why": "Gives interface work a real design database instead of guesswork; the flagship of the design set.",
+  "category": "design",
+  "source": {
+    "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+    "path": ".claude/skills/ui-ux-pro-max",
+    "commit": "dd9a1b4cf9f67ca2e326f646d93e101b2778db30"
+  },
+  "license": "MIT",
+  "stars_at_import": 144911,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": true,
+  "adaptations": "Rewrote ${CLAUDE_PLUGIN_ROOT}-based script paths in SKILL.md to paths relative to the skill folder, so the commands run in any harness."
+}

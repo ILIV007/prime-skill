@@ -1,0 +1,20 @@
+{
+  "name": "banner-design",
+  "title": "Banner Design",
+  "description": "Designs banners for social, ads, website heroes, and print, with multiple art-direction options.",
+  "why": "Banners and covers are a recurring need for channels and launches.",
+  "category": "design",
+  "source": {
+    "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+    "path": ".claude/skills/banner-design",
+    "commit": "dd9a1b4cf9f67ca2e326f646d93e101b2778db30"
+  },
+  "license": "MIT",
+  "stars_at_import": 144911,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

@@ -1,0 +1,20 @@
+{
+  "name": "slides",
+  "title": "Slides",
+  "description": "Creates strategic HTML presentations with charts, design tokens, and responsive layouts.",
+  "why": "Turns briefs and reports into presentable decks without design software.",
+  "category": "design",
+  "source": {
+    "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+    "path": ".claude/skills/slides",
+    "commit": "dd9a1b4cf9f67ca2e326f646d93e101b2778db30"
+  },
+  "license": "MIT",
+  "stars_at_import": 144911,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}
