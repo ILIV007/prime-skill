@@ -1,0 +1,25 @@
+{
+  "name": "color-expert",
+  "title": "color-expert",
+  "description": "Deep color expertise: color spaces (OKLCH, CIELAB), palette and ramp generation, harmony systems, color naming, pigment and print-vs-screen behavior, and contrast verification.",
+  "why": "The palette data elsewhere is lookup-only; this is the craft of making and judging color — perceptually uniform ramps, naming, and verified contrast.",
+  "category": "design",
+  "source": {
+    "repo": "meodai/skill.color-expert",
+    "url": "https://github.com/meodai/skill.color-expert",
+    "path": ".",
+    "commit": "5bf7c7704d56bccc6aeea38c36bcf449abe56a6c"
+  },
+  "license": "CC-BY-4.0",
+  "stars_at_import": 631,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": true,
+  "adaptations": "Root skill only: vendored SKILL.md, references/ and the CC-BY-4.0 LICENSE (full source attribution is recorded here and the license text is vendored, as CC-BY-4.0 requires). Repo-level docs (README, CLAUDE.md, ROADMAP, MAINTENANCE, SECURITY), the maintainer stats script, and evals/ are project infrastructure, not part of the skill.",
+  "tags": [
+    "design-systems",
+    "generative"
+  ],
+  "special": true
+}
