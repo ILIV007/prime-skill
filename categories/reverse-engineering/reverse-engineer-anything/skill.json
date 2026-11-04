@@ -1,0 +1,22 @@
+{
+  "name": "reverse-engineer-anything",
+  "title": "Reverse Engineer Anything",
+  "description": "Reverse engineers binaries, Electron/JS apps, .NET, firmware, and browser targets with REA, backed by runtime evidence.",
+  "why": "The owner's reverse-engineering workhorse: explains features, compares versions, and guides reconstructions from real artifacts.",
+  "category": "reverse-engineering",
+  "source": {
+    "repo": "morluto/rea",
+    "url": "https://github.com/morluto/rea",
+    "path": ".agents/skills/reverse-engineer-anything",
+    "commit": "d7df9df3393f77c78a76a06144ff4f515d5db928"
+  },
+  "license": "MIT",
+  "stars_at_import": 428340,
+  "added": "2026-11-04",
+  "requires": [
+    "REA toolchain (optional, for full function)"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}
