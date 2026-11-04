@@ -1,0 +1,20 @@
+{
+  "name": "secrets-management",
+  "title": "Secrets Management",
+  "description": "Secrets management for CI/CD pipelines using Vault, AWS Secrets Manager, and native platform tooling: storage, rotation, and least-privilege access.",
+  "why": "Every project here juggles bot tokens and API keys; this is the disciplined way to store and rotate them instead of scattering them across configs.",
+  "category": "security",
+  "source": {
+    "repo": "wshobson/agents",
+    "url": "https://github.com/wshobson/agents",
+    "path": "plugins/cicd-automation/skills/secrets-management",
+    "commit": "7e2fb559cf4b824b27f1fec49fe88f7511066d26"
+  },
+  "license": "MIT",
+  "stars_at_import": 42172,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

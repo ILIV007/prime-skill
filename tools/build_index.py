@@ -74,6 +74,8 @@ def validate(skills, errors):
             value = (meta.get(field) or "").strip()
             if not value or value == "TODO":
                 errors.append(f"{label}: '{field}' is empty or TODO")
+        if meta.get("entry") not in ("full", "link-only"):
+            errors.append(f"{label}: entry must be 'full' or 'link-only'")
         if meta.get("entry") == "full":
             if not (skill_dir / "SKILL.md").exists():
                 errors.append(f"{label}: full entry missing SKILL.md")
@@ -81,6 +83,14 @@ def validate(skills, errors):
                         if p.is_file() and p.name.upper().startswith(("LICENSE", "LICENCE", "COPYING"))]
             if not licenses:
                 errors.append(f"{label}: full entry missing LICENSE file (license gate)")
+        elif meta.get("entry") == "link-only":
+            # Link-only entries are metadata only: no vendored files, so the
+            # SKILL.md / LICENSE checks do not apply, but nothing else may
+            # live in the folder either.
+            extra = sorted(p.name for p in skill_dir.iterdir() if p.name != "skill.json")
+            if extra:
+                errors.append(f"{label}: link-only entry must contain only skill.json, "
+                              f"found: {', '.join(extra)}")
         if meta.get("adapted") and not (meta.get("adaptations") or "").strip():
             errors.append(f"{label}: adapted=true but adaptations note is empty")
     return seen
@@ -91,7 +101,12 @@ def skill_row(meta, folder):
     requires = "; ".join(meta.get("requires") or []) or "—"
     source = meta["source"]
     commit = source["commit"][:7]
-    return (f"| [{name}]({folder}) | {esc(meta['description'])} | {esc(meta['why'])} "
+    if meta.get("entry") == "link-only":
+        tree_url = f"{source['url']}/tree/{source['commit']}/{source['path']}"
+        name_cell = f"[{name}]({tree_url}) · link-only"
+    else:
+        name_cell = f"[{name}]({folder})"
+    return (f"| {name_cell} | {esc(meta['description'])} | {esc(meta['why'])} "
             f"| {esc(requires)} | [{source['repo']}]({source['url']}) @ {commit} |")
 
 

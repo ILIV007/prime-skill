@@ -1,0 +1,20 @@
+{
+  "name": "security-review",
+  "title": "Security Review",
+  "description": "Security checklist and patterns to run when adding authentication, handling user input, creating API endpoints, or touching secrets and payments.",
+  "why": "The flagship security skill from the most-starred collection in this repo; turns 'did we think about security' into a concrete pre-ship checklist.",
+  "category": "security",
+  "source": {
+    "repo": "affaan-m/ECC",
+    "url": "https://github.com/affaan-m/ECC",
+    "path": "skills/security-review",
+    "commit": "b38be6a7f6350964d59328b52f0624e1d1d552d1"
+  },
+  "license": "MIT",
+  "stars_at_import": 296744,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

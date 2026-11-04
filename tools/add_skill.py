@@ -12,6 +12,10 @@ Usage:
 - License gate: every imported skill folder must end up with a LICENSE file
   (its own, else the source repo's root LICENSE). A skill that fails the
   gate is skipped and reported; the command exits non-zero.
+- With --link-only, no files are copied and the license gate does not apply:
+  the destination folder holds only skill.json with entry "link-only"
+  (for useful skills whose license forbids redistribution). --path must be
+  the skill folder itself in this mode.
 - Writes skill.json with description/why as TODO for the maintainer.
 
 Stdlib only (plus git on PATH).
@@ -108,6 +112,8 @@ def main():
     parser.add_argument("--category", required=True)
     parser.add_argument("--only", default="", help="comma-separated skill folder names")
     parser.add_argument("--requires", default="", help="semicolon-separated requirement labels")
+    parser.add_argument("--link-only", action="store_true",
+                        help="record metadata only (skill.json, entry=link-only); copy no files")
     args = parser.parse_args()
 
     slug = slug_from_url(args.url)
@@ -141,6 +147,8 @@ def main():
         if not skill_dirs:
             raise SystemExit("no skill folders found (nothing matched)")
 
+        if args.link_only and not (base / "SKILL.md").exists():
+            raise SystemExit("--link-only requires --path to be the skill folder itself")
         failures = []
         imported = []
         for src in skill_dirs:
@@ -148,6 +156,31 @@ def main():
             dest = ROOT / "categories" / args.category / name
             if dest.exists():
                 failures.append(f"{name}: destination already exists, skipped")
+                continue
+            if args.link_only:
+                dest.mkdir(parents=True)
+                license_text = (root_license.read_text(encoding="utf-8", errors="replace")
+                                if root_license is not None else "")
+                title = frontmatter_name(src / "SKILL.md") or name.replace("-", " ").title()
+                meta = {
+                    "name": name,
+                    "title": title,
+                    "description": "TODO",
+                    "why": "TODO",
+                    "category": args.category,
+                    "source": {"repo": slug, "url": f"https://github.com/{slug}",
+                               "path": path_of[src], "commit": commit},
+                    "license": detect_license(license_text, spdx),
+                    "stars_at_import": stars,
+                    "added": datetime.date.today().isoformat(),
+                    "requires": requires,
+                    "entry": "link-only",
+                    "adapted": False,
+                    "adaptations": "",
+                }
+                (dest / "skill.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n",
+                                                 encoding="utf-8")
+                imported.append(name)
                 continue
             copy_runtime(src, dest)
             license_file = find_license_file(dest)

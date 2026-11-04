@@ -1,0 +1,20 @@
+{
+  "name": "incident-runbook-templates",
+  "title": "Incident Runbook Templates",
+  "description": "Production-ready incident response runbook templates: severity levels, triage and escalation paths, step-by-step recovery, and communication structure.",
+  "why": "When a live bot or worker goes down at 3 AM, a written runbook beats improvisation; this is the template set to write them from.",
+  "category": "security",
+  "source": {
+    "repo": "wshobson/agents",
+    "url": "https://github.com/wshobson/agents",
+    "path": "plugins/incident-response/skills/incident-runbook-templates",
+    "commit": "7e2fb559cf4b824b27f1fec49fe88f7511066d26"
+  },
+  "license": "MIT",
+  "stars_at_import": 42172,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

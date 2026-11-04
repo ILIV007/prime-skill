@@ -1,0 +1,20 @@
+{
+  "name": "api-security",
+  "title": "API Security",
+  "description": "API security testing techniques and scenario playbooks for REST, GraphQL, WebSocket, and LLM-integrated APIs, mapped to the OWASP API Top 10.",
+  "why": "The deep, scenario-level companion to security-review: the owner's bots and workers expose APIs, and this is the offensive testing reference for them.",
+  "category": "security",
+  "source": {
+    "repo": "transilienceai/communitytools",
+    "url": "https://github.com/transilienceai/communitytools",
+    "path": "skills/api-security",
+    "commit": "95fdc128af4ca1ae16b3226f9430f1bad97b0656"
+  },
+  "license": "MIT",
+  "stars_at_import": 604,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}
