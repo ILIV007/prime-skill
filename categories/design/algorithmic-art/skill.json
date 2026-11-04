@@ -1,0 +1,20 @@
+{
+  "name": "algorithmic-art",
+  "title": "algorithmic-art",
+  "description": "Creates generative art with p5.js: seeded algorithms, flow fields, and particle systems delivered as interactive HTML pieces.",
+  "why": "The distinctive one in Anthropic's set: real generative-art capability, not another text workflow; useful for visuals and covers.",
+  "category": "design",
+  "source": {
+    "repo": "anthropics/skills",
+    "url": "https://github.com/anthropics/skills",
+    "path": "skills/algorithmic-art",
+    "commit": "ca45fc496a3436251f191354091d557da31c15b5"
+  },
+  "license": "Apache-2.0",
+  "stars_at_import": 187211,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

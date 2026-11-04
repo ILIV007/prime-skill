@@ -1,0 +1,20 @@
+{
+  "name": "skill-creator",
+  "title": "skill-creator",
+  "description": "Anthropic's guide and tooling for creating, evaluating, and iterating on agent skills, with eval and description-tuning scripts.",
+  "why": "This repo curates skills for a living; the official skill-authoring workflow belongs in it.",
+  "category": "development",
+  "source": {
+    "repo": "anthropics/skills",
+    "url": "https://github.com/anthropics/skills",
+    "path": "skills/skill-creator",
+    "commit": "ca45fc496a3436251f191354091d557da31c15b5"
+  },
+  "license": "Apache-2.0",
+  "stars_at_import": 187211,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

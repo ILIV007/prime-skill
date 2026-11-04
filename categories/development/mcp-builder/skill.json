@@ -1,0 +1,20 @@
+{
+  "name": "mcp-builder",
+  "title": "mcp-builder",
+  "description": "Anthropic's playbook for designing and building high-quality MCP servers, with reference guides and an evaluation harness.",
+  "why": "The owner builds connectors and MCP-backed tools; this is the reference guide from the source.",
+  "category": "development",
+  "source": {
+    "repo": "anthropics/skills",
+    "url": "https://github.com/anthropics/skills",
+    "path": "skills/mcp-builder",
+    "commit": "ca45fc496a3436251f191354091d557da31c15b5"
+  },
+  "license": "Apache-2.0",
+  "stars_at_import": 187211,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}
