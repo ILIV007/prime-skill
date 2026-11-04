@@ -1,0 +1,168 @@
+#!/usr/bin/env python3
+"""Validate skill folders and regenerate skills.json + README tables.
+
+Usage:
+  python3 tools/build_index.py           # regenerate generated files
+  python3 tools/build_index.py --check   # exit non-zero if anything is stale/invalid
+
+Stdlib only. Repo root is the parent of this script's directory.
+"""
+import json
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+CATEGORIES = ROOT / "categories"
+START = "<!-- GENERATED:START -->"
+END = "<!-- GENERATED:END -->"
+
+REQUIRED = ["name", "title", "description", "why", "category", "source",
+            "license", "stars_at_import", "added", "requires", "entry",
+            "adapted", "adaptations"]
+SOURCE_FIELDS = ["repo", "url", "path", "commit"]
+
+
+def display_category(cat):
+    return cat.replace("-", " ").title()
+
+
+def esc(text):
+    return str(text).replace("|", "\\|")
+
+
+def load_skills(errors):
+    skills = []
+    if not CATEGORIES.is_dir():
+        return skills
+    for cat_dir in sorted(p for p in CATEGORIES.iterdir() if p.is_dir()):
+        for skill_dir in sorted(p for p in cat_dir.iterdir() if p.is_dir()):
+            meta_file = skill_dir / "skill.json"
+            if not meta_file.exists():
+                errors.append(f"{skill_dir}: missing skill.json")
+                continue
+            try:
+                meta = json.loads(meta_file.read_text(encoding="utf-8"))
+            except json.JSONDecodeError as exc:
+                errors.append(f"{meta_file}: invalid JSON: {exc}")
+                continue
+            skills.append((cat_dir.name, skill_dir, meta))
+    return skills
+
+
+def validate(skills, errors):
+    seen = {}
+    for cat, skill_dir, meta in skills:
+        label = f"categories/{cat}/{skill_dir.name}"
+        for field in REQUIRED:
+            if field not in meta:
+                errors.append(f"{label}: skill.json missing field '{field}'")
+        if errors and meta.get("name") is None:
+            continue
+        name = meta.get("name")
+        if name in seen:
+            errors.append(f"{label}: duplicate skill name '{name}' (also in {seen[name]})")
+        seen[name] = label
+        if name != skill_dir.name:
+            errors.append(f"{label}: name '{name}' does not match folder name")
+        if meta.get("category") != cat:
+            errors.append(f"{label}: category field '{meta.get('category')}' != folder '{cat}'")
+        source = meta.get("source") or {}
+        for field in SOURCE_FIELDS:
+            if not source.get(field):
+                errors.append(f"{label}: source.{field} is empty")
+        for field in ("description", "why"):
+            value = (meta.get(field) or "").strip()
+            if not value or value == "TODO":
+                errors.append(f"{label}: '{field}' is empty or TODO")
+        if meta.get("entry") == "full":
+            if not (skill_dir / "SKILL.md").exists():
+                errors.append(f"{label}: full entry missing SKILL.md")
+            licenses = [p for p in skill_dir.iterdir()
+                        if p.is_file() and p.name.upper().startswith(("LICENSE", "LICENCE", "COPYING"))]
+            if not licenses:
+                errors.append(f"{label}: full entry missing LICENSE file (license gate)")
+        if meta.get("adapted") and not (meta.get("adaptations") or "").strip():
+            errors.append(f"{label}: adapted=true but adaptations note is empty")
+    return seen
+
+
+def skill_row(meta, folder):
+    name = meta["name"]
+    requires = "; ".join(meta.get("requires") or []) or "—"
+    source = meta["source"]
+    commit = source["commit"][:7]
+    return (f"| [{name}]({folder}) | {esc(meta['description'])} | {esc(meta['why'])} "
+            f"| {esc(requires)} | [{source['repo']}]({source['url']}) @ {commit} |")
+
+
+def table_for(metas, folder_of):
+    lines = ["| Skill | What it does | Why it's here | Requires | Source |",
+             "|---|---|---|---|---|"]
+    for meta in metas:
+        lines.append(skill_row(meta, folder_of(meta)))
+    return lines
+
+
+def render_outputs(skills):
+    metas = [meta for _, _, meta in skills]
+    metas.sort(key=lambda m: (m["category"], m["name"]))
+    manifest = {"count": len(metas), "skills": metas}
+    outputs = {"skills.json": json.dumps(manifest, indent=2, ensure_ascii=False) + "\n"}
+
+    by_cat = {}
+    for meta in metas:
+        by_cat.setdefault(meta["category"], []).append(meta)
+
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    if START not in readme or END not in readme:
+        raise SystemExit("README.md is missing the GENERATED markers")
+    head, _, rest = readme.partition(START)
+    _, _, tail = rest.partition(END)
+    blocks = []
+    for cat in sorted(by_cat):
+        blocks.append(f"### {display_category(cat)} ({len(by_cat[cat])})")
+        blocks.append("")
+        blocks.extend(table_for(by_cat[cat], lambda m: f"categories/{m['category']}/{m['name']}/"))
+        blocks.append("")
+    generated = "\n".join(blocks).rstrip() + "\n"
+    outputs["README.md"] = f"{head}{START}\n{generated}{END}{tail}"
+
+    for cat in sorted(by_cat):
+        lines = [f"# {display_category(cat)}", "",
+                 f"Skills in the **{cat}** category. Back to the [root README](../../README.md).",
+                 ""]
+        lines.extend(table_for(by_cat[cat], lambda m: f"{m['name']}/"))
+        outputs[f"categories/{cat}/README.md"] = "\n".join(lines) + "\n"
+    return outputs
+
+
+def main():
+    check = "--check" in sys.argv
+    errors = []
+    skills = load_skills(errors)
+    validate(skills, errors)
+    if errors:
+        for err in errors:
+            print(f"ERROR: {err}")
+        print(f"{len(errors)} validation error(s)")
+        return 1
+    outputs = render_outputs(skills)
+    stale = []
+    for rel, content in outputs.items():
+        path = ROOT / rel
+        current = path.read_text(encoding="utf-8") if path.exists() else None
+        if current != content:
+            stale.append(rel)
+            if not check:
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(content, encoding="utf-8")
+    if check and stale:
+        print("STALE generated files: " + ", ".join(sorted(stale)))
+        return 1
+    action = "check OK" if check else "regenerated"
+    print(f"{action}: {len(skills)} skill(s), files: {', '.join(sorted(outputs))}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
