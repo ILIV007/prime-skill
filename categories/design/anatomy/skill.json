@@ -1,0 +1,23 @@
+{
+  "name": "anatomy",
+  "title": "anatomy",
+  "description": "Builds crafted, interactive isometric SVG figures that explain a technical idea as a physical machine, with worked examples and a geometry-audit kit.",
+  "why": "Precise technical illustration as explanation — a capability neither the generative-art skill nor the UI set covers.",
+  "category": "design",
+  "source": {
+    "repo": "wheresryan22/anatomy",
+    "url": "https://github.com/wheresryan22/anatomy",
+    "path": ".",
+    "commit": "1482e8469b0a9e0d8cc18ea2740a01423d29ae80"
+  },
+  "license": "MIT",
+  "stars_at_import": 24607,
+  "added": "2026-11-04",
+  "requires": [
+    "Node 20.10+",
+    "Chrome/Chromium"
+  ],
+  "entry": "full",
+  "adapted": true,
+  "adaptations": "Root skill imported with its runtime files (examples/, kit/, references/, scripts/, agents/, evals/); repo-level docs, .github/ and tests/ were not vendored."
+}
