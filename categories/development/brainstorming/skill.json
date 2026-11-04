@@ -1,0 +1,20 @@
+{
+  "name": "brainstorming",
+  "title": "Brainstorming",
+  "description": "Clarifies what the user actually wants, one question at a time, compares 2-3 approaches, and gets a design approved before anything is built.",
+  "why": "Stops build-first-guess-later work on new features and projects; it is the process that designed this very repo.",
+  "category": "development",
+  "source": {
+    "repo": "davila7/claude-code-templates",
+    "url": "https://github.com/davila7/claude-code-templates",
+    "path": "cli-tool/components/skills/development/brainstorming",
+    "commit": "cc3f5356409d09bd7596496eb9b265b2225e195f"
+  },
+  "license": "MIT",
+  "stars_at_import": 33112,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}
