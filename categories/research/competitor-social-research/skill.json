@@ -1,0 +1,22 @@
+{
+  "name": "competitor-social-research",
+  "title": "Competitor Social Research",
+  "description": "Researches competitors' social strategy and turns public data into a practical strategy brief.",
+  "why": "Shows what content is winning in your niche and where the gaps are.",
+  "category": "research",
+  "source": {
+    "repo": "ScrapeCreators/social-media-research-skills",
+    "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+    "path": "skills/competitor-social-research",
+    "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+  },
+  "license": "MIT",
+  "stars_at_import": 5438,
+  "added": "2026-11-04",
+  "requires": [
+    "ScrapeCreators API key (paid, credit-based)"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

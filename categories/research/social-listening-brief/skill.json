@@ -1,0 +1,22 @@
+{
+  "name": "social-listening-brief",
+  "title": "Social Listening Brief",
+  "description": "Produces a cited social-listening brief on what people say about a brand, topic, or niche.",
+  "why": "A fast reputation and sentiment snapshot before campaigns or launches.",
+  "category": "research",
+  "source": {
+    "repo": "ScrapeCreators/social-media-research-skills",
+    "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+    "path": "skills/social-listening-brief",
+    "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+  },
+  "license": "MIT",
+  "stars_at_import": 5438,
+  "added": "2026-11-04",
+  "requires": [
+    "ScrapeCreators API key (paid, credit-based)"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

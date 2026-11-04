@@ -1,0 +1,22 @@
+{
+  "name": "product-demand-research",
+  "title": "Product Demand Research",
+  "description": "Validates product ideas by mining pain points, demand signals, and objections from social posts and Reddit.",
+  "why": "Evidence-backed demand checks before building or launching anything.",
+  "category": "research",
+  "source": {
+    "repo": "ScrapeCreators/social-media-research-skills",
+    "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+    "path": "skills/product-demand-research",
+    "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+  },
+  "license": "MIT",
+  "stars_at_import": 5438,
+  "added": "2026-11-04",
+  "requires": [
+    "ScrapeCreators API key (paid, credit-based)"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

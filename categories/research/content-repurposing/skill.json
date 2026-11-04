@@ -1,0 +1,22 @@
+{
+  "name": "content-repurposing",
+  "title": "Content Repurposing",
+  "description": "Turns public videos, transcripts, and posts into threads, scripts, newsletters, and content calendars.",
+  "why": "One good source becomes a week of channel-ready material.",
+  "category": "research",
+  "source": {
+    "repo": "ScrapeCreators/social-media-research-skills",
+    "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+    "path": "skills/content-repurposing",
+    "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+  },
+  "license": "MIT",
+  "stars_at_import": 5438,
+  "added": "2026-11-04",
+  "requires": [
+    "ScrapeCreators API key (paid, credit-based)"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

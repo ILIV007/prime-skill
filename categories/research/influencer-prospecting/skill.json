@@ -1,0 +1,22 @@
+{
+  "name": "influencer-prospecting",
+  "title": "Influencer Prospecting",
+  "description": "Finds and scores creators in a niche for outreach, partnerships, sponsorships, and UGC.",
+  "why": "Builds prospect lists from evidence instead of manual scrolling.",
+  "category": "research",
+  "source": {
+    "repo": "ScrapeCreators/social-media-research-skills",
+    "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+    "path": "skills/influencer-prospecting",
+    "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+  },
+  "license": "MIT",
+  "stars_at_import": 5438,
+  "added": "2026-11-04",
+  "requires": [
+    "ScrapeCreators API key (paid, credit-based)"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}
