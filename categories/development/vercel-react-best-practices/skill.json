@@ -1,0 +1,20 @@
+{
+  "name": "vercel-react-best-practices",
+  "title": "vercel-react-best-practices",
+  "description": "Vercel Engineering's React and Next.js performance rules: 70 prioritized guidelines across data fetching, bundles, rendering, and re-renders.",
+  "why": "The canonical React performance rulebook; applies to the owner's Next.js work (Eggino) and any React build.",
+  "category": "development",
+  "source": {
+    "repo": "vercel-labs/agent-skills",
+    "url": "https://github.com/vercel-labs/agent-skills",
+    "path": "skills/react-best-practices",
+    "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62"
+  },
+  "license": "MIT",
+  "stars_at_import": 33506,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": true,
+  "adaptations": "Folder renamed from react-best-practices to the skill's declared name, vercel-react-best-practices; LICENSE supplied as the standard MIT text because the source repo ships no LICENSE file (MIT is declared in the SKILL.md frontmatter)."
+}
