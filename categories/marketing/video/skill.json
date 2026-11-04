@@ -1,0 +1,20 @@
+{
+  "name": "video",
+  "title": "Video",
+  "description": "Guides AI and programmatic video production: avatars, demos, explainers, and generation pipelines.",
+  "why": "Video is the highest-reach format; this maps the current tool landscape into workflows.",
+  "category": "marketing",
+  "source": {
+    "repo": "coreyhaines31/marketingskills",
+    "url": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/video",
+    "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+  },
+  "license": "MIT",
+  "stars_at_import": 58381,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

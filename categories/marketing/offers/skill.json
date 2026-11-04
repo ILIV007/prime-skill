@@ -1,0 +1,20 @@
+{
+  "name": "offers",
+  "title": "Offers",
+  "description": "Designs the offer itself: value framing, bonus stacks, guarantees, scarcity, and payment structure.",
+  "why": "A better offer beats better ads; core skill for anything sold or promoted.",
+  "category": "marketing",
+  "source": {
+    "repo": "coreyhaines31/marketingskills",
+    "url": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/offers",
+    "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+  },
+  "license": "MIT",
+  "stars_at_import": 58381,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

@@ -1,0 +1,20 @@
+{
+  "name": "copywriting",
+  "title": "Copywriting",
+  "description": "Writes and improves marketing copy for pages: headlines, CTAs, value propositions, and hero sections.",
+  "why": "Sharp copy is the cheapest conversion lever for landing pages and product posts.",
+  "category": "marketing",
+  "source": {
+    "repo": "coreyhaines31/marketingskills",
+    "url": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/copywriting",
+    "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+  },
+  "license": "MIT",
+  "stars_at_import": 58381,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

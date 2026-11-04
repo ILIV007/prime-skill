@@ -1,0 +1,20 @@
+{
+  "name": "competitor-profiling",
+  "title": "Competitor Profiling",
+  "description": "Researches competitors from their URLs and produces structured profile dossiers.",
+  "why": "Know exactly what rivals offer and how they position before you ship.",
+  "category": "marketing",
+  "source": {
+    "repo": "coreyhaines31/marketingskills",
+    "url": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/competitor-profiling",
+    "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+  },
+  "license": "MIT",
+  "stars_at_import": 58381,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

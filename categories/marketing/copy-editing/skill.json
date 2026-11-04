@@ -1,0 +1,20 @@
+{
+  "name": "copy-editing",
+  "title": "Copy Editing",
+  "description": "Edits and refreshes existing marketing copy: tightening, de-slopping, and sharpening without a rewrite.",
+  "why": "Most real work is improving copy that already exists, not starting from zero.",
+  "category": "marketing",
+  "source": {
+    "repo": "coreyhaines31/marketingskills",
+    "url": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/copy-editing",
+    "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+  },
+  "license": "MIT",
+  "stars_at_import": 58381,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

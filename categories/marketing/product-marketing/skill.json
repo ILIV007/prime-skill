@@ -1,0 +1,20 @@
+{
+  "name": "product-marketing",
+  "title": "Product Marketing",
+  "description": "Creates the product-marketing context doc - positioning, audience, ICP, brand voice - that the other marketing skills build on.",
+  "why": "The foundation of the marketing set: write the context once, reuse it in every campaign.",
+  "category": "marketing",
+  "source": {
+    "repo": "coreyhaines31/marketingskills",
+    "url": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/product-marketing",
+    "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+  },
+  "license": "MIT",
+  "stars_at_import": 58381,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

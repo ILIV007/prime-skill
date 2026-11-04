@@ -1,0 +1,20 @@
+{
+  "name": "social",
+  "title": "Social",
+  "description": "Creates, schedules, and optimizes social media content, and runs social listening across the major platforms.",
+  "why": "Directly useful for running and growing social and channel presences.",
+  "category": "marketing",
+  "source": {
+    "repo": "coreyhaines31/marketingskills",
+    "url": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/social",
+    "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+  },
+  "license": "MIT",
+  "stars_at_import": 58381,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}
