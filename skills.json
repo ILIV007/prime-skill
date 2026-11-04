@@ -1,6 +1,26 @@
 {
-  "count": 42,
+  "count": 54,
   "skills": [
+    {
+      "name": "algorithmic-art",
+      "title": "algorithmic-art",
+      "description": "Creates generative art with p5.js: seeded algorithms, flow fields, and particle systems delivered as interactive HTML pieces.",
+      "why": "The distinctive one in Anthropic's set: real generative-art capability, not another text workflow; useful for visuals and covers.",
+      "category": "design",
+      "source": {
+        "repo": "anthropics/skills",
+        "url": "https://github.com/anthropics/skills",
+        "path": "skills/algorithmic-art",
+        "commit": "ca45fc496a3436251f191354091d557da31c15b5"
+      },
+      "license": "Apache-2.0",
+      "stars_at_import": 187211,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
     {
       "name": "banner-design",
       "title": "Banner Design",
@@ -162,6 +182,26 @@
       "adaptations": ""
     },
     {
+      "name": "mcp-builder",
+      "title": "mcp-builder",
+      "description": "Anthropic's playbook for designing and building high-quality MCP servers, with reference guides and an evaluation harness.",
+      "why": "The owner builds connectors and MCP-backed tools; this is the reference guide from the source.",
+      "category": "development",
+      "source": {
+        "repo": "anthropics/skills",
+        "url": "https://github.com/anthropics/skills",
+        "path": "skills/mcp-builder",
+        "commit": "ca45fc496a3436251f191354091d557da31c15b5"
+      },
+      "license": "Apache-2.0",
+      "stars_at_import": 187211,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
       "name": "ponytail",
       "title": "Ponytail",
       "description": "Lazy senior-dev mode: the smallest change that fully solves the task, explained in one read.",
@@ -275,6 +315,213 @@
       },
       "license": "MIT",
       "stars_at_import": 183980,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "skill-creator",
+      "title": "skill-creator",
+      "description": "Anthropic's guide and tooling for creating, evaluating, and iterating on agent skills, with eval and description-tuning scripts.",
+      "why": "This repo curates skills for a living; the official skill-authoring workflow belongs in it.",
+      "category": "development",
+      "source": {
+        "repo": "anthropics/skills",
+        "url": "https://github.com/anthropics/skills",
+        "path": "skills/skill-creator",
+        "commit": "ca45fc496a3436251f191354091d557da31c15b5"
+      },
+      "license": "Apache-2.0",
+      "stars_at_import": 187211,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "subagent-driven-development",
+      "title": "subagent-driven-development",
+      "description": "Executes an implementation plan with fresh subagents per task, with spec and quality review gates between tasks.",
+      "why": "The execution engine for writing-plans in multi-agent harnesses; how the owner's bigger builds actually get run.",
+      "category": "development",
+      "source": {
+        "repo": "obra/superpowers",
+        "url": "https://github.com/obra/superpowers",
+        "path": "skills/subagent-driven-development",
+        "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+      },
+      "license": "MIT",
+      "stars_at_import": 312043,
+      "added": "2026-11-04",
+      "requires": [
+        "a harness with subagents"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "systematic-debugging",
+      "title": "systematic-debugging",
+      "description": "A root-cause-first debugging method: reproduce, isolate, and prove the cause before changing any code.",
+      "why": "Ends guess-and-patch debugging loops; pairs with this project's verify-against-real-behavior rule.",
+      "category": "development",
+      "source": {
+        "repo": "obra/superpowers",
+        "url": "https://github.com/obra/superpowers",
+        "path": "skills/systematic-debugging",
+        "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+      },
+      "license": "MIT",
+      "stars_at_import": 312043,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "test-driven-development",
+      "title": "test-driven-development",
+      "description": "Guides red-green-refactor TDD: write the failing test first, make it pass with the smallest change, then refactor.",
+      "why": "Proven discipline from the most-starred source in this collection; keeps agent-written code verified by construction.",
+      "category": "development",
+      "source": {
+        "repo": "obra/superpowers",
+        "url": "https://github.com/obra/superpowers",
+        "path": "skills/test-driven-development",
+        "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+      },
+      "license": "MIT",
+      "stars_at_import": 312043,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "using-git-worktrees",
+      "title": "using-git-worktrees",
+      "description": "Sets up isolated git worktrees so parallel features, reviews, and experiments never collide in one working tree.",
+      "why": "The standard companion to plan-driven work; makes parallel agent work on the owner's repos safe.",
+      "category": "development",
+      "source": {
+        "repo": "obra/superpowers",
+        "url": "https://github.com/obra/superpowers",
+        "path": "skills/using-git-worktrees",
+        "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+      },
+      "license": "MIT",
+      "stars_at_import": 312043,
+      "added": "2026-11-04",
+      "requires": [
+        "git"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "vercel-react-best-practices",
+      "title": "vercel-react-best-practices",
+      "description": "Vercel Engineering's React and Next.js performance rules: 70 prioritized guidelines across data fetching, bundles, rendering, and re-renders.",
+      "why": "The canonical React performance rulebook; applies to the owner's Next.js work (Eggino) and any React build.",
+      "category": "development",
+      "source": {
+        "repo": "vercel-labs/agent-skills",
+        "url": "https://github.com/vercel-labs/agent-skills",
+        "path": "skills/react-best-practices",
+        "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62"
+      },
+      "license": "MIT",
+      "stars_at_import": 33506,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": true,
+      "adaptations": "Folder renamed from react-best-practices to the skill's declared name, vercel-react-best-practices; LICENSE supplied as the standard MIT text because the source repo ships no LICENSE file (MIT is declared in the SKILL.md frontmatter)."
+    },
+    {
+      "name": "verification-before-completion",
+      "title": "verification-before-completion",
+      "description": "Requires fresh evidence (test runs, command output, live checks) before any claim that work is done or fixed.",
+      "why": "Encodes the rule that shipped means verified; cheap insurance against false 'done' reports.",
+      "category": "development",
+      "source": {
+        "repo": "obra/superpowers",
+        "url": "https://github.com/obra/superpowers",
+        "path": "skills/verification-before-completion",
+        "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+      },
+      "license": "MIT",
+      "stars_at_import": 312043,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "webapp-testing",
+      "title": "webapp-testing",
+      "description": "Tests local web apps with Playwright: manages the dev server, drives a real browser, and inspects console, DOM, and screenshots.",
+      "why": "Gives agents a real-browser check for the owner's web apps and artifacts; catches what unit tests cannot see.",
+      "category": "development",
+      "source": {
+        "repo": "anthropics/skills",
+        "url": "https://github.com/anthropics/skills",
+        "path": "skills/webapp-testing",
+        "commit": "ca45fc496a3436251f191354091d557da31c15b5"
+      },
+      "license": "Apache-2.0",
+      "stars_at_import": 187211,
+      "added": "2026-11-04",
+      "requires": [
+        "Python + Playwright",
+        "a local dev server"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "workers-best-practices",
+      "title": "workers-best-practices",
+      "description": "Cloudflare's official best practices for Workers: configuration, runtime patterns, and platform API guidance.",
+      "why": "Nearly all of the owner's production code runs on Workers (IVAI, TradeAgent, Proxiv3); this is the vendor's own guidance.",
+      "category": "development",
+      "source": {
+        "repo": "cloudflare/skills",
+        "url": "https://github.com/cloudflare/skills",
+        "path": "skills/workers-best-practices",
+        "commit": "1f2cd0a19588e2c6197c91dd7c71729df1fb6156"
+      },
+      "license": "Apache-2.0",
+      "stars_at_import": 3275,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "writing-plans",
+      "title": "writing-plans",
+      "description": "Turns an approved spec or design into a detailed, step-by-step implementation plan that can be executed without guessing.",
+      "why": "The missing half of the brainstorming workflow already in this repo; makes multi-step builds land first-try instead of drifting.",
+      "category": "development",
+      "source": {
+        "repo": "obra/superpowers",
+        "url": "https://github.com/obra/superpowers",
+        "path": "skills/writing-plans",
+        "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+      },
+      "license": "MIT",
+      "stars_at_import": 312043,
       "added": "2026-11-04",
       "requires": [],
       "entry": "full",
