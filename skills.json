@@ -1,4 +1,873 @@
 {
-  "count": 0,
-  "skills": []
+  "count": 42,
+  "skills": [
+    {
+      "name": "banner-design",
+      "title": "Banner Design",
+      "description": "Designs banners for social, ads, website heroes, and print, with multiple art-direction options.",
+      "why": "Banners and covers are a recurring need for channels and launches.",
+      "category": "design",
+      "source": {
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+        "path": ".claude/skills/banner-design",
+        "commit": "dd9a1b4cf9f67ca2e326f646d93e101b2778db30"
+      },
+      "license": "MIT",
+      "stars_at_import": 144911,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "brand",
+      "title": "Brand",
+      "description": "Brand voice, visual identity, messaging frameworks, and consistency checks for branded content.",
+      "why": "Keeps channel and product visuals and tone recognizably on-brand.",
+      "category": "design",
+      "source": {
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+        "path": ".claude/skills/brand",
+        "commit": "dd9a1b4cf9f67ca2e326f646d93e101b2778db30"
+      },
+      "license": "MIT",
+      "stars_at_import": 144911,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "design",
+      "title": "Design",
+      "description": "All-in-one design skill: brand identity, tokens, logos, icons, banners, presentations, and social visuals.",
+      "why": "Covers the long tail of one-off design asks in a single skill.",
+      "category": "design",
+      "source": {
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+        "path": ".claude/skills/design",
+        "commit": "dd9a1b4cf9f67ca2e326f646d93e101b2778db30"
+      },
+      "license": "MIT",
+      "stars_at_import": 144911,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "design-system",
+      "title": "Design System",
+      "description": "Design-token architecture (primitive to semantic to component), component specs, and brand-compliant slides.",
+      "why": "Keeps multi-screen products visually consistent as they grow.",
+      "category": "design",
+      "source": {
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+        "path": ".claude/skills/design-system",
+        "commit": "dd9a1b4cf9f67ca2e326f646d93e101b2778db30"
+      },
+      "license": "MIT",
+      "stars_at_import": 144911,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "slides",
+      "title": "Slides",
+      "description": "Creates strategic HTML presentations with charts, design tokens, and responsive layouts.",
+      "why": "Turns briefs and reports into presentable decks without design software.",
+      "category": "design",
+      "source": {
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+        "path": ".claude/skills/slides",
+        "commit": "dd9a1b4cf9f67ca2e326f646d93e101b2778db30"
+      },
+      "license": "MIT",
+      "stars_at_import": 144911,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "ui-styling",
+      "title": "Ui Styling",
+      "description": "Builds accessible UIs with shadcn/ui, Radix, and Tailwind, plus canvas-based visual designs.",
+      "why": "The practical implementation partner to the design-system rules.",
+      "category": "design",
+      "source": {
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+        "path": ".claude/skills/ui-styling",
+        "commit": "dd9a1b4cf9f67ca2e326f646d93e101b2778db30"
+      },
+      "license": "MIT",
+      "stars_at_import": 144911,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "title": "UI/UX Pro Max",
+      "description": "Design intelligence for web, mobile, and desktop UIs, with searchable local data on styles, palettes, font pairings, UX guidelines, and stacks.",
+      "why": "Gives interface work a real design database instead of guesswork; the flagship of the design set.",
+      "category": "design",
+      "source": {
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+        "path": ".claude/skills/ui-ux-pro-max",
+        "commit": "dd9a1b4cf9f67ca2e326f646d93e101b2778db30"
+      },
+      "license": "MIT",
+      "stars_at_import": 144911,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": true,
+      "adaptations": "Rewrote ${CLAUDE_PLUGIN_ROOT}-based script paths in SKILL.md to paths relative to the skill folder, so the commands run in any harness."
+    },
+    {
+      "name": "brainstorming",
+      "title": "Brainstorming",
+      "description": "Clarifies what the user actually wants, one question at a time, compares 2-3 approaches, and gets a design approved before anything is built.",
+      "why": "Stops build-first-guess-later work on new features and projects; it is the process that designed this very repo.",
+      "category": "development",
+      "source": {
+        "repo": "davila7/claude-code-templates",
+        "url": "https://github.com/davila7/claude-code-templates",
+        "path": "cli-tool/components/skills/development/brainstorming",
+        "commit": "cc3f5356409d09bd7596496eb9b265b2225e195f"
+      },
+      "license": "MIT",
+      "stars_at_import": 33112,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "ponytail",
+      "title": "Ponytail",
+      "description": "Lazy senior-dev mode: the smallest change that fully solves the task, explained in one read.",
+      "why": "Cuts over-engineering, tokens, and cost on everyday coding without dropping safety or tests.",
+      "category": "development",
+      "source": {
+        "repo": "DietrichGebert/ponytail",
+        "url": "https://github.com/DietrichGebert/ponytail",
+        "path": "skills/ponytail",
+        "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846"
+      },
+      "license": "MIT",
+      "stars_at_import": 183980,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "ponytail-audit",
+      "title": "Ponytail Audit",
+      "description": "One-shot whole-repo audit for bugs, security holes, slow paths, untested risky code, and deletable bloat.",
+      "why": "A fast health check for inherited or fast-grown codebases, ranked by impact.",
+      "category": "development",
+      "source": {
+        "repo": "DietrichGebert/ponytail",
+        "url": "https://github.com/DietrichGebert/ponytail",
+        "path": "skills/ponytail-audit",
+        "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846"
+      },
+      "license": "MIT",
+      "stars_at_import": 183980,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "ponytail-debt",
+      "title": "Ponytail Debt",
+      "description": "Lists every deliberate shortcut: marker in the code as a debt ledger.",
+      "why": "Keeps intentional shortcuts visible so they get repaid instead of forgotten.",
+      "category": "development",
+      "source": {
+        "repo": "DietrichGebert/ponytail",
+        "url": "https://github.com/DietrichGebert/ponytail",
+        "path": "skills/ponytail-debt",
+        "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846"
+      },
+      "license": "MIT",
+      "stars_at_import": 183980,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "ponytail-gain",
+      "title": "Ponytail Gain",
+      "description": "Shows Ponytail's measured savings in code, cost, and speed from its benchmark.",
+      "why": "Answers 'is the lazy mode actually paying off' with numbers, not vibes.",
+      "category": "development",
+      "source": {
+        "repo": "DietrichGebert/ponytail",
+        "url": "https://github.com/DietrichGebert/ponytail",
+        "path": "skills/ponytail-gain",
+        "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846"
+      },
+      "license": "MIT",
+      "stars_at_import": 183980,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "ponytail-help",
+      "title": "Ponytail Help",
+      "description": "Quick reference card for Ponytail levels, skills, and commands.",
+      "why": "One-shot cheat sheet so the whole set stays usable without re-reading docs.",
+      "category": "development",
+      "source": {
+        "repo": "DietrichGebert/ponytail",
+        "url": "https://github.com/DietrichGebert/ponytail",
+        "path": "skills/ponytail-help",
+        "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846"
+      },
+      "license": "MIT",
+      "stars_at_import": 183980,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "ponytail-review",
+      "title": "Ponytail Review",
+      "description": "Quality review of a change: correctness, safety, load behavior, tests, and whether every line earns its place.",
+      "why": "Catches risky or bloated diffs before they ship, explained in plain language.",
+      "category": "development",
+      "source": {
+        "repo": "DietrichGebert/ponytail",
+        "url": "https://github.com/DietrichGebert/ponytail",
+        "path": "skills/ponytail-review",
+        "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846"
+      },
+      "license": "MIT",
+      "stars_at_import": 183980,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "community-marketing",
+      "title": "Community Marketing",
+      "description": "Builds and leverages online communities - Discord, Slack, forums - for product growth and loyalty.",
+      "why": "Community-led growth fits bot and channel products especially well.",
+      "category": "marketing",
+      "source": {
+        "repo": "coreyhaines31/marketingskills",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/community-marketing",
+        "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+      },
+      "license": "MIT",
+      "stars_at_import": 58381,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "competitor-profiling",
+      "title": "Competitor Profiling",
+      "description": "Researches competitors from their URLs and produces structured profile dossiers.",
+      "why": "Know exactly what rivals offer and how they position before you ship.",
+      "category": "marketing",
+      "source": {
+        "repo": "coreyhaines31/marketingskills",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/competitor-profiling",
+        "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+      },
+      "license": "MIT",
+      "stars_at_import": 58381,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "content-strategy",
+      "title": "Content Strategy",
+      "description": "Plans what content to create: pillars, topic clusters, editorial calendars, and roadmaps.",
+      "why": "Deciding what to publish beats publishing at random, for blogs and channels alike.",
+      "category": "marketing",
+      "source": {
+        "repo": "coreyhaines31/marketingskills",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/content-strategy",
+        "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+      },
+      "license": "MIT",
+      "stars_at_import": 58381,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "copy-editing",
+      "title": "Copy Editing",
+      "description": "Edits and refreshes existing marketing copy: tightening, de-slopping, and sharpening without a rewrite.",
+      "why": "Most real work is improving copy that already exists, not starting from zero.",
+      "category": "marketing",
+      "source": {
+        "repo": "coreyhaines31/marketingskills",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/copy-editing",
+        "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+      },
+      "license": "MIT",
+      "stars_at_import": 58381,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "copywriting",
+      "title": "Copywriting",
+      "description": "Writes and improves marketing copy for pages: headlines, CTAs, value propositions, and hero sections.",
+      "why": "Sharp copy is the cheapest conversion lever for landing pages and product posts.",
+      "category": "marketing",
+      "source": {
+        "repo": "coreyhaines31/marketingskills",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/copywriting",
+        "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+      },
+      "license": "MIT",
+      "stars_at_import": 58381,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "customer-research",
+      "title": "Customer Research",
+      "description": "Runs and synthesizes customer research: interviews, surveys, review mining, voice-of-customer, and JTBD.",
+      "why": "Decisions grounded in real customer language outperform opinion.",
+      "category": "marketing",
+      "source": {
+        "repo": "coreyhaines31/marketingskills",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/customer-research",
+        "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+      },
+      "license": "MIT",
+      "stars_at_import": 58381,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "launch",
+      "title": "Launch",
+      "description": "Plans product launches and feature announcements: checklists, go-to-market, waitlists, and release strategy.",
+      "why": "Launches are one-shot events; a checklist prevents unforced errors.",
+      "category": "marketing",
+      "source": {
+        "repo": "coreyhaines31/marketingskills",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/launch",
+        "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+      },
+      "license": "MIT",
+      "stars_at_import": 58381,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "marketing-council",
+      "title": "Marketing Council",
+      "description": "Simulates a board of legendary marketers (Godin, Ogilvy, Hormozi, and more) debating your marketing question.",
+      "why": "Several expert lenses on one decision beat a single generic take.",
+      "category": "marketing",
+      "source": {
+        "repo": "coreyhaines31/marketingskills",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/marketing-council",
+        "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+      },
+      "license": "MIT",
+      "stars_at_import": 58381,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "marketing-ideas",
+      "title": "Marketing Ideas",
+      "description": "A bank of proven marketing and growth tactics for software products, matched to the situation.",
+      "why": "The fastest way out of 'we need growth but don't know what to try'.",
+      "category": "marketing",
+      "source": {
+        "repo": "coreyhaines31/marketingskills",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/marketing-ideas",
+        "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+      },
+      "license": "MIT",
+      "stars_at_import": 58381,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "marketing-psychology",
+      "title": "Marketing Psychology",
+      "description": "Applies behavioral science and mental models - anchoring, social proof, scarcity, framing - to marketing.",
+      "why": "Explains why people buy, so offers and copy stop being guesswork.",
+      "category": "marketing",
+      "source": {
+        "repo": "coreyhaines31/marketingskills",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/marketing-psychology",
+        "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+      },
+      "license": "MIT",
+      "stars_at_import": 58381,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "offers",
+      "title": "Offers",
+      "description": "Designs the offer itself: value framing, bonus stacks, guarantees, scarcity, and payment structure.",
+      "why": "A better offer beats better ads; core skill for anything sold or promoted.",
+      "category": "marketing",
+      "source": {
+        "repo": "coreyhaines31/marketingskills",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/offers",
+        "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+      },
+      "license": "MIT",
+      "stars_at_import": 58381,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "product-marketing",
+      "title": "Product Marketing",
+      "description": "Creates the product-marketing context doc - positioning, audience, ICP, brand voice - that the other marketing skills build on.",
+      "why": "The foundation of the marketing set: write the context once, reuse it in every campaign.",
+      "category": "marketing",
+      "source": {
+        "repo": "coreyhaines31/marketingskills",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/product-marketing",
+        "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+      },
+      "license": "MIT",
+      "stars_at_import": 58381,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "social",
+      "title": "Social",
+      "description": "Creates, schedules, and optimizes social media content, and runs social listening across the major platforms.",
+      "why": "Directly useful for running and growing social and channel presences.",
+      "category": "marketing",
+      "source": {
+        "repo": "coreyhaines31/marketingskills",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/social",
+        "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+      },
+      "license": "MIT",
+      "stars_at_import": 58381,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "video",
+      "title": "Video",
+      "description": "Guides AI and programmatic video production: avatars, demos, explainers, and generation pipelines.",
+      "why": "Video is the highest-reach format; this maps the current tool landscape into workflows.",
+      "category": "marketing",
+      "source": {
+        "repo": "coreyhaines31/marketingskills",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/video",
+        "commit": "88c79f6528a9347420e57ceb1fff9a60de651768"
+      },
+      "license": "MIT",
+      "stars_at_import": 58381,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "ad-library-teardown",
+      "title": "Ad Library Teardown",
+      "description": "Analyzes active ads from Meta, Google, and LinkedIn libraries: hooks, offers, CTAs, and claims.",
+      "why": "Competitors publish their best-tested messaging in ad libraries for free.",
+      "category": "research",
+      "source": {
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+        "path": "skills/ad-library-teardown",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+      },
+      "license": "MIT",
+      "stars_at_import": 5438,
+      "added": "2026-11-04",
+      "requires": [
+        "ScrapeCreators API key (paid, credit-based)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "audience-research",
+      "title": "Audience Research",
+      "description": "Evaluates a creator or brand audience from public signals: demographics, geography, language, and fit.",
+      "why": "Prevents sponsorship and partnership picks based on follower counts alone.",
+      "category": "research",
+      "source": {
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+        "path": "skills/audience-research",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+      },
+      "license": "MIT",
+      "stars_at_import": 5438,
+      "added": "2026-11-04",
+      "requires": [
+        "ScrapeCreators API key (paid, credit-based)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "comment-mining",
+      "title": "Comment Mining",
+      "description": "Mines comments and replies for objections, questions, buying intent, and voice-of-customer language.",
+      "why": "Comments are unfiltered market research, already written by the audience.",
+      "category": "research",
+      "source": {
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+        "path": "skills/comment-mining",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+      },
+      "license": "MIT",
+      "stars_at_import": 5438,
+      "added": "2026-11-04",
+      "requires": [
+        "ScrapeCreators API key (paid, credit-based)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "competitor-social-research",
+      "title": "Competitor Social Research",
+      "description": "Researches competitors' social strategy and turns public data into a practical strategy brief.",
+      "why": "Shows what content is winning in your niche and where the gaps are.",
+      "category": "research",
+      "source": {
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+        "path": "skills/competitor-social-research",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+      },
+      "license": "MIT",
+      "stars_at_import": 5438,
+      "added": "2026-11-04",
+      "requires": [
+        "ScrapeCreators API key (paid, credit-based)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "content-repurposing",
+      "title": "Content Repurposing",
+      "description": "Turns public videos, transcripts, and posts into threads, scripts, newsletters, and content calendars.",
+      "why": "One good source becomes a week of channel-ready material.",
+      "category": "research",
+      "source": {
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+        "path": "skills/content-repurposing",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+      },
+      "license": "MIT",
+      "stars_at_import": 5438,
+      "added": "2026-11-04",
+      "requires": [
+        "ScrapeCreators API key (paid, credit-based)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "creator-profile-teardown",
+      "title": "Creator Profile Teardown",
+      "description": "Tears down a creator or brand profile: positioning, pillars, hooks, formats, and outlier posts.",
+      "why": "A repeatable way to learn from accounts that already win.",
+      "category": "research",
+      "source": {
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+        "path": "skills/creator-profile-teardown",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+      },
+      "license": "MIT",
+      "stars_at_import": 5438,
+      "added": "2026-11-04",
+      "requires": [
+        "ScrapeCreators API key (paid, credit-based)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "influencer-prospecting",
+      "title": "Influencer Prospecting",
+      "description": "Finds and scores creators in a niche for outreach, partnerships, sponsorships, and UGC.",
+      "why": "Builds prospect lists from evidence instead of manual scrolling.",
+      "category": "research",
+      "source": {
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+        "path": "skills/influencer-prospecting",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+      },
+      "license": "MIT",
+      "stars_at_import": 5438,
+      "added": "2026-11-04",
+      "requires": [
+        "ScrapeCreators API key (paid, credit-based)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "outlier-post-finder",
+      "title": "Outlier Post Finder",
+      "description": "Finds posts that massively overperformed a creator's baseline and explains why they worked.",
+      "why": "Modeling proven outliers is the shortest path to better content.",
+      "category": "research",
+      "source": {
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+        "path": "skills/outlier-post-finder",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+      },
+      "license": "MIT",
+      "stars_at_import": 5438,
+      "added": "2026-11-04",
+      "requires": [
+        "ScrapeCreators API key (paid, credit-based)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "product-demand-research",
+      "title": "Product Demand Research",
+      "description": "Validates product ideas by mining pain points, demand signals, and objections from social posts and Reddit.",
+      "why": "Evidence-backed demand checks before building or launching anything.",
+      "category": "research",
+      "source": {
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+        "path": "skills/product-demand-research",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+      },
+      "license": "MIT",
+      "stars_at_import": 5438,
+      "added": "2026-11-04",
+      "requires": [
+        "ScrapeCreators API key (paid, credit-based)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "scrapecreators-api",
+      "title": "ScrapeCreators API",
+      "description": "Reference and access layer for the ScrapeCreators REST API: public data from 27+ social platforms.",
+      "why": "The base skill the whole research set calls; it documents every endpoint the others use.",
+      "category": "research",
+      "source": {
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+        "path": "skills/scrapecreators-api",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+      },
+      "license": "MIT",
+      "stars_at_import": 5438,
+      "added": "2026-11-04",
+      "requires": [
+        "ScrapeCreators API key (paid, credit-based)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "social-listening-brief",
+      "title": "Social Listening Brief",
+      "description": "Produces a cited social-listening brief on what people say about a brand, topic, or niche.",
+      "why": "A fast reputation and sentiment snapshot before campaigns or launches.",
+      "category": "research",
+      "source": {
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+        "path": "skills/social-listening-brief",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+      },
+      "license": "MIT",
+      "stars_at_import": 5438,
+      "added": "2026-11-04",
+      "requires": [
+        "ScrapeCreators API key (paid, credit-based)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "transcript-intelligence",
+      "title": "Transcript Intelligence",
+      "description": "Summarizes and mines video transcripts for hooks, claims, quotes, and reusable content atoms.",
+      "why": "Unlocks the content inside long videos without watching them all.",
+      "category": "research",
+      "source": {
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+        "path": "skills/transcript-intelligence",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+      },
+      "license": "MIT",
+      "stars_at_import": 5438,
+      "added": "2026-11-04",
+      "requires": [
+        "ScrapeCreators API key (paid, credit-based)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "trend-discovery",
+      "title": "Trend Discovery",
+      "description": "Finds trending topics, hashtags, sounds, and formats in a niche from public trend endpoints.",
+      "why": "Trend timing is free reach for channels; this turns trends into content angles.",
+      "category": "research",
+      "source": {
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "url": "https://github.com/ScrapeCreators/social-media-research-skills",
+        "path": "skills/trend-discovery",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2"
+      },
+      "license": "MIT",
+      "stars_at_import": 5438,
+      "added": "2026-11-04",
+      "requires": [
+        "ScrapeCreators API key (paid, credit-based)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    },
+    {
+      "name": "reverse-engineer-anything",
+      "title": "Reverse Engineer Anything",
+      "description": "Reverse engineers binaries, Electron/JS apps, .NET, firmware, and browser targets with REA, backed by runtime evidence.",
+      "why": "The owner's reverse-engineering workhorse: explains features, compares versions, and guides reconstructions from real artifacts.",
+      "category": "reverse-engineering",
+      "source": {
+        "repo": "morluto/rea",
+        "url": "https://github.com/morluto/rea",
+        "path": ".agents/skills/reverse-engineer-anything",
+        "commit": "d7df9df3393f77c78a76a06144ff4f515d5db928"
+      },
+      "license": "MIT",
+      "stars_at_import": 428340,
+      "added": "2026-11-04",
+      "requires": [
+        "REA toolchain (optional, for full function)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": ""
+    }
+  ]
 }
