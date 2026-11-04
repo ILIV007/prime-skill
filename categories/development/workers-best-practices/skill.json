@@ -1,0 +1,20 @@
+{
+  "name": "workers-best-practices",
+  "title": "workers-best-practices",
+  "description": "Cloudflare's official best practices for Workers: configuration, runtime patterns, and platform API guidance.",
+  "why": "Nearly all of the owner's production code runs on Workers (IVAI, TradeAgent, Proxiv3); this is the vendor's own guidance.",
+  "category": "development",
+  "source": {
+    "repo": "cloudflare/skills",
+    "url": "https://github.com/cloudflare/skills",
+    "path": "skills/workers-best-practices",
+    "commit": "1f2cd0a19588e2c6197c91dd7c71729df1fb6156"
+  },
+  "license": "Apache-2.0",
+  "stars_at_import": 3275,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}
