@@ -1,0 +1,22 @@
+{
+  "name": "semgrep",
+  "title": "Semgrep",
+  "description": "Trail of Bits' Semgrep skill: writing and running Semgrep rules for static analysis and code auditing.",
+  "why": "The canonical static-analysis skill from a top security firm; listed link-only because its CC-BY-SA-4.0 license does not allow redistribution.",
+  "category": "security",
+  "source": {
+    "repo": "trailofbits/skills",
+    "url": "https://github.com/trailofbits/skills",
+    "path": "plugins/static-analysis/skills/semgrep",
+    "commit": "711af095215ad4ecde5b90cd1d0124b3f1c4ca9e"
+  },
+  "license": "CC-BY-SA-4.0",
+  "stars_at_import": 7992,
+  "added": "2026-11-04",
+  "requires": [
+    "Semgrep CLI"
+  ],
+  "entry": "link-only",
+  "adapted": false,
+  "adaptations": ""
+}
