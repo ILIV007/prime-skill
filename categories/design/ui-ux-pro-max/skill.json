@@ -16,5 +16,9 @@
   "requires": [],
   "entry": "full",
   "adapted": true,
-  "adaptations": "Rewrote ${CLAUDE_PLUGIN_ROOT}-based script paths in SKILL.md to paths relative to the skill folder, so the commands run in any harness."
+  "adaptations": "Rewrote ${CLAUDE_PLUGIN_ROOT}-based script paths in SKILL.md to paths relative to the skill folder, so the commands run in any harness.",
+  "tags": [
+    "design-systems"
+  ],
+  "special": true
 }

@@ -16,5 +16,10 @@
   "requires": [],
   "entry": "full",
   "adapted": false,
-  "adaptations": ""
+  "adaptations": "",
+  "tags": [
+    "content",
+    "design-systems"
+  ],
+  "special": false
 }

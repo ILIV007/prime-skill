@@ -19,5 +19,9 @@
   ],
   "entry": "full",
   "adapted": true,
-  "adaptations": "Root skill imported with its runtime files (examples/, kit/, references/, scripts/, agents/, evals/); repo-level docs, .github/ and tests/ were not vendored."
+  "adaptations": "Root skill imported with its runtime files (examples/, kit/, references/, scripts/, agents/, evals/); repo-level docs, .github/ and tests/ were not vendored.",
+  "tags": [
+    "generative"
+  ],
+  "special": true
 }

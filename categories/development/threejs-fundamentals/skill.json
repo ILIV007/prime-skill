@@ -18,5 +18,10 @@
   ],
   "entry": "full",
   "adapted": false,
-  "adaptations": ""
+  "adaptations": "",
+  "tags": [
+    "3d",
+    "react"
+  ],
+  "special": false
 }

@@ -16,5 +16,10 @@
   "requires": [],
   "entry": "full",
   "adapted": false,
-  "adaptations": ""
+  "adaptations": "",
+  "tags": [
+    "harness",
+    "api"
+  ],
+  "special": false
 }

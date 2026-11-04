@@ -16,5 +16,9 @@
   "requires": [],
   "entry": "full",
   "adapted": false,
-  "adaptations": ""
+  "adaptations": "",
+  "tags": [
+    "automation"
+  ],
+  "special": false
 }

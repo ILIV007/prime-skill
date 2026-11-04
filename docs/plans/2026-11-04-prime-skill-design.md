@@ -172,6 +172,31 @@ redistribution).
   they are generated.
 - Order of implementation steps (goes in the implementation plan).
 
+## Amendment (2026-11-04, PASS 2): tags, specials, category growth
+
+- **Tags.** Every `skill.json` carries a required `tags` field: 1–3 values
+  from a controlled vocabulary, enforced by `build_index.py` validation
+  (an unknown tag, or a missing/empty field, fails `--check` and CI).
+  Tags are cross-cutting topics only — never a restatement of the entry's
+  own category — and live in `skills.json` and the site, not in the README
+  tables. Vocabulary (16): `3d`, `api`, `automation`, `competitor`,
+  `content`, `design-systems`, `generative`, `harness`, `react`,
+  `research-methods`, `security-testing`, `social-data`, `tokens`,
+  `video`, `web-search`, `workflow`. Changes from the seed list:
+  `academic` was folded into `research-methods` (a single-entry tag is
+  not cross-cutting), and `workflow` was added for reusable work methods
+  that transfer across categories. `add_skill.py` requires `--tags` for
+  every new import.
+- **Specials.** A `special` boolean in `skill.json` (default false) flags
+  the collection's signature picks — a unique capability or exceptional
+  craft, at most one per capability cluster. `build_index.py` renders
+  them into the README's ⭐ Specials showcase from the manifest.
+- **Category growth tripwires.** Development splits at ~32 entries, or
+  when a coherent subgroup reaches 8+ entries (the harness-meta cluster
+  splits first). Research splits when general (non-social) research
+  reaches ~6 entries. A new category needs a one-line scope (in the
+  generator's `SCOPES`) and at least 2 entries.
+
 ## Success criteria
 
 - A fresh agent given only the repo URL can enumerate all skills, their

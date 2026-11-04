@@ -18,5 +18,9 @@
   ],
   "entry": "full",
   "adapted": false,
-  "adaptations": ""
+  "adaptations": "",
+  "tags": [
+    "automation"
+  ],
+  "special": true
 }

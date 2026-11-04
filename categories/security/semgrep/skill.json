@@ -18,5 +18,10 @@
   ],
   "entry": "link-only",
   "adapted": false,
-  "adaptations": ""
+  "adaptations": "",
+  "tags": [
+    "security-testing",
+    "automation"
+  ],
+  "special": false
 }

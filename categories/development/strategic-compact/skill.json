@@ -18,5 +18,10 @@
   ],
   "entry": "full",
   "adapted": true,
-  "adaptations": "Ships a Claude Code-specific PreToolUse hook (suggest-compact.js); the compaction guidance itself is harness-portable."
+  "adaptations": "Ships a Claude Code-specific PreToolUse hook (suggest-compact.js); the compaction guidance itself is harness-portable.",
+  "tags": [
+    "tokens",
+    "harness"
+  ],
+  "special": false
 }

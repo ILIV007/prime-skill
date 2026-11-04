@@ -25,14 +25,32 @@ in one line, it doesn't belong here.
   carry metadata only (their license does not allow redistribution); follow
   their source link to fetch the files.
 
+## ⭐ Specials
+
+The signature picks — the entries with a capability or a level of craft
+nothing else here (or anywhere) quite matches.
+
+<!-- GENERATED:SPECIALS:START -->
+| Skill | Category | Why it's here |
+|---|---|---|
+| [algorithmic-art](categories/design/algorithmic-art/) | Design | The distinctive one in Anthropic's set: real generative-art capability, not another text workflow; useful for visuals and covers. |
+| [anatomy](categories/design/anatomy/) | Design | Precise technical illustration as explanation — a capability neither the generative-art skill nor the UI set covers. |
+| [color-expert](categories/design/color-expert/) | Design | The palette data elsewhere is lookup-only; this is the craft of making and judging color — perceptually uniform ramps, naming, and verified contrast. |
+| [ui-ux-pro-max](categories/design/ui-ux-pro-max/) | Design | Gives interface work a real design database instead of guesswork; the flagship of the design set. |
+| [caveman](categories/development/caveman/) | Development | Cuts output-token waste on every reply without losing substance; the communication-side counterpart to ponytail's lean code. |
+| [ponytail](categories/development/ponytail/) | Development | Cuts over-engineering, tokens, and cost on everyday coding without dropping safety or tests. |
+| [blind-llm-agents](categories/reverse-engineering/blind-llm-agents/) | Reverse Engineering | The defensive mirror of REA: REA takes artifacts apart; this protects your own releases from being taken apart. |
+| [reverse-engineer-anything](categories/reverse-engineering/reverse-engineer-anything/) | Reverse Engineering | The owner's reverse-engineering workhorse: explains features, compares versions, and guides reconstructions from real artifacts. |
+<!-- GENERATED:SPECIALS:END -->
+
 ## At a glance
 
 <!-- GENERATED:INDEX:START -->
-**73 skills · 7 categories · 3 link-only**
+**75 skills · 7 categories · 3 link-only**
 
 | Category | Skills | Scope | Page |
 |---|---|---|---|
-| Design | 9 | Visual and interface design: design systems, styling, branding, and generated visuals. | [Browse →](categories/design/README.md) |
+| Design | 11 | Visual and interface design: design systems, styling, branding, and generated visuals. | [Browse →](categories/design/README.md) |
 | Development | 24 | Building software: planning, implementation, testing, debugging, and harness workflows. | [Browse →](categories/development/README.md) |
 | Marketing | 12 | Go-to-market: positioning, copy, content, social, and launches. | [Browse →](categories/marketing/README.md) |
 | Media | 4 | Media production: video creation and editing, motion, and filmmaking craft. | [Browse →](categories/media/README.md) |
@@ -54,11 +72,30 @@ in one line, it doesn't belong here.
 - Adaptations, when needed, are minimal and harness-neutral (no
   machine-specific paths, no private infrastructure), and are declared in
   the skill's `skill.json` (`adapted` / `adaptations`).
+- **Specials** are the collection's signature picks — a unique capability
+  or exceptional craft, at most one per capability cluster, flagged
+  `special` in the manifest and showcased in the ⭐ Specials section above.
+- Every skill carries 1–3 `tags` from a controlled vocabulary —
+  cross-cutting topics only, never a restatement of its category:
+  `3d`, `api`, `automation`, `competitor`, `content`, `design-systems`,
+  `generative`, `harness`, `react`, `research-methods`, `security-testing`,
+  `social-data`, `tokens`, `video`, `web-search`, `workflow`. Tags live in
+  `skills.json` and on the site, not in the tables below; an unknown tag
+  fails validation.
+
+### Category growth
+
+- Development splits at ~32 entries, or when a coherent subgroup reaches
+  8+ entries (the harness-meta cluster — skill/MCP/subagent tooling —
+  splits first).
+- Research splits when general (non-social) research reaches ~6 entries.
+- A new category needs a one-line scope (recorded in the generator) and
+  at least 2 entries.
 
 ## Categories
 
 <!-- GENERATED:START -->
-### [Design](categories/design/README.md) (9)
+### [Design](categories/design/README.md) (11)
 
 | Skill | What it does | Why it's here | Requires | Source |
 |---|---|---|---|---|
@@ -67,6 +104,8 @@ in one line, it doesn't belong here.
 | [banner-design](categories/design/banner-design/) | Designs banners for social, ads, website heroes, and print, with multiple art-direction options. | Banners and covers are a recurring need for channels and launches. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
 | [blender-web-3d](categories/design/blender-web-3d/) | Drives Blender headless or via MCP to build, modify, render, and optimize 3D models, then publishes them as fast Three.js/Next.js web experiences with modern color, shader, and compression pipelines. | The only Blender-to-web pipeline in the collection: real 3D asset craft with optimization and deploy covered, plus a runnable demo to start from. | Blender 4.x/5.x; Node.js 20+ | [czlonkowski/blender-web-3d-skill](https://github.com/czlonkowski/blender-web-3d-skill) @ 858762f |
 | [brand](categories/design/brand/) | Brand voice, visual identity, messaging frameworks, and consistency checks for branded content. | Keeps channel and product visuals and tone recognizably on-brand. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
+| [color-contrast](categories/design/color-contrast/) | Measures color contrast with WCAG 2.x ratios and APCA, audits a codebase or stylesheet for failing pairs (including dark mode), and repairs failures with the smallest possible color change. | The executable half of color accessibility: it audits real stylesheets, computes real ratios, and fixes failures — measurement work no resident skill does. | Python 3 | [hendurhance/color-contrast](https://github.com/hendurhance/color-contrast) @ f301f1c |
+| [color-expert](categories/design/color-expert/) | Deep color expertise: color spaces (OKLCH, CIELAB), palette and ramp generation, harmony systems, color naming, pigment and print-vs-screen behavior, and contrast verification. | The palette data elsewhere is lookup-only; this is the craft of making and judging color — perceptually uniform ramps, naming, and verified contrast. | — | [meodai/skill.color-expert](https://github.com/meodai/skill.color-expert) @ 5bf7c77 |
 | [design-system](categories/design/design-system/) | Design-token architecture (primitive to semantic to component), component specs, and brand-compliant slides. | Keeps multi-screen products visually consistent as they grow. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
 | [slides](categories/design/slides/) | Creates strategic HTML presentations with charts, design tokens, and responsive layouts. | Turns briefs and reports into presentable decks without design software. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
 | [ui-styling](categories/design/ui-styling/) | Builds accessible UIs with shadcn/ui, Radix, and Tailwind, plus canvas-based visual designs. | The practical implementation partner to the design-system rules. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |

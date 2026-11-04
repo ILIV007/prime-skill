@@ -3,7 +3,7 @@
 
 Usage:
   python3 tools/add_skill.py <repo-url> --path <path-in-repo> --category <cat>
-                             [--only name1,name2] [--requires "a;b"]
+                             --tags "tag1;tag2" [--only name1,name2] [--requires "a;b"]
 
 - Sparse blob-filtered clone at HEAD; the resolved commit is pinned in
   skill.json.
@@ -33,6 +33,8 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from build_index import TAGS  # controlled tag vocabulary (single source of truth)
 EXCLUDE_DIRS = {"tests", "__tests__", "test", ".github", "node_modules",
                 ".git", "__pycache__", ".hg", ".svn"}
 LICENSE_NAMES = ("LICENSE", "LICENCE", "COPYING")
@@ -112,6 +114,9 @@ def main():
     parser.add_argument("--category", required=True)
     parser.add_argument("--only", default="", help="comma-separated skill folder names")
     parser.add_argument("--requires", default="", help="semicolon-separated requirement labels")
+    parser.add_argument("--tags", default="",
+                        help="semicolon-separated tags (1-3) from the controlled vocabulary "
+                             "enforced by build_index.py; required for every import")
     parser.add_argument("--link-only", action="store_true",
                         help="record metadata only (skill.json, entry=link-only); copy no files")
     args = parser.parse_args()
@@ -119,6 +124,14 @@ def main():
     slug = slug_from_url(args.url)
     only = {n.strip() for n in args.only.split(",") if n.strip()}
     requires = [r.strip() for r in args.requires.split(";") if r.strip()]
+    tags = [t.strip() for t in args.tags.split(";") if t.strip()]
+    if not 1 <= len(tags) <= 3:
+        raise SystemExit("--tags is required: pass 1-3 tags from the controlled vocabulary "
+                         f"({', '.join(sorted(TAGS))})")
+    unknown = [t for t in tags if t not in TAGS]
+    if unknown:
+        raise SystemExit(f"unknown tag(s): {', '.join(unknown)} — vocabulary: "
+                         f"{', '.join(sorted(TAGS))}")
 
     tmp = Path(tempfile.mkdtemp(prefix="prime-skill-import-"))
     try:
@@ -177,6 +190,8 @@ def main():
                     "entry": "link-only",
                     "adapted": False,
                     "adaptations": "",
+                    "tags": tags,
+                    "special": False,
                 }
                 (dest / "skill.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n",
                                                  encoding="utf-8")
@@ -208,6 +223,8 @@ def main():
                 "entry": "full",
                 "adapted": False,
                 "adaptations": "",
+                "tags": tags,
+                "special": False,
             }
             (dest / "skill.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n",
                                              encoding="utf-8")

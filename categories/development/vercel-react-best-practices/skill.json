@@ -16,5 +16,9 @@
   "requires": [],
   "entry": "full",
   "adapted": true,
-  "adaptations": "Folder renamed from react-best-practices to the skill's declared name, vercel-react-best-practices; LICENSE supplied as the standard MIT text because the source repo ships no LICENSE file (MIT is declared in the SKILL.md frontmatter)."
+  "adaptations": "Folder renamed from react-best-practices to the skill's declared name, vercel-react-best-practices; LICENSE supplied as the standard MIT text because the source repo ships no LICENSE file (MIT is declared in the SKILL.md frontmatter).",
+  "tags": [
+    "react"
+  ],
+  "special": false
 }

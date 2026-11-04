@@ -16,5 +16,10 @@
   "requires": [],
   "entry": "link-only",
   "adapted": false,
-  "adaptations": ""
+  "adaptations": "",
+  "tags": [
+    "video",
+    "generative"
+  ],
+  "special": false
 }

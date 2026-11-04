@@ -16,5 +16,10 @@
   "requires": [],
   "entry": "full",
   "adapted": false,
-  "adaptations": ""
+  "adaptations": "",
+  "tags": [
+    "security-testing",
+    "api"
+  ],
+  "special": false
 }

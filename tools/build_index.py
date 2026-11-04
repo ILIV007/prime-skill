@@ -17,6 +17,33 @@ START = "<!-- GENERATED:START -->"
 END = "<!-- GENERATED:END -->"
 IDX_START = "<!-- GENERATED:INDEX:START -->"
 IDX_END = "<!-- GENERATED:INDEX:END -->"
+SP_START = "<!-- GENERATED:SPECIALS:START -->"
+SP_END = "<!-- GENERATED:SPECIALS:END -->"
+
+# Controlled tag vocabulary: cross-cutting topics only, never a restatement
+# of an entry's own category. Every skill carries 1-3 of these in its
+# skill.json `tags` field; anything outside this list fails validation.
+# ("academic" from the seed list was folded into "research-methods" — a
+# single-entry tag is not cross-cutting; "workflow" was added for reusable
+# work methods that transfer across categories.)
+TAGS = {
+    "tokens",           # token / context economy
+    "api",              # API design, testing, or access layers
+    "social-data",      # social-platform data and signals
+    "web-search",       # searching the open web
+    "competitor",       # competitor intelligence
+    "video",            # video creation, editing, and craft
+    "3d",               # 3D scenes, models, and rendering
+    "react",            # React / Next.js ecosystem
+    "harness",          # agent-harness meta: skills, MCP, subagents
+    "automation",       # scripted / pipeline automation
+    "content",          # content writing and production
+    "security-testing",  # security verification: testing, scanning, review
+    "design-systems",   # design tokens, systems, and palettes
+    "generative",       # generative art and media
+    "research-methods",  # structured research and inquiry methods
+    "workflow",         # reusable work methods across domains
+}
 
 SCOPES = {
     "development": "Building software: planning, implementation, testing, debugging, and harness workflows.",
@@ -30,7 +57,7 @@ SCOPES = {
 
 REQUIRED = ["name", "title", "description", "why", "category", "source",
             "license", "stars_at_import", "added", "requires", "entry",
-            "adapted", "adaptations"]
+            "adapted", "adaptations", "tags"]
 SOURCE_FIELDS = ["repo", "url", "path", "commit"]
 
 
@@ -105,6 +132,17 @@ def validate(skills, errors):
                               f"found: {', '.join(extra)}")
         if meta.get("adapted") and not (meta.get("adaptations") or "").strip():
             errors.append(f"{label}: adapted=true but adaptations note is empty")
+        tags = meta.get("tags")
+        if not isinstance(tags, list) or not 1 <= len(tags) <= 3:
+            errors.append(f"{label}: tags must be a list of 1-3 tags")
+        else:
+            for tag in tags:
+                if tag not in TAGS:
+                    errors.append(f"{label}: unknown tag '{tag}' (not in the controlled vocabulary)")
+            if len(set(tags)) != len(tags):
+                errors.append(f"{label}: duplicate tags")
+        if "special" in meta and not isinstance(meta.get("special"), bool):
+            errors.append(f"{label}: special must be a boolean")
     return seen
 
 
@@ -145,6 +183,8 @@ def render_outputs(skills):
         raise SystemExit("README.md is missing the GENERATED markers")
     if IDX_START not in readme or IDX_END not in readme:
         raise SystemExit("README.md is missing the GENERATED:INDEX markers")
+    if SP_START not in readme or SP_END not in readme:
+        raise SystemExit("README.md is missing the GENERATED:SPECIALS markers")
 
     link_only = sum(1 for m in metas if m.get("entry") == "link-only")
     idx = [f"**{len(metas)} skills · {len(by_cat)} categories · {link_only} link-only**",
@@ -157,6 +197,15 @@ def render_outputs(skills):
     ihead, _, irest = readme.partition(IDX_START)
     _, _, itail = irest.partition(IDX_END)
     readme = f"{ihead}{IDX_START}\n" + "\n".join(idx) + f"\n{IDX_END}{itail}"
+
+    specials = [m for m in metas if m.get("special")]
+    sp = ["| Skill | Category | Why it's here |", "|---|---|---|"]
+    for m in specials:
+        sp.append(f"| [{m['name']}](categories/{m['category']}/{m['name']}/) "
+                  f"| {display_category(m['category'])} | {esc(m['why'])} |")
+    shead, _, srest = readme.partition(SP_START)
+    _, _, stail = srest.partition(SP_END)
+    readme = f"{shead}{SP_START}\n" + "\n".join(sp) + f"\n{SP_END}{stail}"
 
     head, _, rest = readme.partition(START)
     _, _, tail = rest.partition(END)

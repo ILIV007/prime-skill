@@ -1,5 +1,5 @@
 {
-  "count": 73,
+  "count": 75,
   "skills": [
     {
       "name": "algorithmic-art",
@@ -19,7 +19,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "generative"
+      ],
+      "special": true
     },
     {
       "name": "anatomy",
@@ -42,7 +46,11 @@
       ],
       "entry": "full",
       "adapted": true,
-      "adaptations": "Root skill imported with its runtime files (examples/, kit/, references/, scripts/, agents/, evals/); repo-level docs, .github/ and tests/ were not vendored."
+      "adaptations": "Root skill imported with its runtime files (examples/, kit/, references/, scripts/, agents/, evals/); repo-level docs, .github/ and tests/ were not vendored.",
+      "tags": [
+        "generative"
+      ],
+      "special": true
     },
     {
       "name": "banner-design",
@@ -62,7 +70,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "content"
+      ],
+      "special": false
     },
     {
       "name": "blender-web-3d",
@@ -85,7 +97,11 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "3d"
+      ],
+      "special": false
     },
     {
       "name": "brand",
@@ -105,7 +121,63 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "content"
+      ],
+      "special": false
+    },
+    {
+      "name": "color-contrast",
+      "title": "color-contrast",
+      "description": "Measures color contrast with WCAG 2.x ratios and APCA, audits a codebase or stylesheet for failing pairs (including dark mode), and repairs failures with the smallest possible color change.",
+      "why": "The executable half of color accessibility: it audits real stylesheets, computes real ratios, and fixes failures — measurement work no resident skill does.",
+      "category": "design",
+      "source": {
+        "repo": "hendurhance/color-contrast",
+        "url": "https://github.com/hendurhance/color-contrast",
+        "path": ".",
+        "commit": "f301f1c07a472108e179ddeac657b6fb1605af07"
+      },
+      "license": "MIT",
+      "stars_at_import": 0,
+      "added": "2026-11-04",
+      "requires": [
+        "Python 3"
+      ],
+      "entry": "full",
+      "adapted": true,
+      "adaptations": "Root skill only: vendored SKILL.md, scripts/, references/ and LICENSE; the repo README is project documentation, not part of the skill. License recorded as MIT from the vendored LICENSE file (verbatim MIT text; the GitHub API reports NOASSERTION for this repo).",
+      "tags": [
+        "automation",
+        "design-systems"
+      ],
+      "special": false
+    },
+    {
+      "name": "color-expert",
+      "title": "color-expert",
+      "description": "Deep color expertise: color spaces (OKLCH, CIELAB), palette and ramp generation, harmony systems, color naming, pigment and print-vs-screen behavior, and contrast verification.",
+      "why": "The palette data elsewhere is lookup-only; this is the craft of making and judging color — perceptually uniform ramps, naming, and verified contrast.",
+      "category": "design",
+      "source": {
+        "repo": "meodai/skill.color-expert",
+        "url": "https://github.com/meodai/skill.color-expert",
+        "path": ".",
+        "commit": "5bf7c7704d56bccc6aeea38c36bcf449abe56a6c"
+      },
+      "license": "CC-BY-4.0",
+      "stars_at_import": 631,
+      "added": "2026-11-04",
+      "requires": [],
+      "entry": "full",
+      "adapted": true,
+      "adaptations": "Root skill only: vendored SKILL.md, references/ and the CC-BY-4.0 LICENSE (full source attribution is recorded here and the license text is vendored, as CC-BY-4.0 requires). Repo-level docs (README, CLAUDE.md, ROADMAP, MAINTENANCE, SECURITY), the maintainer stats script, and evals/ are project infrastructure, not part of the skill.",
+      "tags": [
+        "design-systems",
+        "generative"
+      ],
+      "special": true
     },
     {
       "name": "design-system",
@@ -125,7 +197,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "design-systems"
+      ],
+      "special": false
     },
     {
       "name": "slides",
@@ -145,7 +221,12 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "content",
+        "design-systems"
+      ],
+      "special": false
     },
     {
       "name": "ui-styling",
@@ -165,7 +246,12 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "design-systems",
+        "react"
+      ],
+      "special": false
     },
     {
       "name": "ui-ux-pro-max",
@@ -185,7 +271,11 @@
       "requires": [],
       "entry": "full",
       "adapted": true,
-      "adaptations": "Rewrote ${CLAUDE_PLUGIN_ROOT}-based script paths in SKILL.md to paths relative to the skill folder, so the commands run in any harness."
+      "adaptations": "Rewrote ${CLAUDE_PLUGIN_ROOT}-based script paths in SKILL.md to paths relative to the skill folder, so the commands run in any harness.",
+      "tags": [
+        "design-systems"
+      ],
+      "special": true
     },
     {
       "name": "brainstorming",
@@ -205,7 +295,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "workflow"
+      ],
+      "special": false
     },
     {
       "name": "caveman",
@@ -225,7 +319,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": "License note: the GitHub API declares this repo Apache-2.0 and the vendored LICENSE is the Apache-2.0 text, but the repo also ships a separate MIT license file (LICENSE-MIT) for parts of the project; the skill folder is recorded as Apache-2.0. Content imported unmodified."
+      "adaptations": "License note: the GitHub API declares this repo Apache-2.0 and the vendored LICENSE is the Apache-2.0 text, but the repo also ships a separate MIT license file (LICENSE-MIT) for parts of the project; the skill folder is recorded as Apache-2.0. Content imported unmodified.",
+      "tags": [
+        "tokens"
+      ],
+      "special": true
     },
     {
       "name": "caveman-compress",
@@ -248,7 +346,11 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": "License note: the GitHub API declares this repo Apache-2.0 and the vendored LICENSE is the Apache-2.0 text, but the repo also ships a separate MIT license file (LICENSE-MIT) for parts of the project; the skill folder is recorded as Apache-2.0. Content imported unmodified."
+      "adaptations": "License note: the GitHub API declares this repo Apache-2.0 and the vendored LICENSE is the Apache-2.0 text, but the repo also ships a separate MIT license file (LICENSE-MIT) for parts of the project; the skill folder is recorded as Apache-2.0. Content imported unmodified.",
+      "tags": [
+        "tokens"
+      ],
+      "special": false
     },
     {
       "name": "domain-modeling",
@@ -268,7 +370,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "workflow"
+      ],
+      "special": false
     },
     {
       "name": "find-skills",
@@ -291,7 +397,11 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "harness"
+      ],
+      "special": false
     },
     {
       "name": "grill-me",
@@ -311,7 +421,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "workflow"
+      ],
+      "special": false
     },
     {
       "name": "grilling",
@@ -331,7 +445,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "workflow"
+      ],
+      "special": false
     },
     {
       "name": "mcp-builder",
@@ -351,7 +469,12 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "harness",
+        "api"
+      ],
+      "special": false
     },
     {
       "name": "ponytail",
@@ -371,7 +494,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "tokens"
+      ],
+      "special": true
     },
     {
       "name": "ponytail-audit",
@@ -391,7 +518,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "workflow"
+      ],
+      "special": false
     },
     {
       "name": "ponytail-debt",
@@ -411,7 +542,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "workflow"
+      ],
+      "special": false
     },
     {
       "name": "ponytail-review",
@@ -431,7 +566,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "workflow"
+      ],
+      "special": false
     },
     {
       "name": "skill-creator",
@@ -451,7 +590,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "harness"
+      ],
+      "special": false
     },
     {
       "name": "strategic-compact",
@@ -473,7 +616,12 @@
       ],
       "entry": "full",
       "adapted": true,
-      "adaptations": "Ships a Claude Code-specific PreToolUse hook (suggest-compact.js); the compaction guidance itself is harness-portable."
+      "adaptations": "Ships a Claude Code-specific PreToolUse hook (suggest-compact.js); the compaction guidance itself is harness-portable.",
+      "tags": [
+        "tokens",
+        "harness"
+      ],
+      "special": false
     },
     {
       "name": "subagent-driven-development",
@@ -495,7 +643,12 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "harness",
+        "workflow"
+      ],
+      "special": false
     },
     {
       "name": "systematic-debugging",
@@ -515,7 +668,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "workflow"
+      ],
+      "special": false
     },
     {
       "name": "test-driven-development",
@@ -535,7 +692,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "workflow"
+      ],
+      "special": false
     },
     {
       "name": "threejs-fundamentals",
@@ -557,7 +718,12 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "3d",
+        "react"
+      ],
+      "special": false
     },
     {
       "name": "using-git-worktrees",
@@ -579,7 +745,11 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "harness"
+      ],
+      "special": false
     },
     {
       "name": "vercel-react-best-practices",
@@ -599,7 +769,11 @@
       "requires": [],
       "entry": "full",
       "adapted": true,
-      "adaptations": "Folder renamed from react-best-practices to the skill's declared name, vercel-react-best-practices; LICENSE supplied as the standard MIT text because the source repo ships no LICENSE file (MIT is declared in the SKILL.md frontmatter)."
+      "adaptations": "Folder renamed from react-best-practices to the skill's declared name, vercel-react-best-practices; LICENSE supplied as the standard MIT text because the source repo ships no LICENSE file (MIT is declared in the SKILL.md frontmatter).",
+      "tags": [
+        "react"
+      ],
+      "special": false
     },
     {
       "name": "verification-before-completion",
@@ -619,7 +793,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "workflow"
+      ],
+      "special": false
     },
     {
       "name": "webapp-testing",
@@ -643,7 +821,11 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "automation"
+      ],
+      "special": false
     },
     {
       "name": "workers-best-practices",
@@ -663,7 +845,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "api"
+      ],
+      "special": false
     },
     {
       "name": "writing-plans",
@@ -683,7 +869,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "workflow"
+      ],
+      "special": false
     },
     {
       "name": "community-marketing",
@@ -703,7 +893,12 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "social-data",
+        "content"
+      ],
+      "special": false
     },
     {
       "name": "competitor-profiling",
@@ -723,7 +918,12 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "competitor",
+        "research-methods"
+      ],
+      "special": false
     },
     {
       "name": "content-strategy",
@@ -743,7 +943,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "content"
+      ],
+      "special": false
     },
     {
       "name": "copy-editing",
@@ -763,7 +967,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "content"
+      ],
+      "special": false
     },
     {
       "name": "copywriting",
@@ -783,7 +991,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "content"
+      ],
+      "special": false
     },
     {
       "name": "customer-research",
@@ -803,7 +1015,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "research-methods"
+      ],
+      "special": false
     },
     {
       "name": "launch",
@@ -823,7 +1039,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "workflow"
+      ],
+      "special": false
     },
     {
       "name": "marketing-ideas",
@@ -843,7 +1063,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "content"
+      ],
+      "special": false
     },
     {
       "name": "marketing-psychology",
@@ -863,7 +1087,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "content"
+      ],
+      "special": false
     },
     {
       "name": "offers",
@@ -883,7 +1111,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "content"
+      ],
+      "special": false
     },
     {
       "name": "product-marketing",
@@ -903,7 +1135,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "content"
+      ],
+      "special": false
     },
     {
       "name": "social",
@@ -923,7 +1159,12 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "social-data",
+        "content"
+      ],
+      "special": false
     },
     {
       "name": "cinematic-director",
@@ -943,7 +1184,12 @@
       "requires": [],
       "entry": "link-only",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "video",
+        "generative"
+      ],
+      "special": false
     },
     {
       "name": "ffmpeg-skill",
@@ -966,7 +1212,12 @@
       ],
       "entry": "full",
       "adapted": true,
-      "adaptations": "Root skill only: vendored SKILL.md + scripts/, references/, mcp/, templates/. The repo's 13 .claude/skills/* maintainer-workflow skills and other repo-level folders were excluded — they are separate skills and infrastructure, not part of this skill."
+      "adaptations": "Root skill only: vendored SKILL.md + scripts/, references/, mcp/, templates/. The repo's 13 .claude/skills/* maintainer-workflow skills and other repo-level folders were excluded — they are separate skills and infrastructure, not part of this skill.",
+      "tags": [
+        "video",
+        "automation"
+      ],
+      "special": false
     },
     {
       "name": "remotion-best-practices",
@@ -988,7 +1239,12 @@
       ],
       "entry": "link-only",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "video",
+        "react"
+      ],
+      "special": false
     },
     {
       "name": "video",
@@ -1008,7 +1264,12 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "video",
+        "generative"
+      ],
+      "special": false
     },
     {
       "name": "ad-library-teardown",
@@ -1030,7 +1291,12 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "social-data",
+        "competitor"
+      ],
+      "special": false
     },
     {
       "name": "audience-research",
@@ -1052,7 +1318,12 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "social-data",
+        "research-methods"
+      ],
+      "special": false
     },
     {
       "name": "comment-mining",
@@ -1074,7 +1345,12 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "social-data",
+        "research-methods"
+      ],
+      "special": false
     },
     {
       "name": "competitor-social-research",
@@ -1096,7 +1372,12 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "social-data",
+        "competitor"
+      ],
+      "special": false
     },
     {
       "name": "content-repurposing",
@@ -1118,7 +1399,12 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "social-data",
+        "content"
+      ],
+      "special": false
     },
     {
       "name": "creator-profile-teardown",
@@ -1140,7 +1426,11 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "social-data"
+      ],
+      "special": false
     },
     {
       "name": "deep-research",
@@ -1162,7 +1452,12 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "web-search",
+        "research-methods"
+      ],
+      "special": false
     },
     {
       "name": "exa-search",
@@ -1184,7 +1479,12 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "web-search",
+        "api"
+      ],
+      "special": false
     },
     {
       "name": "influencer-prospecting",
@@ -1206,7 +1506,11 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "social-data"
+      ],
+      "special": false
     },
     {
       "name": "literature-review",
@@ -1228,7 +1532,11 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "research-methods"
+      ],
+      "special": false
     },
     {
       "name": "outlier-post-finder",
@@ -1250,7 +1558,11 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "social-data"
+      ],
+      "special": false
     },
     {
       "name": "product-demand-research",
@@ -1272,7 +1584,12 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "social-data",
+        "research-methods"
+      ],
+      "special": false
     },
     {
       "name": "scrapecreators-api",
@@ -1294,7 +1611,12 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "social-data",
+        "api"
+      ],
+      "special": false
     },
     {
       "name": "social-listening-brief",
@@ -1316,7 +1638,12 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "social-data",
+        "research-methods"
+      ],
+      "special": false
     },
     {
       "name": "transcript-intelligence",
@@ -1338,7 +1665,12 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "social-data",
+        "content"
+      ],
+      "special": false
     },
     {
       "name": "trend-discovery",
@@ -1360,7 +1692,11 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "social-data"
+      ],
+      "special": false
     },
     {
       "name": "blind-llm-agents",
@@ -1382,7 +1718,11 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "automation"
+      ],
+      "special": true
     },
     {
       "name": "reverse-engineer-anything",
@@ -1404,7 +1744,11 @@
       ],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "harness"
+      ],
+      "special": true
     },
     {
       "name": "api-security",
@@ -1424,7 +1768,12 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "security-testing",
+        "api"
+      ],
+      "special": false
     },
     {
       "name": "incident-runbook-templates",
@@ -1444,7 +1793,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "workflow"
+      ],
+      "special": false
     },
     {
       "name": "secrets-management",
@@ -1464,7 +1817,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "automation"
+      ],
+      "special": false
     },
     {
       "name": "security-review",
@@ -1484,7 +1841,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "security-testing"
+      ],
+      "special": false
     },
     {
       "name": "semgrep",
@@ -1506,7 +1867,12 @@
       ],
       "entry": "link-only",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "security-testing",
+        "automation"
+      ],
+      "special": false
     },
     {
       "name": "stride-analysis-patterns",
@@ -1526,7 +1892,11 @@
       "requires": [],
       "entry": "full",
       "adapted": false,
-      "adaptations": ""
+      "adaptations": "",
+      "tags": [
+        "workflow"
+      ],
+      "special": false
     }
   ]
 }

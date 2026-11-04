@@ -18,5 +18,9 @@
   ],
   "entry": "full",
   "adapted": false,
-  "adaptations": ""
+  "adaptations": "",
+  "tags": [
+    "social-data"
+  ],
+  "special": false
 }

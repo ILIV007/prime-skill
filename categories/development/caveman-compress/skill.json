@@ -19,5 +19,9 @@
   ],
   "entry": "full",
   "adapted": false,
-  "adaptations": "License note: the GitHub API declares this repo Apache-2.0 and the vendored LICENSE is the Apache-2.0 text, but the repo also ships a separate MIT license file (LICENSE-MIT) for parts of the project; the skill folder is recorded as Apache-2.0. Content imported unmodified."
+  "adaptations": "License note: the GitHub API declares this repo Apache-2.0 and the vendored LICENSE is the Apache-2.0 text, but the repo also ships a separate MIT license file (LICENSE-MIT) for parts of the project; the skill folder is recorded as Apache-2.0. Content imported unmodified.",
+  "tags": [
+    "tokens"
+  ],
+  "special": false
 }
