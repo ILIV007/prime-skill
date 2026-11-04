@@ -1,0 +1,27 @@
+{
+  "name": "color-contrast",
+  "title": "color-contrast",
+  "description": "Measures color contrast with WCAG 2.x ratios and APCA, audits a codebase or stylesheet for failing pairs (including dark mode), and repairs failures with the smallest possible color change.",
+  "why": "The executable half of color accessibility: it audits real stylesheets, computes real ratios, and fixes failures — measurement work no resident skill does.",
+  "category": "design",
+  "source": {
+    "repo": "hendurhance/color-contrast",
+    "url": "https://github.com/hendurhance/color-contrast",
+    "path": ".",
+    "commit": "f301f1c07a472108e179ddeac657b6fb1605af07"
+  },
+  "license": "MIT",
+  "stars_at_import": 0,
+  "added": "2026-11-04",
+  "requires": [
+    "Python 3"
+  ],
+  "entry": "full",
+  "adapted": true,
+  "adaptations": "Root skill only: vendored SKILL.md, scripts/, references/ and LICENSE; the repo README is project documentation, not part of the skill. License recorded as MIT from the vendored LICENSE file (verbatim MIT text; the GitHub API reports NOASSERTION for this repo).",
+  "tags": [
+    "automation",
+    "design-systems"
+  ],
+  "special": false
+}
