@@ -1,0 +1,20 @@
+{
+  "name": "domain-modeling",
+  "title": "Domain Modeling",
+  "description": "Builds and sharpens a project's domain model: maintains a living glossary of codebase terminology and records architecture decisions as ADRs.",
+  "why": "Shared vocabulary keeps agents and humans from talking past each other; this makes terminology a maintained artifact, not folklore.",
+  "category": "development",
+  "source": {
+    "repo": "mattpocock/skills",
+    "url": "https://github.com/mattpocock/skills",
+    "path": "skills/engineering/domain-modeling",
+    "commit": "4ae2317ddb22b046e26455e4f9c9b3aaaf62212d"
+  },
+  "license": "MIT",
+  "stars_at_import": 312014,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

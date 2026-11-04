@@ -1,0 +1,22 @@
+{
+  "name": "strategic-compact",
+  "title": "Strategic Compact",
+  "description": "Suggests manual context compaction at logical task-phase boundaries, so long sessions compact deliberately instead of at arbitrary auto-compaction points.",
+  "why": "Long agent sessions die at context limits; compacting at phase boundaries keeps the working thread coherent across a whole build.",
+  "category": "development",
+  "source": {
+    "repo": "affaan-m/ECC",
+    "url": "https://github.com/affaan-m/ECC",
+    "path": ".agents/skills/strategic-compact",
+    "commit": "b38be6a7f6350964d59328b52f0624e1d1d552d1"
+  },
+  "license": "MIT",
+  "stars_at_import": 296787,
+  "added": "2026-11-04",
+  "requires": [
+    "Context-compaction harness"
+  ],
+  "entry": "full",
+  "adapted": true,
+  "adaptations": "Ships a Claude Code-specific PreToolUse hook (suggest-compact.js); the compaction guidance itself is harness-portable."
+}

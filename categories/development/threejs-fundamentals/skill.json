@@ -1,0 +1,22 @@
+{
+  "name": "threejs-fundamentals",
+  "title": "Three.js Fundamentals",
+  "description": "Three.js scene setup done right: scenes and fog, cameras, the renderer and tone mapping, the animation loop, object hierarchies, transforms, core math, and cleanup, on WebGL or WebGPU/TSL.",
+  "why": "The fundamentals entry of the Three.js set: scene, camera, and renderer mistakes are where 3D web work goes wrong first.",
+  "category": "development",
+  "source": {
+    "repo": "CloudAI-X/threejs-skills",
+    "url": "https://github.com/CloudAI-X/threejs-skills",
+    "path": "skills/threejs-fundamentals",
+    "commit": "0e181866f095b5f06d005133876e926515390d95"
+  },
+  "license": "MIT",
+  "stars_at_import": 3962,
+  "added": "2026-11-04",
+  "requires": [
+    "Three.js project"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

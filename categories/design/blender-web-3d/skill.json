@@ -1,0 +1,23 @@
+{
+  "name": "blender-web-3d",
+  "title": "Blender Web 3D",
+  "description": "Drives Blender headless or via MCP to build, modify, render, and optimize 3D models, then publishes them as fast Three.js/Next.js web experiences with modern color, shader, and compression pipelines.",
+  "why": "The only Blender-to-web pipeline in the collection: real 3D asset craft with optimization and deploy covered, plus a runnable demo to start from.",
+  "category": "design",
+  "source": {
+    "repo": "czlonkowski/blender-web-3d-skill",
+    "url": "https://github.com/czlonkowski/blender-web-3d-skill",
+    "path": "plugins/blender-web-3d/skills/blender-web-3d",
+    "commit": "858762f1add7f1d9f5dcb1fb1d0b55f71906bf0d"
+  },
+  "license": "MIT",
+  "stars_at_import": 4,
+  "added": "2026-11-04",
+  "requires": [
+    "Blender 4.x/5.x",
+    "Node.js 20+"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

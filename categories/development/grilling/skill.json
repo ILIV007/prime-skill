@@ -1,0 +1,20 @@
+{
+  "name": "grilling",
+  "title": "Grilling",
+  "description": "The reusable interview engine behind grill-me: grills the user relentlessly about a plan, decision, or idea, one question at a time.",
+  "why": "Grill-me is the session wrapper; this is the portable technique that other workflows can invoke on any decision.",
+  "category": "development",
+  "source": {
+    "repo": "mattpocock/skills",
+    "url": "https://github.com/mattpocock/skills",
+    "path": "skills/productivity/grilling",
+    "commit": "4ae2317ddb22b046e26455e4f9c9b3aaaf62212d"
+  },
+  "license": "MIT",
+  "stars_at_import": 312013,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}

@@ -1,0 +1,23 @@
+{
+  "name": "caveman-compress",
+  "title": "Caveman Compress",
+  "description": "Compresses memory files such as CLAUDE.md or todo lists into caveman format to save input tokens, keeping a readable backup outside the tree.",
+  "why": "Long-lived context files are re-read every session; compressing them is a permanent input-token saving rather than a one-off.",
+  "category": "development",
+  "source": {
+    "repo": "JuliusBrussee/caveman",
+    "url": "https://github.com/JuliusBrussee/caveman",
+    "path": "skills/caveman-compress",
+    "commit": "2e068f735253cce28256744804785f01887d9646"
+  },
+  "license": "Apache-2.0",
+  "stars_at_import": 117342,
+  "added": "2026-11-04",
+  "requires": [
+    "Python 3",
+    "Model provider API"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": "License note: the GitHub API declares this repo Apache-2.0 and the vendored LICENSE is the Apache-2.0 text, but the repo also ships a separate MIT license file (LICENSE-MIT) for parts of the project; the skill folder is recorded as Apache-2.0. Content imported unmodified."
+}

@@ -1,0 +1,20 @@
+{
+  "name": "grill-me",
+  "title": "Grill Me",
+  "description": "A relentless one-question-at-a-time interview that stress-tests a plan or design until every branch of the decision tree is resolved.",
+  "why": "The sharp end of requirements work: it surfaces the decisions brainstorming leaves unmade, before they turn into rework.",
+  "category": "development",
+  "source": {
+    "repo": "mattpocock/skills",
+    "url": "https://github.com/mattpocock/skills",
+    "path": "skills/productivity/grill-me",
+    "commit": "4ae2317ddb22b046e26455e4f9c9b3aaaf62212d"
+  },
+  "license": "MIT",
+  "stars_at_import": 312014,
+  "added": "2026-11-04",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": ""
+}
