@@ -1,0 +1,27 @@
+{
+  "name": "voicestudio",
+  "title": "voicestudio",
+  "description": "Drives a locally running VoiceStudio backend (REST API or MCP): text-to-speech with saved or designed voices, voice cloning, transcription, and automated dubbing or narration workflows.",
+  "why": "The collection's only voice skill: local-first speech generation and cloning, no cloud TTS account — nothing else in Prime Skill makes or processes spoken audio.",
+  "category": "media",
+  "source": {
+    "repo": "debpalash/VoiceStudio",
+    "url": "https://github.com/debpalash/VoiceStudio",
+    "path": "skills/voicestudio",
+    "commit": "c88bf7006e65266eb1692bec977e2e88c3062486"
+  },
+  "license": "AGPL-3.0",
+  "stars_at_import": 102393,
+  "added": "2026-11-06",
+  "requires": [
+    "VoiceStudio backend running locally (localhost:3900)"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": "",
+  "tags": [
+    "generative",
+    "content"
+  ],
+  "special": false
+}

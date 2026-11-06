@@ -1,0 +1,28 @@
+{
+  "name": "lemo-opuscar",
+  "title": "lemo-opuscar",
+  "description": "Makes complete short films entirely in code: describe a story, pick one of 66 styles (each shipped with a demo film), and the agent directs and renders it with Node/canvas/Three.js and ffmpeg — no video generator involved.",
+  "why": "End-to-end code-film production, a genuinely distinct job from cinematic-director's planning layer; listed link-only to keep the collection's motion cluster to one vendored representative.",
+  "category": "media",
+  "source": {
+    "repo": "lemomo-ai/lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar",
+    "path": "plugin/skills/lemo-opuscar",
+    "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00"
+  },
+  "license": "MIT + CC BY 4.0",
+  "stars_at_import": 12848,
+  "added": "2026-11-06",
+  "requires": [
+    "Node.js",
+    "FFmpeg"
+  ],
+  "entry": "link-only",
+  "adapted": false,
+  "adaptations": "",
+  "tags": [
+    "video",
+    "generative"
+  ],
+  "special": false
+}

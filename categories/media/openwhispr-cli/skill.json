@@ -1,0 +1,28 @@
+{
+  "name": "openwhispr-cli",
+  "title": "openwhispr-cli",
+  "description": "Operates OpenWhispr from the terminal via the `openwhispr` CLI: manage notes, folders, transcriptions and audio, and script dictation workflows against the local desktop app or the cloud API.",
+  "why": "Local, offline-capable dictation as an agent-operable CLI — a speech-to-text workflow nothing else in the collection covers.",
+  "category": "media",
+  "source": {
+    "repo": "OpenWhispr/openwhispr",
+    "url": "https://github.com/OpenWhispr/openwhispr",
+    "path": "agent-skills/openwhispr-cli",
+    "commit": "3e1f8c2cf84cd390543b6f3e650d82d9e0044351"
+  },
+  "license": "MIT",
+  "stars_at_import": 10840,
+  "added": "2026-11-06",
+  "requires": [
+    "OpenWhispr desktop app (local backend) or cloud account",
+    "@openwhispr/cli (Node.js 20+)"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": "",
+  "tags": [
+    "automation",
+    "workflow"
+  ],
+  "special": false
+}

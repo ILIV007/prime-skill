@@ -1,0 +1,29 @@
+{
+  "name": "rea-video",
+  "title": "rea-video",
+  "description": "Reverse-engineers how a video was made, shot by shot: classifies each shot (live action, AI-generated, 3D, 2D/stop-motion, code render, screen capture and more), detects AI edits and overlay packaging, breaks down the audio, and produces an executable remake plan.",
+  "why": "REA's sibling for video: the only entry that analyzes and deconstructs existing videos instead of creating new ones — nothing else in the collection reads a finished video's production method.",
+  "category": "media",
+  "source": {
+    "repo": "JuneYaooo/rea-video",
+    "url": "https://github.com/JuneYaooo/rea-video",
+    "path": "skills/rea-video",
+    "commit": "c9359c46f90c9824713081ea18fd207a45a0636a"
+  },
+  "license": "Apache-2.0",
+  "stars_at_import": 2539,
+  "added": "2026-11-06",
+  "requires": [
+    "rea-video CLI (install from the source repo)",
+    "FFmpeg",
+    "Python 3.10+"
+  ],
+  "entry": "full",
+  "adapted": true,
+  "adaptations": "Translated from Chinese to English: SKILL.md and all eight references/*.md were translated faithfully for the collection's English-only rule; every command, flag, path and JSON field is unchanged from upstream.",
+  "tags": [
+    "video",
+    "automation"
+  ],
+  "special": false
+}

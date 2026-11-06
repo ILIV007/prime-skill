@@ -1,5 +1,5 @@
 {
-  "count": 75,
+  "count": 80,
   "skills": [
     {
       "name": "algorithmic-art",
@@ -1220,6 +1220,120 @@
       "special": false
     },
     {
+      "name": "lemo-opuscar",
+      "title": "lemo-opuscar",
+      "description": "Makes complete short films entirely in code: describe a story, pick one of 66 styles (each shipped with a demo film), and the agent directs and renders it with Node/canvas/Three.js and ffmpeg — no video generator involved.",
+      "why": "End-to-end code-film production, a genuinely distinct job from cinematic-director's planning layer; listed link-only to keep the collection's motion cluster to one vendored representative.",
+      "category": "media",
+      "source": {
+        "repo": "lemomo-ai/lemo-opuscar",
+        "url": "https://github.com/lemomo-ai/lemo-opuscar",
+        "path": "plugin/skills/lemo-opuscar",
+        "commit": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00"
+      },
+      "license": "MIT + CC BY 4.0",
+      "stars_at_import": 12848,
+      "added": "2026-11-06",
+      "requires": [
+        "Node.js",
+        "FFmpeg"
+      ],
+      "entry": "link-only",
+      "adapted": false,
+      "adaptations": "",
+      "tags": [
+        "video",
+        "generative"
+      ],
+      "special": false
+    },
+    {
+      "name": "openwhispr-cli",
+      "title": "openwhispr-cli",
+      "description": "Operates OpenWhispr from the terminal via the `openwhispr` CLI: manage notes, folders, transcriptions and audio, and script dictation workflows against the local desktop app or the cloud API.",
+      "why": "Local, offline-capable dictation as an agent-operable CLI — a speech-to-text workflow nothing else in the collection covers.",
+      "category": "media",
+      "source": {
+        "repo": "OpenWhispr/openwhispr",
+        "url": "https://github.com/OpenWhispr/openwhispr",
+        "path": "agent-skills/openwhispr-cli",
+        "commit": "3e1f8c2cf84cd390543b6f3e650d82d9e0044351"
+      },
+      "license": "MIT",
+      "stars_at_import": 10840,
+      "added": "2026-11-06",
+      "requires": [
+        "OpenWhispr desktop app (local backend) or cloud account",
+        "@openwhispr/cli (Node.js 20+)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": "",
+      "tags": [
+        "automation",
+        "workflow"
+      ],
+      "special": false
+    },
+    {
+      "name": "rea-video",
+      "title": "rea-video",
+      "description": "Reverse-engineers how a video was made, shot by shot: classifies each shot (live action, AI-generated, 3D, 2D/stop-motion, code render, screen capture and more), detects AI edits and overlay packaging, breaks down the audio, and produces an executable remake plan.",
+      "why": "REA's sibling for video: the only entry that analyzes and deconstructs existing videos instead of creating new ones — nothing else in the collection reads a finished video's production method.",
+      "category": "media",
+      "source": {
+        "repo": "JuneYaooo/rea-video",
+        "url": "https://github.com/JuneYaooo/rea-video",
+        "path": "skills/rea-video",
+        "commit": "c9359c46f90c9824713081ea18fd207a45a0636a"
+      },
+      "license": "Apache-2.0",
+      "stars_at_import": 2539,
+      "added": "2026-11-06",
+      "requires": [
+        "rea-video CLI (install from the source repo)",
+        "FFmpeg",
+        "Python 3.10+"
+      ],
+      "entry": "full",
+      "adapted": true,
+      "adaptations": "Translated from Chinese to English: SKILL.md and all eight references/*.md were translated faithfully for the collection's English-only rule; every command, flag, path and JSON field is unchanged from upstream.",
+      "tags": [
+        "video",
+        "automation"
+      ],
+      "special": false
+    },
+    {
+      "name": "reel-story",
+      "title": "reel-story",
+      "description": "From Jenesyx/arta-edit-studio: turns Farsi-first talking-head videos into animated Instagram Reels — this representative skill is the full-screen story format with B-roll and stickers, rendered with HyperFrames from a Whisper transcript, with no burned-in subtitles. The repo also ships the reel-setup and reel-split skills.",
+      "why": "A Farsi-first Reels editing workflow, unique in the collection and close to the curator's own content work; link-only while the young repo matures.",
+      "category": "media",
+      "source": {
+        "repo": "Jenesyx/arta-edit-studio",
+        "url": "https://github.com/Jenesyx/arta-edit-studio",
+        "path": ".claude/skills/reel-story",
+        "commit": "a4b9345ae3b714fabd9e2808bba78269124605e1"
+      },
+      "license": "MIT",
+      "stars_at_import": 11,
+      "added": "2026-11-06",
+      "requires": [
+        "Whisper (large-v3)",
+        "HyperFrames",
+        "FFmpeg"
+      ],
+      "entry": "link-only",
+      "adapted": false,
+      "adaptations": "",
+      "tags": [
+        "video",
+        "content"
+      ],
+      "special": false
+    },
+    {
       "name": "remotion-best-practices",
       "title": "remotion-best-practices",
       "description": "Remotion's official best practices for programmatic video in React — markup, animation, captions, maps and interactivity done right.",
@@ -1268,6 +1382,33 @@
       "tags": [
         "video",
         "generative"
+      ],
+      "special": false
+    },
+    {
+      "name": "voicestudio",
+      "title": "voicestudio",
+      "description": "Drives a locally running VoiceStudio backend (REST API or MCP): text-to-speech with saved or designed voices, voice cloning, transcription, and automated dubbing or narration workflows.",
+      "why": "The collection's only voice skill: local-first speech generation and cloning, no cloud TTS account — nothing else in Prime Skill makes or processes spoken audio.",
+      "category": "media",
+      "source": {
+        "repo": "debpalash/VoiceStudio",
+        "url": "https://github.com/debpalash/VoiceStudio",
+        "path": "skills/voicestudio",
+        "commit": "c88bf7006e65266eb1692bec977e2e88c3062486"
+      },
+      "license": "AGPL-3.0",
+      "stars_at_import": 102393,
+      "added": "2026-11-06",
+      "requires": [
+        "VoiceStudio backend running locally (localhost:3900)"
+      ],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": "",
+      "tags": [
+        "generative",
+        "content"
       ],
       "special": false
     },

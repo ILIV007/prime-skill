@@ -1,0 +1,7 @@
+# Recording the user's corrections and preferences
+
+- The user points out that a shot was misjudged ("this is stop motion, not AI", "this segment is material I shot myself"): run
+  `rea-video correct out/ref --shots 3,5 --label still_motion --note "<the user's exact words>"` (you can also use `--start/--end` to specify a time range; `--shots all` means the whole video; for real material use `--real yes|no`).
+  This immediately updates the conclusions and the report, and records it in `~/.rea-video/corrections.jsonl`; decomposing the same file later applies it automatically, and shots of the same kind are flagged in the review tasks.
+- The user states a long-term preference: for ones that map to parameters use `rea-video prefs engine kling2.1`, `prefs vlm on`, `prefs env_file <path>`, `prefs reviewer <name>`, `prefs capsule_root <capsule-cinema path>`; for the rest, record them with `rea-video prefs --note "keep reports short, focus on the remake plan"`; next time `rea-video memory` will show them — adjust your replies accordingly.
+- Only record what the user explicitly said; don't write your own guesses as corrections. Corrections don't automatically change the classification weights; after a few have accumulated, export them as evaluation samples with `rea-video memory --export-labels eval/user_labels.yaml`, then evaluate and adjust the rules per the development conventions (repo `docs/dev/evaluation.md`).

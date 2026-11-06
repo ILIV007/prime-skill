@@ -1,0 +1,29 @@
+{
+  "name": "reel-story",
+  "title": "reel-story",
+  "description": "From Jenesyx/arta-edit-studio: turns Farsi-first talking-head videos into animated Instagram Reels — this representative skill is the full-screen story format with B-roll and stickers, rendered with HyperFrames from a Whisper transcript, with no burned-in subtitles. The repo also ships the reel-setup and reel-split skills.",
+  "why": "A Farsi-first Reels editing workflow, unique in the collection and close to the curator's own content work; link-only while the young repo matures.",
+  "category": "media",
+  "source": {
+    "repo": "Jenesyx/arta-edit-studio",
+    "url": "https://github.com/Jenesyx/arta-edit-studio",
+    "path": ".claude/skills/reel-story",
+    "commit": "a4b9345ae3b714fabd9e2808bba78269124605e1"
+  },
+  "license": "MIT",
+  "stars_at_import": 11,
+  "added": "2026-11-06",
+  "requires": [
+    "Whisper (large-v3)",
+    "HyperFrames",
+    "FFmpeg"
+  ],
+  "entry": "link-only",
+  "adapted": false,
+  "adaptations": "",
+  "tags": [
+    "video",
+    "content"
+  ],
+  "special": false
+}
