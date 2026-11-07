@@ -7,6 +7,8 @@
 A small, curated collection of genuinely useful agent skills — categorized by
 function, browsable by humans and agents alike.
 
+🌐 **Browse the collection as a site: [iliv007.github.io/prime-skill](https://iliv007.github.io/prime-skill/)** — search, filter by category and tag, no cloning needed.
+
 Most skill collections dump everything they can find. This one does the
 opposite: every entry here was read, tried, and chosen because it earns its
 place. Usefulness first, popularity second. If a skill's value can't be stated
@@ -17,7 +19,8 @@ in one line, it doesn't belong here.
 - **Agents:** read [`skills.json`](skills.json) at the repo root. It lists
   every skill with its category, one-line description, requirements, and exact
   source provenance (repo, path, commit).
-- **Humans:** browse `categories/` below, or scan the tables in this README.
+- **Humans:** browse the [site](https://iliv007.github.io/prime-skill/), the
+  `categories/` folders below, or scan the tables in this README.
 - **Install a skill:** copy its folder from `categories/<category>/<skill>/`
   into your agent's skills directory. Each folder is self-contained and keeps
   the standard `SKILL.md` format used by Claude Code, OpenAI Codex, Cursor,
