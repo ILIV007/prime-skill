@@ -1,0 +1,25 @@
+{
+  "name": "emil-design-eng",
+  "title": "emil-design-eng",
+  "description": "Emil Kowalski's design-engineering philosophy as a skill: whether an element should animate at all, custom easing curves, durations, interruptible transitions, and the invisible polish details that make interfaces feel right.",
+  "why": "Fills the collection's animation/motion-craft gap: no other entry covers animation decision-making or easing craft. It is the flagship of the source repo's 18 skills; the siblings are deliberately not imported (one per cluster), so the source repo is the pointer to the rest.",
+  "category": "design",
+  "source": {
+    "repo": "emilkowalski/skills",
+    "url": "https://github.com/emilkowalski/skills",
+    "path": "skills/emil-design-eng",
+    "commit": "715c1807e08c497cfd1dc4feb450a2a3300ef2a9"
+  },
+  "license": "MIT",
+  "stars_at_import": 55998,
+  "added": "2026-11-11",
+  "requires": [],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": "",
+  "tags": [
+    "react",
+    "design-systems"
+  ],
+  "special": false
+}
