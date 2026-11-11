@@ -46,6 +46,22 @@ nothing else here (or anywhere) quite matches.
 | [reverse-engineer-anything](categories/reverse-engineering/reverse-engineer-anything/) | Reverse Engineering | The owner's reverse-engineering workhorse: explains features, compares versions, and guides reconstructions from real artifacts. |
 <!-- GENERATED:SPECIALS:END -->
 
+## 🔌 Recommended MCP servers
+
+Skills tell an agent *how* to work; MCP servers give it hands. This short
+shelf lists companion MCP servers that are actually run and vetted here —
+recommendations, not skills: nothing is vendored, each entry only links to
+its source ([`mcps.json`](mcps.json)). Paid services are labelled, every
+entry states plainly what the server can run or access, and the shelf is
+capped at 12 — one server per job, the same rule as the skills.
+
+<!-- GENERATED:MCP:START -->
+| Server | What it does | Why it's here | Transport | Requires | What it can run / access | Source |
+|---|---|---|---|---|---|---|
+| [github](https://github.com/github/github-mcp-server) | GitHub's official MCP server: repositories, issues, pull requests, and Actions from any MCP client. | The first-party reference integration — the fastest way to give an agent real, scoped GitHub access; this repo's own pipeline runs on it. | stdio + http | GitHub personal access token | Acts on your GitHub account with your token's scopes — it can read and write anything that token can, so scope the token to the job. | [github/github-mcp-server](https://github.com/github/github-mcp-server) @ 6fbcd00 · MIT · ★ 34,385 |
+| [rea](https://github.com/morluto/rea) | Reverse-engineering toolkit — native binaries, managed and Electron apps, firmware, and web targets — exposed as MCP tools for agents. | The engine behind this collection's reverse-engineer-anything pick, callable directly over MCP; the curator's own RE workhorse, in daily use. | stdio | REA toolchain installed locally | Runs local analysis tooling on your own machine and reads the files and artifacts you point it at; it executes the REA toolchain locally, with no hosted component. | [morluto/rea](https://github.com/morluto/rea) @ 3c0e9d8 · MIT · ★ 451,233 |
+<!-- GENERATED:MCP:END -->
+
 ## At a glance
 
 <!-- GENERATED:INDEX:START -->
@@ -78,6 +94,10 @@ nothing else here (or anywhere) quite matches.
 - **Specials** are the collection's signature picks — a unique capability
   or exceptional craft, at most one per capability cluster, flagged
   `special` in the manifest and showcased in the ⭐ Specials section above.
+- **Recommended MCP servers** (the 🔌 shelf above) are separate from the
+  skills: link-only entries in `mcps.json`, capped at 12, one per job,
+  each carrying a plain `access` statement of what it can run or reach;
+  paid services are labelled in the entry.
 - Every skill carries 1–3 `tags` from a controlled vocabulary —
   cross-cutting topics only, never a restatement of its category:
   `3d`, `api`, `automation`, `competitor`, `content`, `design-systems`,

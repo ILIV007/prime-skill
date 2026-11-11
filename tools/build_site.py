@@ -16,6 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 MANIFEST = ROOT / "skills.json"
+MCP_MANIFEST = ROOT / "mcps.json"
 OUT = ROOT / "site" / "index.html"
 REPO_URL = "https://github.com/ILIV007/prime-skill"
 CATEGORY_ORDER = ["development", "design", "marketing", "media", "research",
@@ -115,6 +116,16 @@ h1{font-family:"Press Start 2P","Courier New",monospace;font-size:2.1rem;line-he
 .tag:hover{border-color:var(--cyan);color:#fff}
 .card footer{margin-top:auto;padding-top:8px;font-size:.9rem;display:flex;gap:16px}
 #empty{display:none;color:var(--muted);text-align:center;padding:48px 0}
+.mcp{margin-top:44px;border-top:2px dashed #352d5e;padding-top:18px}
+.mcp h2{font-family:"Press Start 2P","Courier New",monospace;font-size:.8rem;
+  color:var(--muted);margin:0 0 8px}
+.mcp .mcp-note{color:var(--faint);font-size:.9rem;margin:0 0 6px;max-width:780px}
+.mcp ul{list-style:none;margin:0;padding:0}
+.mcp li{padding:9px 0;border-bottom:1px solid #241d47;font-size:.95rem}
+.mcp li:last-child{border-bottom:none}
+.mcp .mcp-name{font-weight:700}
+.mcp .mcp-meta{color:var(--faint);font-size:.85rem}
+.mcp .mcp-access{display:block;color:var(--muted);font-size:.88rem}
 .site-footer{margin-top:56px;text-align:center;color:var(--faint);font-size:.85rem}
 .card h3,.desc,.why,.req span{overflow-wrap:anywhere}
 @media (max-width:560px){h1{font-size:1.35rem}.grid{grid-template-columns:1fr}}
@@ -331,9 +342,45 @@ def card(skill):
 </article>"""
 
 
+def mcp_section(servers):
+    """A quiet, compact list — deliberately plainer than the skills grid."""
+    if not servers:
+        return ""
+    rows = []
+    for srv in sorted(servers, key=lambda s: (s.get("name") or "").lower()):
+        src = srv.get("source") or {}
+        url = src.get("url") or REPO_URL
+        stars = srv.get("stars_at_import")
+        stars_txt = f"{stars:,}" if isinstance(stars, int) else "—"
+        meta = " · ".join(x for x in [
+            " + ".join(srv.get("transport") or []),
+            str(srv.get("license") or ""),
+            f"★ {stars_txt}",
+        ] if x)
+        paid = ""
+        if srv.get("paid"):
+            paid = f' <span class="badge linkonly">{esc(srv["paid"])}</span>'
+        rows.append(
+            f'<li><a class="mcp-name" href="{esc(url)}" target="_blank" rel="noopener">'
+            f'{esc(srv.get("title") or srv.get("name") or "")}</a>{paid} '
+            f'<span class="mcp-meta">{esc(meta)}</span><br>'
+            f'{esc(srv.get("description") or "")}'
+            f'<span class="mcp-access">Access: {esc(srv.get("access") or "")}</span></li>')
+    return f"""<section class="mcp">
+  <h2>🔌 Recommended MCP servers</h2>
+  <p class="mcp-note">Companion servers, not skills — recommendations only, nothing vendored. Each entry states what the server can run or access; paid services are labelled. Full list with provenance in <a href="{REPO_URL}/blob/main/mcps.json">mcps.json</a>.</p>
+  <ul>
+{''.join(rows)}
+  </ul>
+</section>"""
+
+
 def main():
     data = json.loads(MANIFEST.read_text(encoding="utf-8"))
     skills = data["skills"]
+    mcp_servers = []
+    if MCP_MANIFEST.exists():
+        mcp_servers = json.loads(MCP_MANIFEST.read_text(encoding="utf-8")).get("servers") or []
     total = data.get("count", len(skills))
     link_only_count = sum(1 for s in skills if s.get("entry") == "link-only")
     special_count = sum(1 for s in skills if s.get("special"))
@@ -401,6 +448,7 @@ def main():
 {''.join(cards)}
 </main>
 <p id="empty">No skills match your filters. Try clearing a tag or the search.</p>
+{mcp_section(mcp_servers)}
 <p class="site-footer">Generated from <a href="{REPO_URL}/blob/main/skills.json">skills.json</a> · “Link-only” entries are listed with metadata and a source link only, because their license does not permit redistribution.</p>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -411,7 +459,7 @@ def main():
 """
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(page, encoding="utf-8")
-    print(f"wrote {OUT} ({total} skills, {special_count} specials, {link_only_count} link-only, {len(tag_counts)} tags)")
+    print(f"wrote {OUT} ({total} skills, {special_count} specials, {link_only_count} link-only, {len(tag_counts)} tags, {len(mcp_servers)} MCP servers)")
 
 
 if __name__ == "__main__":

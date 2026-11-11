@@ -14,5 +14,7 @@ jobs:
           python-version: "3.x"
       - name: Generated index is fresh and skills are valid
         run: python3 tools/build_index.py --check
+      - name: MCP shelf is fresh and servers are valid
+        run: python3 tools/build_mcps.py --check
       - name: skills.json parses
         run: python3 -m json.tool skills.json > /dev/null
