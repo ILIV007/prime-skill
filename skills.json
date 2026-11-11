@@ -1,5 +1,5 @@
 {
-  "count": 80,
+  "count": 81,
   "skills": [
     {
       "name": "algorithmic-art",
@@ -200,6 +200,31 @@
       "adaptations": "",
       "tags": [
         "design-systems"
+      ],
+      "special": false
+    },
+    {
+      "name": "diagram-design",
+      "title": "diagram-design",
+      "description": "Produces 45 diagram types — architecture, sequence, ER/data models, flowcharts, Wardley maps, Sankey, Gantt and more — as self-contained HTML+SVG, with a style-guide gate that pulls theme tokens from a site URL or design system so diagrams match the brand.",
+      "why": "The collection's only diagramming skill: no other entry makes technical or editorial diagrams, and its dependency-free HTML+SVG output is themed from the target's own tokens instead of generic AI styling.",
+      "category": "design",
+      "source": {
+        "repo": "cathrynlavery/diagram-design",
+        "url": "https://github.com/cathrynlavery/diagram-design",
+        "path": "skills/diagram-design",
+        "commit": "f2496acbde9f45ccb55c24d4f75210c8a1355df8"
+      },
+      "license": "MIT",
+      "stars_at_import": 66426,
+      "added": "2026-11-11",
+      "requires": [],
+      "entry": "full",
+      "adapted": false,
+      "adaptations": "",
+      "tags": [
+        "design-systems",
+        "content"
       ],
       "special": false
     },
