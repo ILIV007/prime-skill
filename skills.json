@@ -1,5 +1,5 @@
 {
-  "count": 81,
+  "count": 82,
   "skills": [
     {
       "name": "algorithmic-art",
@@ -225,6 +225,34 @@
       "tags": [
         "design-systems",
         "content"
+      ],
+      "special": false
+    },
+    {
+      "name": "kubai-icons",
+      "title": "kubai-icons",
+      "description": "Generates new icons in one fixed, consistent house style: a rulebook-driven design engine with a headless visual self-check and a static SVG exporter, companion to the Kubai icon library (2,600+ icons for React, Vue and plain SVG).",
+      "why": "Icon generation in a single consistent style is a job no other design entry does — ui-ux-pro-max's data covers icon selection, not creation. Listed link-only: the skill's own license is source-available, bars translation and modified redistribution, and its text is Chinese, so it cannot be vendored into this English collection.",
+      "category": "design",
+      "source": {
+        "repo": "kubai087/kubai-icons",
+        "url": "https://github.com/kubai087/kubai-icons",
+        "path": ".",
+        "commit": "4b11d2f84352133b4049b48d99857388713b21f3"
+      },
+      "license": "Kubai Icons License (source-available)",
+      "stars_at_import": 708,
+      "added": "2026-11-11",
+      "requires": [
+        "Node.js 18+",
+        "Chrome"
+      ],
+      "entry": "link-only",
+      "adapted": false,
+      "adaptations": "",
+      "tags": [
+        "generative",
+        "design-systems"
       ],
       "special": false
     },

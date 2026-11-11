@@ -69,11 +69,11 @@ capped at 12 — one server per job, the same rule as the skills.
 ## At a glance
 
 <!-- GENERATED:INDEX:START -->
-**81 skills · 7 categories · 5 link-only**
+**82 skills · 7 categories · 6 link-only**
 
 | Category | Skills | Scope | Page |
 |---|---|---|---|
-| Design | 12 | Visual and interface design: design systems, styling, branding, and generated visuals. | [Browse →](categories/design/README.md) |
+| Design | 13 | Visual and interface design: design systems, styling, branding, and generated visuals. | [Browse →](categories/design/README.md) |
 | Development | 24 | Building software: planning, implementation, testing, debugging, and harness workflows. | [Browse →](categories/development/README.md) |
 | Marketing | 12 | Go-to-market: positioning, copy, content, social, and launches. | [Browse →](categories/marketing/README.md) |
 | Media | 9 | Media production: video creation and editing, motion, and filmmaking craft. | [Browse →](categories/media/README.md) |
@@ -122,7 +122,7 @@ capped at 12 — one server per job, the same rule as the skills.
 ## Categories
 
 <!-- GENERATED:START -->
-### [Design](categories/design/README.md) (12)
+### [Design](categories/design/README.md) (13)
 
 | Skill | What it does | Why it's here | Requires | Source |
 |---|---|---|---|---|
@@ -135,6 +135,7 @@ capped at 12 — one server per job, the same rule as the skills.
 | [color-expert](categories/design/color-expert/) | Deep color expertise: color spaces (OKLCH, CIELAB), palette and ramp generation, harmony systems, color naming, pigment and print-vs-screen behavior, and contrast verification. | The palette data elsewhere is lookup-only; this is the craft of making and judging color — perceptually uniform ramps, naming, and verified contrast. | — | [meodai/skill.color-expert](https://github.com/meodai/skill.color-expert) @ 5bf7c77 |
 | [design-system](categories/design/design-system/) | Design-token architecture (primitive to semantic to component), component specs, and brand-compliant slides. | Keeps multi-screen products visually consistent as they grow. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
 | [diagram-design](categories/design/diagram-design/) | Produces 45 diagram types — architecture, sequence, ER/data models, flowcharts, Wardley maps, Sankey, Gantt and more — as self-contained HTML+SVG, with a style-guide gate that pulls theme tokens from a site URL or design system so diagrams match the brand. | The collection's only diagramming skill: no other entry makes technical or editorial diagrams, and its dependency-free HTML+SVG output is themed from the target's own tokens instead of generic AI styling. | — | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) @ f2496ac |
+| [kubai-icons](https://github.com/kubai087/kubai-icons/tree/4b11d2f84352133b4049b48d99857388713b21f3/.) · link-only | Generates new icons in one fixed, consistent house style: a rulebook-driven design engine with a headless visual self-check and a static SVG exporter, companion to the Kubai icon library (2,600+ icons for React, Vue and plain SVG). | Icon generation in a single consistent style is a job no other design entry does — ui-ux-pro-max's data covers icon selection, not creation. Listed link-only: the skill's own license is source-available, bars translation and modified redistribution, and its text is Chinese, so it cannot be vendored into this English collection. | Node.js 18+; Chrome | [kubai087/kubai-icons](https://github.com/kubai087/kubai-icons) @ 4b11d2f |
 | [slides](categories/design/slides/) | Creates strategic HTML presentations with charts, design tokens, and responsive layouts. | Turns briefs and reports into presentable decks without design software. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
 | [ui-styling](categories/design/ui-styling/) | Builds accessible UIs with shadcn/ui, Radix, and Tailwind, plus canvas-based visual designs. | The practical implementation partner to the design-system rules. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
 | [ui-ux-pro-max](categories/design/ui-ux-pro-max/) | Design intelligence for web, mobile, and desktop UIs, with searchable local data on styles, palettes, font pairings, UX guidelines, and stacks. | Gives interface work a real design database instead of guesswork; the flagship of the design set. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
