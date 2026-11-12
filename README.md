@@ -69,7 +69,7 @@ capped at 12 — one server per job, the same rule as the skills.
 ## At a glance
 
 <!-- GENERATED:INDEX:START -->
-**83 skills · 7 categories · 6 link-only**
+**84 skills · 7 categories · 6 link-only**
 
 | Category | Skills | Scope | Page |
 |---|---|---|---|
@@ -77,7 +77,7 @@ capped at 12 — one server per job, the same rule as the skills.
 | Development | 24 | Building software: planning, implementation, testing, debugging, and harness workflows. | [Browse →](categories/development/README.md) |
 | Marketing | 12 | Go-to-market: positioning, copy, content, social, and launches. | [Browse →](categories/marketing/README.md) |
 | Media | 9 | Media production: video creation and editing, motion, and filmmaking craft. | [Browse →](categories/media/README.md) |
-| Research | 16 | Finding things out: social-media research, deep research, search, and literature. | [Browse →](categories/research/README.md) |
+| Research | 17 | Finding things out: social-media research, deep research, search, and literature. | [Browse →](categories/research/README.md) |
 | Reverse Engineering | 2 | Understanding compiled and shipped artifacts — and hardening your own against it. | [Browse →](categories/reverse-engineering/README.md) |
 | Security | 6 | Defending systems: secure coding, API testing, threat modeling, and incident readiness. | [Browse →](categories/security/README.md) |
 <!-- GENERATED:INDEX:END -->
@@ -201,11 +201,12 @@ capped at 12 — one server per job, the same rule as the skills.
 | [video](categories/media/video/) | Guides AI and programmatic video production: avatars, demos, explainers, and generation pipelines. | Video is the highest-reach format; this maps the current tool landscape into workflows. | — | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) @ 88c79f6 |
 | [voicestudio](categories/media/voicestudio/) | Drives a locally running VoiceStudio backend (REST API or MCP): text-to-speech with saved or designed voices, voice cloning, transcription, and automated dubbing or narration workflows. | The collection's only voice skill: local-first speech generation and cloning, no cloud TTS account — nothing else in Prime Skill makes or processes spoken audio. | VoiceStudio backend running locally (localhost:3900) | [debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio) @ c88bf70 |
 
-### [Research](categories/research/README.md) (16)
+### [Research](categories/research/README.md) (17)
 
 | Skill | What it does | Why it's here | Requires | Source |
 |---|---|---|---|---|
 | [ad-library-teardown](categories/research/ad-library-teardown/) | Analyzes active ads from Meta, Google, and LinkedIn libraries: hooks, offers, CTAs, and claims. | Competitors publish their best-tested messaging in ad libraries for free. | ScrapeCreators API key (paid) | [ScrapeCreators/social-media-research-skills](https://github.com/ScrapeCreators/social-media-research-skills) @ 64ba7b4 |
+| [agent-reach](categories/research/agent-reach/) | Free, local, read-only access to platform content: search and read posts, comments, subtitles, stock quotes and jobs across X, Reddit, YouTube, GitHub, Instagram, Facebook, Xiaohongshu, Bilibili and more — no API keys for public content. | The free/local fetch layer the research cluster lacked: its fetchers are the paid ScrapeCreators API (credit-limited) and exa-search, and no entry reads platforms like Xiaohongshu and Bilibili at all. Fetch here, analyze with the cluster’s existing skills. | agent-reach CLI (pip install agent-reach); Python 3.10+; Chrome for browser channels | [Panniantong/agent-reach](https://github.com/Panniantong/agent-reach) @ c70ae6d |
 | [audience-research](categories/research/audience-research/) | Evaluates a creator or brand audience from public signals: demographics, geography, language, and fit. | Prevents sponsorship and partnership picks based on follower counts alone. | ScrapeCreators API key (paid) | [ScrapeCreators/social-media-research-skills](https://github.com/ScrapeCreators/social-media-research-skills) @ 64ba7b4 |
 | [comment-mining](categories/research/comment-mining/) | Mines comments and replies for objections, questions, buying intent, and voice-of-customer language. | Comments are unfiltered market research, already written by the audience. | ScrapeCreators API key (paid) | [ScrapeCreators/social-media-research-skills](https://github.com/ScrapeCreators/social-media-research-skills) @ 64ba7b4 |
 | [competitor-social-research](categories/research/competitor-social-research/) | Researches competitors' social strategy and turns public data into a practical strategy brief. | Shows what content is winning in your niche and where the gaps are. | ScrapeCreators API key (paid) | [ScrapeCreators/social-media-research-skills](https://github.com/ScrapeCreators/social-media-research-skills) @ 64ba7b4 |

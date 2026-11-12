@@ -1,0 +1,29 @@
+{
+  "name": "agent-reach",
+  "title": "agent-reach",
+  "description": "Free, local, read-only access to platform content: search and read posts, comments, subtitles, stock quotes and jobs across X, Reddit, YouTube, GitHub, Instagram, Facebook, Xiaohongshu, Bilibili and more — no API keys for public content.",
+  "why": "The free/local fetch layer the research cluster lacked: its fetchers are the paid ScrapeCreators API (credit-limited) and exa-search, and no entry reads platforms like Xiaohongshu and Bilibili at all. Fetch here, analyze with the cluster’s existing skills.",
+  "category": "research",
+  "source": {
+    "repo": "Panniantong/agent-reach",
+    "url": "https://github.com/Panniantong/agent-reach",
+    "path": "agent_reach/skill",
+    "commit": "c70ae6da5d39bc90e09ad2ae0575ccc89f31e284"
+  },
+  "license": "MIT",
+  "stars_at_import": 111251,
+  "added": "2026-11-12",
+  "requires": [
+    "agent-reach CLI (pip install agent-reach)",
+    "Python 3.10+",
+    "Chrome for browser channels"
+  ],
+  "entry": "full",
+  "adapted": true,
+  "adaptations": "English skill file used as the canonical SKILL.md (upstream SKILL_en.md); the three references/*.md were translated faithfully from Chinese to English for the collection’s English-only rule; every command, flag, path and JSON field is unchanged from upstream.",
+  "tags": [
+    "social-data",
+    "web-search"
+  ],
+  "special": false
+}
