@@ -16,5 +16,7 @@ jobs:
         run: python3 tools/build_index.py --check
       - name: MCP shelf is fresh and servers are valid
         run: python3 tools/build_mcps.py --check
+      - name: Void shelf is fresh and entries are valid
+        run: python3 tools/build_void.py --check
       - name: skills.json parses
         run: python3 -m json.tool skills.json > /dev/null

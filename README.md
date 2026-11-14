@@ -66,6 +66,26 @@ capped at 12 — one server per job, the same rule as the skills.
 | [rea](https://github.com/morluto/rea) | Reverse-engineering toolkit — native binaries, managed and Electron apps, firmware, and web targets — exposed as MCP tools for agents. | The engine behind this collection's reverse-engineer-anything pick, callable directly over MCP; the curator's own RE workhorse, in daily use. | stdio | REA toolchain installed locally | Runs local analysis tooling on your own machine and reads the files and artifacts you point it at; it executes the REA toolchain locally, with no hosted component. | [morluto/rea](https://github.com/morluto/rea) @ 3c0e9d8 · MIT · ★ 451,233 |
 <!-- GENERATED:MCP:END -->
 
+## 🕳️ Void
+
+Vetted, valuable, not adopted. Void lists things that were checked and
+found genuinely useful, but do not belong in the collection: they are
+platforms, plugins, dashboards, or infrastructure — not standalone
+skills — or they duplicate an entry that already exists. **Void entries
+are not skills**: nothing here is vendored, each entry only links to its
+source ([`void.json`](void.json)), and Void entries appear in no count
+anywhere — not the skills total, not any category, not the MCP count,
+not tag statistics. The shelf is capped at 12, vetted only, and Void
+entries never flow into `skills.json` or `mcps.json`.
+
+<!-- GENERATED:VOID:START -->
+| Entry | What it is | Why it's valuable | Why it's not in the collection | Source |
+|---|---|---|---|---|
+| [autoharness](https://github.com/tigerless-labs/AutoHarness) | A Claude Code plugin that learns reusable skills from successful sessions and manages their lifecycle: merging similar skills, updating stale ones, archiving unused ones, and protecting manually written ones. | The most credible self-learning skill layer in the wild — it turns real session experience into maintained, deduplicated skills instead of letting them rot. | It is a plugin, not a skill: its single SKILL.md routes every change through its own stage_skill tool, which only exists inside the plugin, so there is no importable standalone skill. | [tigerless-labs/AutoHarness](https://github.com/tigerless-labs/AutoHarness) @ 6d85325 · MIT · ★ 11,119 |
+| [gbrain](https://github.com/garrytan/gbrain) | Long-term memory system for agents: CLI plus MCP server plus Postgres, with markdown and git as the source of truth and hybrid vector-plus-graph search. | An excellent memory layer, and the memory job is a genuine gap the collection has no entry for — persistent agents need somewhere to remember. | Infrastructure, not a skill: its ~80 shipped SKILL.md files are GBrain-operator procedures that only work against a running GBrain instance. | [garrytan/gbrain](https://github.com/garrytan/gbrain) @ 921afa3 · MIT · ★ 32,893 |
+| [open-design](https://github.com/nexu-io/open-design) | Collaborative AI design workspace — desktop app plus CLI plus MCP server — with a library of 565 skills covering design systems, templates, and craft rules. | A huge, real design-skill library — the largest single source of design craft in the agent-skill world. | A platform, not a skill: its skills are OD-coupled (od: frontmatter, its own design systems and craft rules), and its best skill names — algorithmic-art, color-expert, copywriting, brainstorming — already exist in the collection. | [nexu-io/open-design](https://github.com/nexu-io/open-design) @ 59e4f2a · Apache-2.0 · ★ 107,603 |
+<!-- GENERATED:VOID:END -->
+
 ## At a glance
 
 <!-- GENERATED:INDEX:START -->
@@ -102,6 +122,11 @@ capped at 12 — one server per job, the same rule as the skills.
   skills: link-only entries in `mcps.json`, capped at 12, one per job,
   each carrying a plain `access` statement of what it can run or reach;
   paid services are labelled in the entry.
+- **Void** (the 🕳️ shelf above) is separate from the skills and from the
+  MCPs: link-only entries in `void.json`, capped at 12, vetted only, each
+  carrying two honest lines — why it is valuable, and why it is not in
+  the collection. Void entries are counted nowhere and never flow into
+  `skills.json` or `mcps.json`.
 - Every skill carries 1–3 `tags` from a controlled vocabulary —
   cross-cutting topics only, never a restatement of its category:
   `3d`, `api`, `automation`, `competitor`, `content`, `design-systems`,

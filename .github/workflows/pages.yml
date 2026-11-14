@@ -6,6 +6,7 @@ on:
     paths:
       - skills.json
       - mcps.json
+      - void.json
       - tools/build_site.py
       - .github/workflows/pages.yml
   workflow_dispatch:

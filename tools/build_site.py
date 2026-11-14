@@ -17,6 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 MANIFEST = ROOT / "skills.json"
 MCP_MANIFEST = ROOT / "mcps.json"
+VOID_MANIFEST = ROOT / "void.json"
 OUT = ROOT / "site" / "index.html"
 REPO_URL = "https://github.com/ILIV007/prime-skill"
 CATEGORY_ORDER = ["development", "design", "marketing", "media", "research",
@@ -126,6 +127,16 @@ h1{font-family:"Press Start 2P","Courier New",monospace;font-size:2.1rem;line-he
 .mcp .mcp-name{font-weight:700}
 .mcp .mcp-meta{color:var(--faint);font-size:.85rem}
 .mcp .mcp-access{display:block;color:var(--muted);font-size:.88rem}
+.void{margin-top:44px;border:2px dashed #4a4066;border-radius:4px;padding:18px 20px;background:#14102a}
+.void h2{font-family:"Press Start 2P","Courier New",monospace;font-size:.8rem;
+  color:var(--faint);margin:0 0 8px}
+.void .void-note{color:var(--faint);font-size:.9rem;margin:0 0 6px;max-width:780px}
+.void ul{list-style:none;margin:0;padding:0}
+.void li{padding:9px 0;border-bottom:1px solid #241d47;font-size:.95rem}
+.void li:last-child{border-bottom:none}
+.void .void-name{font-weight:700}
+.void .void-meta{color:var(--faint);font-size:.85rem}
+.void .void-why{display:block;color:var(--muted);font-size:.88rem}
 .site-footer{margin-top:56px;text-align:center;color:var(--faint);font-size:.85rem}
 .card h3,.desc,.why,.req span{overflow-wrap:anywhere}
 @media (max-width:560px){h1{font-size:1.35rem}.grid{grid-template-columns:1fr}}
@@ -375,12 +386,51 @@ def mcp_section(servers):
 </section>"""
 
 
+def void_section(entries):
+    """Void: vetted, valuable, not adopted — link-only, and NOT skills.
+
+    Deliberately distinct from the skills grid and the MCP list: its own
+    dashed box, its own heading, and both reason lines on every entry.
+    Void entries never enter any count (skills total, categories, MCP
+    count, tags) — this renderer only reads void.json.
+    """
+    if not entries:
+        return ""
+    rows = []
+    for entry in sorted(entries, key=lambda e: (e.get("name") or "").lower()):
+        src = entry.get("source") or {}
+        url = src.get("url") or REPO_URL
+        stars = entry.get("stars_at_import")
+        stars_txt = f"{stars:,}" if isinstance(stars, int) else "—"
+        meta = " · ".join(x for x in [
+            str(entry.get("license") or ""),
+            f"★ {stars_txt}",
+        ] if x)
+        rows.append(
+            f'<li><a class="void-name" href="{esc(url)}" target="_blank" rel="noopener">'
+            f'{esc(entry.get("title") or entry.get("name") or "")}</a> '
+            f'<span class="void-meta">{esc(meta)}</span><br>'
+            f'{esc(entry.get("description") or "")}'
+            f'<span class="void-why">Why it\'s valuable: {esc(entry.get("why_valuable") or "")}</span>'
+            f'<span class="void-why">Why it\'s not in the collection: {esc(entry.get("why_not_included") or "")}</span></li>')
+    return f"""<section class="void" id="void">
+  <h2>🕳️ Void</h2>
+  <p class="void-note">Vetted, valuable, not adopted — link-only, and <b>not skills</b>. Things checked and found genuinely useful that do not belong in the collection: platforms, plugins, dashboards, or infrastructure, or duplicates of an entry that already exists. Full list in <a href="{REPO_URL}/blob/main/void.json">void.json</a>.</p>
+  <ul>
+{''.join(rows)}
+  </ul>
+</section>"""
+
+
 def main():
     data = json.loads(MANIFEST.read_text(encoding="utf-8"))
     skills = data["skills"]
     mcp_servers = []
     if MCP_MANIFEST.exists():
         mcp_servers = json.loads(MCP_MANIFEST.read_text(encoding="utf-8")).get("servers") or []
+    void_entries = []
+    if VOID_MANIFEST.exists():
+        void_entries = json.loads(VOID_MANIFEST.read_text(encoding="utf-8")).get("entries") or []
     total = data.get("count", len(skills))
     link_only_count = sum(1 for s in skills if s.get("entry") == "link-only")
     special_count = sum(1 for s in skills if s.get("special"))
@@ -449,6 +499,7 @@ def main():
 </main>
 <p id="empty">No skills match your filters. Try clearing a tag or the search.</p>
 {mcp_section(mcp_servers)}
+{void_section(void_entries)}
 <p class="site-footer">Generated from <a href="{REPO_URL}/blob/main/skills.json">skills.json</a> · “Link-only” entries are listed with metadata and a source link only, because their license does not permit redistribution.</p>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -459,7 +510,7 @@ def main():
 """
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(page, encoding="utf-8")
-    print(f"wrote {OUT} ({total} skills, {special_count} specials, {link_only_count} link-only, {len(tag_counts)} tags, {len(mcp_servers)} MCP servers)")
+    print(f"wrote {OUT} ({total} skills, {special_count} specials, {link_only_count} link-only, {len(tag_counts)} tags, {len(mcp_servers)} MCP servers, {len(void_entries)} Void entries)")
 
 
 if __name__ == "__main__":
