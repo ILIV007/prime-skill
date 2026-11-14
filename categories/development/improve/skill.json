@@ -1,0 +1,27 @@
+{
+  "name": "improve",
+  "title": "improve",
+  "description": "Survey any codebase as a senior advisor and produce prioritized, self-contained implementation plans for other models/agents to execute — read-only on source code, never implements anything itself.",
+  "why": "The audit-first advisor loop: recon, then a 9-category parallel audit, findings vetted and prioritized by leverage, and plans written for the weakest plausible executor, executed in an isolated worktree — distinct from writing-plans (plans from a given spec) and subagent-driven-development (executes an existing plan).",
+  "category": "development",
+  "source": {
+    "repo": "shadcn/improve",
+    "url": "https://github.com/shadcn/improve",
+    "path": "skills/improve",
+    "commit": "cac56e1ebd3c279aa9153616cfeac7b174ab90f9"
+  },
+  "license": "MIT",
+  "stars_at_import": 11846,
+  "added": "2026-11-14",
+  "requires": [
+    "Agent Skills-compatible harness"
+  ],
+  "entry": "full",
+  "adapted": false,
+  "adaptations": "",
+  "tags": [
+    "workflow",
+    "harness"
+  ],
+  "special": false
+}

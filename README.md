@@ -100,12 +100,12 @@ Void entries never flow into `skills.json` or `mcps.json`.
 ## At a glance
 
 <!-- GENERATED:INDEX:START -->
-**84 skills · 7 categories · 6 link-only**
+**85 skills · 7 categories · 6 link-only**
 
 | Category | Skills | Scope | Page |
 |---|---|---|---|
 | Design | 14 | Visual and interface design: design systems, styling, branding, and generated visuals. | [Browse →](categories/design/README.md) |
-| Development | 24 | Building software: planning, implementation, testing, debugging, and harness workflows. | [Browse →](categories/development/README.md) |
+| Development | 25 | Building software: planning, implementation, testing, debugging, and harness workflows. | [Browse →](categories/development/README.md) |
 | Marketing | 12 | Go-to-market: positioning, copy, content, social, and launches. | [Browse →](categories/marketing/README.md) |
 | Media | 9 | Media production: video creation and editing, motion, and filmmaking craft. | [Browse →](categories/media/README.md) |
 | Research | 17 | Finding things out: social-media research, deep research, search, and literature. | [Browse →](categories/research/README.md) |
@@ -177,7 +177,7 @@ Void entries never flow into `skills.json` or `mcps.json`.
 | [ui-styling](categories/design/ui-styling/) | Builds accessible UIs with shadcn/ui, Radix, and Tailwind, plus canvas-based visual designs. | The practical implementation partner to the design-system rules. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
 | [ui-ux-pro-max](categories/design/ui-ux-pro-max/) | Design intelligence for web, mobile, and desktop UIs, with searchable local data on styles, palettes, font pairings, UX guidelines, and stacks. | Gives interface work a real design database instead of guesswork; the flagship of the design set. | — | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) @ dd9a1b4 |
 
-### [Development](categories/development/README.md) (24)
+### [Development](categories/development/README.md) (25)
 
 | Skill | What it does | Why it's here | Requires | Source |
 |---|---|---|---|---|
@@ -188,6 +188,7 @@ Void entries never flow into `skills.json` or `mcps.json`.
 | [find-skills](categories/development/find-skills/) | Finds and installs agent skills from the open ecosystem through the Skills CLI and the skills.sh registry. | Skill discovery is a different job from skill authoring — and the front door for growing this very collection. | Node.js; skills.sh access | [vercel-labs/skills](https://github.com/vercel-labs/skills) @ 9197d91 |
 | [grill-me](categories/development/grill-me/) | A relentless one-question-at-a-time interview that stress-tests a plan or design until every branch of the decision tree is resolved. | The sharp end of requirements work: it surfaces the decisions brainstorming leaves unmade, before they turn into rework. | — | [mattpocock/skills](https://github.com/mattpocock/skills) @ 4ae2317 |
 | [grilling](categories/development/grilling/) | The reusable interview engine behind grill-me: grills the user relentlessly about a plan, decision, or idea, one question at a time. | Grill-me is the session wrapper; this is the portable technique that other workflows can invoke on any decision. | — | [mattpocock/skills](https://github.com/mattpocock/skills) @ 4ae2317 |
+| [improve](categories/development/improve/) | Survey any codebase as a senior advisor and produce prioritized, self-contained implementation plans for other models/agents to execute — read-only on source code, never implements anything itself. | The audit-first advisor loop: recon, then a 9-category parallel audit, findings vetted and prioritized by leverage, and plans written for the weakest plausible executor, executed in an isolated worktree — distinct from writing-plans (plans from a given spec) and subagent-driven-development (executes an existing plan). | Agent Skills-compatible harness | [shadcn/improve](https://github.com/shadcn/improve) @ cac56e1 |
 | [mcp-builder](categories/development/mcp-builder/) | Anthropic's playbook for designing and building high-quality MCP servers, with reference guides and an evaluation harness. | The owner builds connectors and MCP-backed tools; this is the reference guide from the source. | — | [anthropics/skills](https://github.com/anthropics/skills) @ ca45fc4 |
 | [ponytail](categories/development/ponytail/) | Lazy senior-dev mode: the smallest change that fully solves the task, explained in one read. | Cuts over-engineering, tokens, and cost on everyday coding without dropping safety or tests. | — | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) @ 96608e0 |
 | [ponytail-audit](categories/development/ponytail-audit/) | One-shot whole-repo audit for bugs, security holes, slow paths, untested risky code, and deletable bloat. | A fast health check for inherited or fast-grown codebases, ranked by impact. | — | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) @ 96608e0 |
