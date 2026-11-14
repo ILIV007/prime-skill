@@ -1,5 +1,5 @@
 {
-  "about": "Void is a link-only shelf for things that were vetted and found genuinely valuable, but do not belong in the collection: they are platforms, plugins, dashboards, or infrastructure — not standalone skills — or they duplicate an entry that already exists. Void entries are NOT skills and are never counted anywhere: not in the skills total, not in any category, not in the MCP count, not in tag statistics. Nothing here is vendored; each entry only links to its source. Capped at 12, vetted only — Void never flows into skills.json or mcps.json.",
+  "about": "Void is a link-only shelf for things that were vetted and found genuinely valuable, but do not belong in the collection: they are platforms, plugins, dashboards, or infrastructure — not standalone skills — or they duplicate an entry that already exists. Void entries are NOT skills and are never counted anywhere: not in the skills total, not in any category, not in the MCP count, not in tag statistics. Nothing here is vendored; each entry only links to its source. No cap — admission is by merit alone: vetted, genuinely valuable, and not for the main collection. Void never flows into skills.json or mcps.json.",
   "count": 12,
   "entries": [
     {

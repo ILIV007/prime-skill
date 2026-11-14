@@ -12,10 +12,12 @@ manifest (void.json), its own schema, its own validator, its own CI step.
 A Void entry is structurally distinguishable from a skill entry and from
 an MCP entry — it carries `why_valuable` and `why_not_included`, and it
 carries NO category, tags, entry/special flags, transport, requires,
-access, or paid fields. Void entries are link-only, vetted only, capped
-at 12, and never counted anywhere: not in the skills total, not in any
-category, not in the MCP count, not in tag statistics. Void never flows
-into skills.json or mcps.json.
+access, or paid fields. Void entries are link-only and vetted only,
+admitted on merit alone — no cap: anything vetted and genuinely valuable
+that does not belong in the collection may enter. They are never counted
+anywhere: not in the skills total, not in any category, not in the MCP
+count, not in tag statistics. Void never flows into skills.json or
+mcps.json.
 """
 import json
 import sys
@@ -26,7 +28,6 @@ MANIFEST = ROOT / "void.json"
 README = ROOT / "README.md"
 START = "<!-- GENERATED:VOID:START -->"
 END = "<!-- GENERATED:VOID:END -->"
-CAP = 12
 REQUIRED = ["name", "title", "description", "why_valuable",
             "why_not_included", "source", "license", "stars_at_import",
             "added"]
@@ -57,8 +58,6 @@ def load(errors):
 def validate(data, entries, errors):
     if data is not None and data.get("count") != len(entries):
         errors.append(f"void.json: count {data.get('count')} != {len(entries)} entr(ies)")
-    if len(entries) > CAP:
-        errors.append(f"void.json: {len(entries)} entries exceeds the hard cap of {CAP}")
     seen = set()
     for entry in entries:
         name = entry.get("name") or "?"

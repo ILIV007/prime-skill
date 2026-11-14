@@ -75,8 +75,9 @@ skills — or they duplicate an entry that already exists. **Void entries
 are not skills**: nothing here is vendored, each entry only links to its
 source ([`void.json`](void.json)), and Void entries appear in no count
 anywhere — not the skills total, not any category, not the MCP count,
-not tag statistics. The shelf is capped at 12, vetted only, and Void
-entries never flow into `skills.json` or `mcps.json`.
+not tag statistics. The shelf has no cap: an entry goes in only on
+merit — vetted, genuinely valuable, and not for the main collection.
+Void entries never flow into `skills.json` or `mcps.json`.
 
 <!-- GENERATED:VOID:START -->
 | Entry | What it is | Why it's valuable | Why it's not in the collection | Source |
@@ -132,8 +133,8 @@ entries never flow into `skills.json` or `mcps.json`.
   each carrying a plain `access` statement of what it can run or reach;
   paid services are labelled in the entry.
 - **Void** (the 🕳️ shelf above) is separate from the skills and from the
-  MCPs: link-only entries in `void.json`, capped at 12, vetted only, each
-  carrying two honest lines — why it is valuable, and why it is not in
+  MCPs: link-only entries in `void.json`, vetted only, admitted on merit
+  alone — no cap — each carrying two honest lines — why it is valuable, and why it is not in
   the collection. Void entries are counted nowhere and never flow into
   `skills.json` or `mcps.json`.
 - Every skill carries 1–3 `tags` from a controlled vocabulary —
