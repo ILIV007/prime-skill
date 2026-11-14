@@ -1,1 +1,186 @@
-{"about":"Void is a link-only shelf for things that were vetted and found genuinely valuable, but do not belong in the collection: they are platforms, plugins, dashboards, or infrastructure — not standalone skills — or they duplicate an entry that already exists. Void entries are NOT skills and are never counted anywhere: not in the skills total, not in any category, not in the MCP count, not in tag statistics. Nothing here is vendored; each entry only links to its source. Capped at 12, vetted only — Void never flows into skills.json or mcps.json.","count":3,"entries":[{"added":"2026-11-14","description":"A Claude Code plugin that learns reusable skills from successful sessions and manages their lifecycle: merging similar skills, updating stale ones, archiving unused ones, and protecting manually written ones.","license":"MIT","name":"autoharness","source":{"commit":"6d85325ab5ef436d1d4d52ffa82e43ea0365d144","repo":"tigerless-labs/AutoHarness","url":"https://github.com/tigerless-labs/AutoHarness"},"stars_at_import":11119,"title":"AutoHarness","why_not_included":"It is a plugin, not a skill: its single SKILL.md routes every change through its own stage_skill tool, which only exists inside the plugin, so there is no importable standalone skill.","why_valuable":"The most credible self-learning skill layer in the wild — it turns real session experience into maintained, deduplicated skills instead of letting them rot."},{"added":"2026-11-14","description":"Long-term memory system for agents: CLI plus MCP server plus Postgres, with markdown and git as the source of truth and hybrid vector-plus-graph search.","license":"MIT","name":"gbrain","source":{"commit":"921afa332c1a531ef0853976ba9331faac44b600","repo":"garrytan/gbrain","url":"https://github.com/garrytan/gbrain"},"stars_at_import":32893,"title":"GBrain","why_not_included":"Infrastructure, not a skill: its ~80 shipped SKILL.md files are GBrain-operator procedures that only work against a running GBrain instance.","why_valuable":"An excellent memory layer, and the memory job is a genuine gap the collection has no entry for — persistent agents need somewhere to remember."},{"added":"2026-11-14","description":"Collaborative AI design workspace — desktop app plus CLI plus MCP server — with a library of 565 skills covering design systems, templates, and craft rules.","license":"Apache-2.0","name":"open-design","source":{"commit":"59e4f2ae85de7e7318a5e6bdcf3a34584c4b7582","repo":"nexu-io/open-design","url":"https://github.com/nexu-io/open-design"},"stars_at_import":107603,"title":"Open Design","why_not_included":"A platform, not a skill: its skills are OD-coupled (od: frontmatter, its own design systems and craft rules), and its best skill names — algorithmic-art, color-expert, copywriting, brainstorming — already exist in the collection.","why_valuable":"A huge, real design-skill library — the largest single source of design craft in the agent-skill world."}]}
+{
+  "about": "Void is a link-only shelf for things that were vetted and found genuinely valuable, but do not belong in the collection: they are platforms, plugins, dashboards, or infrastructure — not standalone skills — or they duplicate an entry that already exists. Void entries are NOT skills and are never counted anywhere: not in the skills total, not in any category, not in the MCP count, not in tag statistics. Nothing here is vendored; each entry only links to its source. Capped at 12, vetted only — Void never flows into skills.json or mcps.json.",
+  "count": 12,
+  "entries": [
+    {
+      "added": "2026-11-14",
+      "description": "A Claude Code plugin that learns reusable skills from successful sessions and manages their lifecycle: merging similar skills, updating stale ones, archiving unused ones, and protecting manually written ones.",
+      "license": "MIT",
+      "name": "autoharness",
+      "source": {
+        "commit": "6d85325ab5ef436d1d4d52ffa82e43ea0365d144",
+        "repo": "tigerless-labs/AutoHarness",
+        "url": "https://github.com/tigerless-labs/AutoHarness"
+      },
+      "stars_at_import": 11119,
+      "title": "AutoHarness",
+      "why_not_included": "It is a plugin, not a skill: its single SKILL.md routes every change through its own stage_skill tool, which only exists inside the plugin, so there is no importable standalone skill.",
+      "why_valuable": "The most credible self-learning skill layer in the wild — it turns real session experience into maintained, deduplicated skills instead of letting them rot."
+    },
+    {
+      "added": "2026-11-14",
+      "description": "Long-term memory system for agents: CLI plus MCP server plus Postgres, with markdown and git as the source of truth and hybrid vector-plus-graph search.",
+      "license": "MIT",
+      "name": "gbrain",
+      "source": {
+        "commit": "921afa332c1a531ef0853976ba9331faac44b600",
+        "repo": "garrytan/gbrain",
+        "url": "https://github.com/garrytan/gbrain"
+      },
+      "stars_at_import": 32893,
+      "title": "GBrain",
+      "why_not_included": "Infrastructure, not a skill: its ~80 shipped SKILL.md files are GBrain-operator procedures that only work against a running GBrain instance.",
+      "why_valuable": "An excellent memory layer, and the memory job is a genuine gap the collection has no entry for — persistent agents need somewhere to remember."
+    },
+    {
+      "added": "2026-11-14",
+      "description": "Collaborative AI design workspace — desktop app plus CLI plus MCP server — with a library of 565 skills covering design systems, templates, and craft rules.",
+      "license": "Apache-2.0",
+      "name": "open-design",
+      "source": {
+        "commit": "59e4f2ae85de7e7318a5e6bdcf3a34584c4b7582",
+        "repo": "nexu-io/open-design",
+        "url": "https://github.com/nexu-io/open-design"
+      },
+      "stars_at_import": 107603,
+      "title": "Open Design",
+      "why_not_included": "A platform, not a skill: its skills are OD-coupled (od: frontmatter, its own design systems and craft rules), and its best skill names — algorithmic-art, color-expert, copywriting, brainstorming — already exist in the collection.",
+      "why_valuable": "A huge, real design-skill library — the largest single source of design craft in the agent-skill world."
+    },
+    {
+      "name": "langfuse",
+      "title": "Langfuse",
+      "description": "Open-source AI engineering platform: AI Gateway, agent observability, evals, and prompt/skill management, built on OpenTelemetry.",
+      "why_valuable": "The leading open-source observability platform for LLM apps and agents — traces, evals, cost tracking, prompt/skill management; the collection has no observability entry, and the owner builds five AI bots.",
+      "why_not_included": "A self-hosted platform, not a skill; open-core with paid cloud features.",
+      "source": {
+        "repo": "langfuse/langfuse",
+        "url": "https://github.com/langfuse/langfuse",
+        "commit": "48a31810e1c6e6a4a589b1eacc5eecc7960c9b87"
+      },
+      "license": "MIT (core) + Enterprise License (ee/)",
+      "stars_at_import": 37422,
+      "added": "2026-11-14"
+    },
+    {
+      "name": "paper-qa",
+      "title": "paper-qa",
+      "description": "High-accuracy RAG for answering questions from scientific documents with citations.",
+      "why_valuable": "The most distinctive missing research tool: citation-grounded Q&A over scientific papers — nothing in the research cluster reads papers.",
+      "why_not_included": "A Python library/agent, not a skill.",
+      "source": {
+        "repo": "Future-House/paper-qa",
+        "url": "https://github.com/Future-House/paper-qa",
+        "commit": "c692d0dfeac4a0296599f7fe21a253a58b7ac12a"
+      },
+      "license": "Apache-2.0",
+      "stars_at_import": 9598,
+      "added": "2026-11-14"
+    },
+    {
+      "name": "youtube-agent-skill",
+      "title": "YouTube Agent Skill",
+      "description": "Eleven Claude skills that run a YouTube channel: scripts off 21 hook formulas, title+thumbnail linting, edit decisions, comments, planning, viral-hunting, SEO, shorts, retention, chapters, audit.",
+      "why_valuable": "Eleven real, focused Claude skills that run a whole YouTube channel end to end — the most complete creator skill pack in the harvest.",
+      "why_not_included": "A skill pack for YouTube, a platform the owner doesn't use; short-form video is already covered by video and reel-story.",
+      "source": {
+        "repo": "Jakeschincariol/youtube-agent-skill",
+        "url": "https://github.com/Jakeschincariol/youtube-agent-skill",
+        "commit": "a2feb2104981a375ffd4f87ee04f4f5344ac43c6"
+      },
+      "license": "MIT",
+      "stars_at_import": 5890,
+      "added": "2026-11-14"
+    },
+    {
+      "name": "reverse-skill",
+      "title": "reverse-skill",
+      "description": "Reverse Engineering / Authorized Penetration Testing / Security Research skill router pack — AI-powered routing, on-demand toolchain bootstrapping.",
+      "why_valuable": "The skill router for RE and security research (44k★) — teaches an agent which tool to reach for (jadx, apktool, Frida, native libs); the owner explicitly asked to hunt hacking/security skills.",
+      "why_not_included": "89 skills, heavily offensive (EDR bypass, attack chains); REA already represents reverse-engineering in the main collection.",
+      "source": {
+        "repo": "zhaoxuya520/reverse-skill",
+        "url": "https://github.com/zhaoxuya520/reverse-skill",
+        "commit": "b972ad0e90f26d8f044828f004da22a4a585da12"
+      },
+      "license": "MIT",
+      "stars_at_import": 44640,
+      "added": "2026-11-14"
+    },
+    {
+      "name": "hyperframes",
+      "title": "Hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "why_valuable": "The agent-native programmatic video engine from HeyGen (84k★) — HTML in, MP4 out, made to be driven by agents.",
+      "why_not_included": "A render engine, not a skill; the motion cluster already has Remotion (link-only) as its representative.",
+      "source": {
+        "repo": "heygen-com/hyperframes",
+        "url": "https://github.com/heygen-com/hyperframes",
+        "commit": "32f562bbd00de00b0aa68acd5621fd00a7b4e0de"
+      },
+      "license": "Apache-2.0",
+      "stars_at_import": 84193,
+      "added": "2026-11-14"
+    },
+    {
+      "name": "local-deep-research",
+      "title": "Local Deep Research",
+      "description": "Local deep-research agent (~95% on SimpleQA per the author); local and cloud LLMs, 10+ search engines incl. arXiv and PubMed.",
+      "why_valuable": "The research-agent tool the owner asked about — runs locally and free, and actually does multi-step research with sources.",
+      "why_not_included": "An app/agent, not a skill; needs local models or API keys.",
+      "source": {
+        "repo": "LearningCircuit/local-deep-research",
+        "url": "https://github.com/LearningCircuit/local-deep-research",
+        "commit": "ee7b2a550e8a19de1588ecdbef85242c9b6d831a"
+      },
+      "license": "MIT",
+      "stars_at_import": 9582,
+      "added": "2026-11-14"
+    },
+    {
+      "name": "appflowy",
+      "title": "AppFlowy",
+      "description": "AI collaborative workspace (projects, wikis, teams) where you keep control of your data; local AI via Ollama/LMStudio.",
+      "why_valuable": "The flagship open-source Notion alternative (78k★) — the most-starred item in the whole harvest, real and actively maintained.",
+      "why_not_included": "A productivity app, not a skill; outside the agent-skills scope.",
+      "source": {
+        "repo": "AppFlowy-IO/AppFlowy",
+        "url": "https://github.com/AppFlowy-IO/AppFlowy",
+        "commit": "8fcee27d9bd93aad4ee0191d5d8d915d6a9a4e93"
+      },
+      "license": "AGPL-3.0",
+      "stars_at_import": 78901,
+      "added": "2026-11-14"
+    },
+    {
+      "name": "llama-index",
+      "title": "llama-index",
+      "description": "The document processing platform for AI — connect LLMs to documents, files, and external data.",
+      "why_valuable": "The standard RAG/document framework (52k★) — the research cluster has fetchers and search but no document-processing platform.",
+      "why_not_included": "A framework, not a skill; huge generic surface.",
+      "source": {
+        "repo": "run-llama/llama_index",
+        "url": "https://github.com/run-llama/llama_index",
+        "commit": "99d7433f6f71888951379ccca9294e272442c832"
+      },
+      "license": "MIT",
+      "stars_at_import": 52900,
+      "added": "2026-11-14"
+    },
+    {
+      "name": "opencreator",
+      "title": "OpenCreator",
+      "description": "Open-source AI workspace for creators: video translation and dubbing in 120+ languages, downloader, transcription.",
+      "why_valuable": "A real creator workspace (14k★) — video dubbing/translation directly useful for the owner's channel and content work.",
+      "why_not_included": "An app, not a skill.",
+      "source": {
+        "repo": "krillinai/OpenCreator",
+        "url": "https://github.com/krillinai/OpenCreator",
+        "commit": "983a0bfa003bb6939703dc24df47eb3f7d98a883"
+      },
+      "license": "Apache-2.0",
+      "stars_at_import": 14350,
+      "added": "2026-11-14"
+    }
+  ]
+}
