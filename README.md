@@ -53,7 +53,8 @@ shelf lists companion MCP servers that are actually run and vetted here —
 recommendations, not skills: nothing is vendored, each entry only links to
 its source ([`mcps.json`](mcps.json)). Paid services are labelled, every
 entry states plainly what the server can run or access, and the shelf is
-capped at 12 — one server per job, the same rule as the skills.
+capped at 12 — one server per job, in the same one-per-job spirit as the
+skills' one-per-cluster rule.
 
 <!-- GENERATED:MCP:START -->
 | Server | What it does | Why it's here | Transport | Requires | What it can run / access | Source |
